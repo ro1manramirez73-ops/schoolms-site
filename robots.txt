@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://schoolms.rampastor.com/sitemap.xml
