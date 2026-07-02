@@ -1,752 +1,802 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>SchoolMS — School Management Software for Caribbean & Central America | One-Time Purchase</title>
+<meta name="description" content="SchoolMS is school management software for small schools in the Bahamas, Belize, Honduras, Guatemala & the Caribbean. Students, attendance, grades, fees, payroll — one payment, yours forever. From $1,000."/>
+<meta name="keywords" content="school management software Caribbean, school management system Bahamas, school software Belize, school ERP Central America, student attendance software, school payroll software, offline school management"/>
+<link rel="canonical" href="https://schoolms.rampastor.com/"/>
+<meta property="og:type" content="website"/>
+<meta property="og:url" content="https://schoolms.rampastor.com/"/>
+<meta property="og:title" content="SchoolMS — One Payment. Run Your Whole School."/>
+<meta property="og:description" content="Replace spreadsheets with one system. Students, attendance, grades, fees, payroll — installed on your computer, no subscription. Caribbean & Central America."/>
+<meta property="og:image" content="https://schoolms.rampastor.com/og-image.png"/>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@graph":[{"@type":"SoftwareApplication","name":"SchoolMS","applicationCategory":"EducationalApplication","operatingSystem":"Windows 10, Windows 11","description":"Complete school management software for small schools in the Caribbean and Central America. One-time purchase — no subscription.","url":"https://schoolms.rampastor.com","softwareVersion":"2.5","offers":[{"@type":"Offer","name":"Tier 1","price":"1000","priceCurrency":"USD"},{"@type":"Offer","name":"Tier 2","price":"1800","priceCurrency":"USD"},{"@type":"Offer","name":"Tier 3","price":"2800","priceCurrency":"USD"}],"aggregateRating":{"@type":"AggregateRating","ratingValue":"5","reviewCount":"3","bestRating":"5"}},{"@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Does SchoolMS work without internet?","acceptedAnswer":{"@type":"Answer","text":"Yes. SchoolMS runs completely offline after installation. Staff access it through your local Wi-Fi — no internet required after the initial download."}},{"@type":"Question","name":"Is there a monthly subscription fee?","acceptedAnswer":{"@type":"Answer","text":"No. SchoolMS is a one-time purchase. You pay once and own that version forever. No monthly fees, no per-student charges, no renewal costs."}}]}]}
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet"/>
+<style>
+/* ── RESET & TOKENS ─────────────────────────────────── */
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --ink:#0E1117;
+  --ink-2:#161B25;
+  --ink-3:#1E2535;
+  --gold:#D4A843;
+  --gold-dim:#A07C2A;
+  --gold-soft:rgba(212,168,67,.10);
+  --gold-glow:rgba(212,168,67,.20);
+  --parch:#EEE8D9;
+  --mist:#7A8BA0;
+  --mist-dim:#4A5A70;
+  --success:#3DD68C;
+  --danger:#E8514A;
+  --warn:#F0A840;
+  --serif:'DM Serif Display',Georgia,serif;
+  --sans:'Inter',system-ui,sans-serif;
+  --r:8px;--r-lg:14px;--r-xl:20px;
+}
+html{font-size:16px;scroll-behavior:smooth;-webkit-font-smoothing:antialiased}
+body{background:var(--ink);color:var(--parch);font-family:var(--sans);line-height:1.65;overflow-x:hidden}
+img{max-width:100%;display:block}
+a{color:inherit;text-decoration:none}
 
-  <!-- ═══ PRIMARY SEO ═══ -->
-  <title>SchoolMS — School Management Software for Caribbean & Central America | One-Time Purchase</title>
-  <meta name="description" content="SchoolMS is offline school management software for small schools in the Bahamas, Belize, Honduras, Guatemala & the Caribbean. Students, attendance, grades, fees, payroll — one payment, yours forever. From $300." />
-  <meta name="keywords" content="school management software Caribbean, school management system Bahamas, school software Belize, school ERP Central America, student attendance software, school payroll software, offline school management, one-time purchase school software, school fees software, report card software" />
-  <link rel="canonical" href="https://schoolms.rampastor.com/" />
+/* ── UTILITY ─────────────────────────────────────────── */
+.container{max-width:1120px;margin:0 auto;padding:0 5%}
+.eyebrow{font-size:11px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--gold);margin-bottom:14px}
+.section-h{font-family:var(--serif);font-size:clamp(2rem,3.8vw,3rem);line-height:1.12;color:var(--parch);margin-bottom:18px}
+.section-sub{font-size:16px;color:var(--mist);max-width:520px;line-height:1.72}
+.gold{color:var(--gold)}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;border:none;border-radius:var(--r);font-family:var(--sans);font-weight:600;font-size:14px;cursor:pointer;text-decoration:none;transition:all .18s;letter-spacing:.01em}
+.btn-gold{background:var(--gold);color:var(--ink);padding:13px 26px}
+.btn-gold:hover{background:#E2B94E;transform:translateY(-2px);box-shadow:0 8px 28px rgba(212,168,67,.35)}
+.btn-outline{background:transparent;color:var(--parch);border:1px solid rgba(238,232,217,.2);padding:12px 24px}
+.btn-outline:hover{border-color:rgba(238,232,217,.5);background:rgba(238,232,217,.05)}
+.btn-sm{padding:9px 18px;font-size:13px}
 
-  <!-- ═══ OPEN GRAPH ═══ -->
-  <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://schoolms.rampastor.com/" />
-  <meta property="og:title" content="SchoolMS — School Management Software | One Payment. Forever." />
-  <meta property="og:description" content="Replace spreadsheets with one system. Students, attendance, grades, fees, payroll — installed on your computer, no subscription. Used by schools in Bahamas, Belize, Honduras & Guatemala." />
-  <meta property="og:image" content="https://schoolms.rampastor.com/og-image.png" />
-  <meta property="og:locale" content="en_US" />
-  <meta property="og:site_name" content="SchoolMS" />
+/* ── NAV ─────────────────────────────────────────────── */
+nav{position:fixed;top:0;inset-inline:0;z-index:100;height:60px;display:flex;align-items:center;transition:all .3s}
+nav.stuck{background:rgba(14,17,23,.96);border-bottom:1px solid rgba(238,232,217,.07);backdrop-filter:blur(14px)}
+.nav-inner{display:flex;align-items:center;justify-content:space-between;width:100%;max-width:1120px;margin:0 auto;padding:0 5%}
+.nav-logo{display:flex;align-items:center;gap:10px}
+.nav-logo-mark{width:30px;height:30px;background:var(--gold);border-radius:7px;display:flex;align-items:center;justify-content:center;font-family:var(--serif);font-size:16px;font-weight:400;color:var(--ink)}
+.nav-logo-text{font-family:var(--serif);font-size:17px;color:var(--parch)}
+.nav-links{display:flex;align-items:center;gap:2px}
+.nav-links a{font-size:13px;font-weight:500;color:var(--mist);padding:7px 13px;border-radius:var(--r);transition:color .15s}
+.nav-links a:hover{color:var(--parch)}
+.nav-cta{background:var(--gold)!important;color:var(--ink)!important;font-weight:700!important}
+.nav-cta:hover{background:#E2B94E!important}
+.hamburger{display:none;background:none;border:none;color:var(--parch);cursor:pointer;padding:4px;font-size:20px}
 
-  <!-- ═══ TWITTER CARD ═══ -->
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="SchoolMS — School Management Software | One Payment. Forever." />
-  <meta name="twitter:description" content="Replace spreadsheets with one system. No subscription. No cloud. Yours forever." />
-  <meta name="twitter:image" content="https://schoolms.rampastor.com/og-image.png" />
+/* ── HERO ─────────────────────────────────────────────── */
+.hero{min-height:100vh;display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center;padding:100px 5% 60px;max-width:1120px;margin:0 auto}
+.hero-kicker{display:inline-flex;align-items:center;gap:8px;border:1px solid rgba(212,168,67,.3);border-radius:100px;padding:5px 14px;font-size:12px;font-weight:600;color:var(--gold);letter-spacing:.06em;margin-bottom:24px}
+.hero-kicker::before{content:'';width:6px;height:6px;border-radius:50%;background:var(--gold);animation:blink 2s ease-in-out infinite}
+@keyframes blink{0%,100%{opacity:1}50%{opacity:.3}}
+.hero h1{font-family:var(--serif);font-size:clamp(2.4rem,4.8vw,3.8rem);line-height:1.08;color:var(--parch);margin-bottom:22px;letter-spacing:-.01em}
+.hero h1 em{font-style:italic;color:var(--gold)}
+.hero-desc{font-size:16px;color:var(--mist);line-height:1.75;margin-bottom:34px;max-width:460px}
+.hero-actions{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:48px}
+.social-proof{display:flex;align-items:center;gap:14px}
+.avatars{display:flex}
+.avatars span{width:30px;height:30px;border-radius:50%;background:var(--gold-dim);border:2px solid var(--ink);display:flex;align-items:center;justify-content:center;font-size:10px;font-weight:700;color:var(--ink);margin-left:-7px}
+.avatars span:first-child{margin-left:0}
+.proof-text{font-size:12px;color:var(--mist);line-height:1.5}
+.proof-text strong{color:var(--parch)}
+.stars{color:var(--gold);font-size:11px;letter-spacing:1px}
 
-  <!-- ═══ SCHEMA MARKUP ═══ -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@graph": [
-      {
-        "@type": "SoftwareApplication",
-        "name": "SchoolMS",
-        "applicationCategory": "EducationalApplication",
-        "operatingSystem": "Windows 10, Windows 11",
-        "description": "Complete school management software for small and mid-size schools in the Caribbean and Central America. Includes student management, attendance, grades, fees, payroll, timetables, and parent portals. One-time purchase — no subscription.",
-        "url": "https://schoolms.rampastor.com",
-        "downloadUrl": "https://github.com/ro1manramirez73-ops/schoolms-store/releases/download/v2.5/SchoolMS_Setup_v2.5.exe",
-        "softwareVersion": "2.5",
-        "screenshot": [
-          "https://schoolms.rampastor.com/screenshots/dashboard.png",
-          "https://schoolms.rampastor.com/screenshots/students.png",
-          "https://schoolms.rampastor.com/screenshots/finances.png"
-        ],
-        "featureList": [
-          "Student Management",
-          "Attendance Tracking",
-          "Grades and Report Cards",
-          "Fees and Finance",
-          "Staff Payroll",
-          "Timetable Builder",
-          "Parent and Student Portals",
-          "Bulk CSV Import",
-          "AI Assistant",
-          "Works Offline",
-          "Cloudflare Tunnel Remote Access",
-          "English and Spanish Interface"
-        ],
-        "offers": [
-          {
-            "@type": "Offer",
-            "name": "Starter",
-            "price": "300",
-            "priceCurrency": "USD",
-            "description": "For very small schools and tutoring centres. Up to 10 staff accounts.",
-            "url": "https://schoolms.rampastor.com/#pricing"
-          },
-          {
-            "@type": "Offer",
-            "name": "Standard",
-            "price": "450",
-            "priceCurrency": "USD",
-            "description": "For small and mid-size schools. Up to 30 staff accounts.",
-            "url": "https://schoolms.rampastor.com/#pricing"
-          },
-          {
-            "@type": "Offer",
-            "name": "Professional",
-            "price": "600",
-            "priceCurrency": "USD",
-            "description": "For larger schools. Up to 50 staff accounts.",
-            "url": "https://schoolms.rampastor.com/#pricing"
-          },
-          {
-            "@type": "Offer",
-            "name": "Premium",
-            "price": "900",
-            "priceCurrency": "USD",
-            "description": "For multi-branch organisations. Up to 3 license keys.",
-            "url": "https://schoolms.rampastor.com/#pricing"
-          }
-        ],
-        "aggregateRating": {
-          "@type": "AggregateRating",
-          "ratingValue": "5",
-          "reviewCount": "3",
-          "bestRating": "5",
-          "worstRating": "1"
-        },
-        "review": [
-          {
-            "@type": "Review",
-            "author": { "@type": "Person", "name": "Maria L." },
-            "reviewBody": "We were spending $180/month on three separate tools that still didn't talk to each other. SchoolMS replaced all of them. We paid $450 once and haven't paid anything since.",
-            "reviewRating": { "@type": "Rating", "ratingValue": "5" },
-            "locationCreated": { "@type": "Country", "name": "Belize" }
-          },
-          {
-            "@type": "Review",
-            "author": { "@type": "Person", "name": "Carlos R." },
-            "reviewBody": "Payroll used to take my accountant a full day every month — now it takes 20 minutes. NIB contributions are automatic, payslips print in one click.",
-            "reviewRating": { "@type": "Rating", "ratingValue": "5" },
-            "locationCreated": { "@type": "Country", "name": "Honduras" }
-          },
-          {
-            "@type": "Review",
-            "author": { "@type": "Person", "name": "Ana G." },
-            "reviewBody": "Parents stopped calling the office to ask about grades and fees — they just check it themselves. Staff phone calls dropped by more than half in the first week.",
-            "reviewRating": { "@type": "Rating", "ratingValue": "5" },
-            "locationCreated": { "@type": "Country", "name": "Guatemala" }
-          }
-        ],
-        "publisher": {
-          "@type": "Organization",
-          "name": "RamPastor",
-          "url": "https://rampastor.com",
-          "email": "ro1manramirez73@gmail.com",
-          "address": {
-            "@type": "PostalAddress",
-            "addressCountry": "BS",
-            "addressLocality": "Nassau"
-          }
-        }
-      },
-      {
-        "@type": "FAQPage",
-        "mainEntity": [
-          {
-            "@type": "Question",
-            "name": "Does SchoolMS work without internet?",
-            "acceptedAnswer": { "@type": "Answer", "text": "Yes. SchoolMS runs completely offline after installation. Staff access it through your local Wi-Fi network — no internet connection required." }
-          },
-          {
-            "@type": "Question",
-            "name": "Is there a monthly subscription fee?",
-            "acceptedAnswer": { "@type": "Answer", "text": "No. SchoolMS is a one-time purchase. You pay once and own that version forever. There are no monthly fees, no per-student charges, and no renewal costs." }
-          },
-          {
-            "@type": "Question",
-            "name": "How many students can I add?",
-            "acceptedAnswer": { "@type": "Answer", "text": "Unlimited students in all plans. Staff account limits only apply to login accounts, not student records." }
-          },
-          {
-            "@type": "Question",
-            "name": "Can parents and students access the system from home?",
-            "acceptedAnswer": { "@type": "Answer", "text": "Yes. Using Cloudflare Tunnel (free), you can give your system a real HTTPS URL accessible from anywhere. Parents can check grades and fees from their phone without calling the school." }
-          },
-          {
-            "@type": "Question",
-            "name": "Is SchoolMS available in Spanish?",
-            "acceptedAnswer": { "@type": "Answer", "text": "Yes. Full English and Spanish support is included. Switch language from the sidebar with one click — no restart needed." }
-          },
-          {
-            "@type": "Question",
-            "name": "What countries is SchoolMS available in?",
-            "acceptedAnswer": { "@type": "Answer", "text": "SchoolMS is used by schools across the Caribbean and Central America, including the Bahamas, Belize, Honduras, Guatemala, Jamaica, Trinidad and Tobago, and more. It works on any Windows computer worldwide." }
-          },
-          {
-            "@type": "Question",
-            "name": "Can I import my existing student data?",
-            "acceptedAnswer": { "@type": "Answer", "text": "Yes. The Import Data page accepts any CSV file exported from Excel. The system auto-detects column names and works with your existing files." }
-          },
-          {
-            "@type": "Question",
-            "name": "What are the system requirements?",
-            "acceptedAnswer": { "@type": "Answer", "text": "Windows 10 or 11 (64-bit) on the server computer. Any device with a browser (phone, tablet, laptop) can connect as a client. Minimum 4 GB RAM and 10 GB free disk space." }
-          }
-        ]
-      }
-    ]
-  }
-  </script>
+/* RECEIPT — the signature element */
+.receipt-wrap{position:relative}
+.receipt{background:#F9F6EE;border-radius:var(--r-xl);overflow:hidden;box-shadow:0 40px 80px rgba(0,0,0,.6),0 0 0 1px rgba(0,0,0,.3),4px 4px 0 0 rgba(212,168,67,.15);transform:rotate(1.5deg);transition:transform .4s ease}
+.receipt-wrap:hover .receipt{transform:rotate(0)}
+.receipt-header{background:var(--ink-2);padding:16px 20px;display:flex;align-items:center;justify-content:space-between}
+.receipt-logo{display:flex;align-items:center;gap:8px;font-family:var(--serif);font-size:14px;color:var(--parch)}
+.receipt-logo-mark{width:22px;height:22px;background:var(--gold);border-radius:5px;display:flex;align-items:center;justify-content:center;font-size:11px;color:var(--ink)}
+.receipt-body{padding:20px}
+.receipt-title{font-size:10px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#888;margin-bottom:14px}
+.receipt-row{display:flex;justify-content:space-between;align-items:center;padding:8px 0;border-bottom:1px solid #E8E3D8;font-size:13px;color:#333}
+.receipt-row:last-of-type{border-bottom:none}
+.receipt-row .label{color:#666}
+.receipt-row .val{font-weight:600;color:#222}
+.receipt-row .badge-present{background:#D4EDDA;color:#155724;font-size:10px;font-weight:700;padding:2px 7px;border-radius:100px}
+.receipt-row .badge-absent{background:#F8D7DA;color:#721C24;font-size:10px;font-weight:700;padding:2px 7px;border-radius:100px}
+.receipt-divider{height:1px;background:#E8E3D8;margin:14px 0;position:relative}
+.receipt-divider::before,.receipt-divider::after{content:'';position:absolute;width:20px;height:20px;background:var(--ink-2);border-radius:50%;top:50%;transform:translateY(-50%)}
+.receipt-divider::before{left:-30px}
+.receipt-divider::after{right:-30px}
+.receipt-total{display:flex;justify-content:space-between;align-items:baseline;padding:10px 0 4px}
+.receipt-total .label{font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#888}
+.receipt-total .val{font-family:var(--serif);font-size:1.7rem;color:#1A1A1A}
+.receipt-note{font-size:10px;color:#AAA;text-align:center;margin-top:12px;font-style:italic}
+.receipt-float{position:absolute;top:-16px;right:-20px;background:var(--gold);color:var(--ink);border-radius:var(--r-lg);padding:12px 16px;font-size:11px;font-weight:700;text-align:center;box-shadow:0 8px 24px rgba(212,168,67,.4);transform:rotate(-3deg)}
+.receipt-float .big{font-family:var(--serif);font-size:1.5rem;display:block}
 
-  <!-- ═══ FONTS ═══ -->
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Syne:wght@700;800&display=swap" rel="stylesheet" />
+/* ── FLAGS STRIP ─────────────────────────────────────── */
+.flags-strip{border-top:1px solid rgba(238,232,217,.07);border-bottom:1px solid rgba(238,232,217,.07);background:var(--ink-2);padding:14px 0;overflow:hidden}
+.flags-inner{display:flex;align-items:center;gap:36px;width:max-content;animation:marquee 22s linear infinite}
+@keyframes marquee{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
+.flags-label{font-size:10px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--mist);white-space:nowrap;flex-shrink:0}
+.flag-item{display:flex;align-items:center;gap:8px;white-space:nowrap;font-size:13px;color:var(--parch);font-weight:500;flex-shrink:0}
+.flag-sep{color:var(--ink-3);font-size:14px;flex-shrink:0}
 
-  <style>
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-    :root {
-      --navy: #0f1729; --navy-mid: #162040; --navy-light: #1e2d54;
-      --brass: #c9a84c; --brass-light: #e0c06a; --brass-dim: #8a6f30;
-      --slate: #8896b3; --mist: #c4cedd; --white: #f0f4ff;
-      --void: #0a0d14; --success: #2dd4a0; --danger: #f05b5b;
-    }
-    html { scroll-behavior: smooth; font-size: 16px; -webkit-font-smoothing: antialiased; }
-    body { background: var(--void); color: var(--white); font-family: 'Inter', sans-serif; line-height: 1.6; }
+/* ── SECTIONS ─────────────────────────────────────────── */
+.section{padding:96px 0}
+.section-alt{background:var(--ink-2)}
+.section-head{margin-bottom:56px}
+.section-head.centered{text-align:center}
+.section-head.centered .section-sub{margin:0 auto}
 
-    /* NAV */
-    nav { background: var(--navy); border-bottom: 1px solid rgba(201,168,76,.12); padding: 0 5%; display: flex; align-items: center; justify-content: space-between; height: 60px; position: sticky; top: 0; z-index: 100; }
-    .logo { display: flex; align-items: center; gap: 10px; text-decoration: none; }
-    .logo-icon { width: 34px; height: 34px; background: var(--brass); border-radius: 7px; display: flex; align-items: center; justify-content: center; font-family: 'Syne', sans-serif; font-weight: 800; font-size: 15px; color: var(--void); }
-    .logo-text { font-family: 'Syne', sans-serif; font-weight: 700; font-size: 18px; color: var(--white); }
-    .nav-links { display: flex; align-items: center; gap: 4px; }
-    .nav-links a { color: var(--slate); text-decoration: none; font-size: 13px; font-weight: 500; padding: 6px 12px; border-radius: 6px; transition: all .15s; }
-    .nav-links a:hover { color: var(--white); background: rgba(255,255,255,.05); }
-    .nav-cta { background: var(--brass); color: var(--void) !important; font-weight: 600 !important; border-radius: 6px !important; }
-    .nav-cta:hover { background: var(--brass-light) !important; }
-    .lang-toggle { display: flex; gap: 4px; }
-    .lang-btn { background: none; border: 1px solid rgba(136,150,179,.25); color: var(--slate); font-size: 11px; font-weight: 600; padding: 4px 8px; border-radius: 4px; cursor: pointer; }
-    .lang-btn.active { border-color: var(--brass); color: var(--brass); }
+/* ── PAIN GRID ───────────────────────────────────────── */
+.pain-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:rgba(238,232,217,.06);border:1px solid rgba(238,232,217,.06);border-radius:var(--r-xl);overflow:hidden;margin-top:56px}
+.pain-card{background:var(--ink);padding:30px;transition:background .2s}
+.pain-card:hover{background:var(--ink-2)}
+.pain-icon{font-size:28px;margin-bottom:14px}
+.pain-title{font-family:var(--serif);font-size:16px;color:var(--parch);margin-bottom:8px}
+.pain-text{font-size:13px;color:var(--mist);line-height:1.7;margin-bottom:14px}
+.pain-fix{font-size:12px;font-weight:600;color:var(--gold)}
+.pain-fix::before{content:'→ '}
 
-    /* HERO */
-    .hero { padding: 80px 5% 60px; max-width: 1100px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; }
-    .hero-eyebrow { font-size: 11px; font-weight: 600; letter-spacing: .12em; text-transform: uppercase; color: var(--brass-dim); margin-bottom: 16px; }
-    .hero h1 { font-family: 'Syne', sans-serif; font-size: clamp(2rem, 4vw, 2.8rem); font-weight: 800; line-height: 1.1; letter-spacing: -.02em; margin-bottom: 20px; }
-    .hero h1 span { color: var(--brass); }
-    .hero-sub { font-size: 16px; color: var(--slate); line-height: 1.7; margin-bottom: 32px; max-width: 480px; }
-    .hero-badges { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 32px; }
-    .badge { display: inline-flex; align-items: center; gap: 5px; background: rgba(45,212,160,.1); border: 1px solid rgba(45,212,160,.25); color: var(--success); font-size: 12px; font-weight: 600; padding: 4px 10px; border-radius: 100px; }
-    .hero-btns { display: flex; gap: 12px; flex-wrap: wrap; }
-    .btn-primary { background: var(--brass); color: var(--void); border: none; border-radius: 8px; padding: 13px 24px; font-weight: 700; font-size: 14px; cursor: pointer; text-decoration: none; display: inline-flex; align-items: center; gap: 6px; transition: all .15s; }
-    .btn-primary:hover { background: var(--brass-light); transform: translateY(-1px); box-shadow: 0 6px 20px rgba(201,168,76,.3); }
-    .btn-ghost { background: transparent; color: var(--brass); border: 1px solid rgba(201,168,76,.3); border-radius: 8px; padding: 12px 22px; font-weight: 600; font-size: 14px; cursor: pointer; text-decoration: none; display: inline-flex; align-items: center; gap: 6px; transition: all .15s; }
-    .btn-ghost:hover { background: rgba(201,168,76,.08); }
-    .hero-stats { display: flex; gap: 32px; margin-top: 40px; }
-    .hero-stat-val { font-family: 'Syne', sans-serif; font-size: 1.6rem; font-weight: 800; color: var(--brass); }
-    .hero-stat-lbl { font-size: 11px; color: var(--slate); margin-top: 2px; }
-    .hero-visual { background: var(--navy); border: 1px solid rgba(201,168,76,.12); border-radius: 16px; overflow: hidden; }
-    .hero-visual img { width: 100%; display: block; }
-    .hero-visual-bar { background: var(--navy-mid); padding: 10px 16px; display: flex; align-items: center; gap: 8px; border-bottom: 1px solid rgba(136,150,179,.1); }
-    .dot { width: 10px; height: 10px; border-radius: 50%; }
+/* ── FEATURES ─────────────────────────────────────────── */
+.features-layout{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:start;margin-top:56px}
+.feat-tabs{display:flex;flex-direction:column;gap:2px}
+.feat-tab{display:flex;align-items:flex-start;gap:14px;padding:16px;border-radius:var(--r-lg);cursor:pointer;border:1px solid transparent;transition:all .2s}
+.feat-tab:hover{background:var(--ink-2)}
+.feat-tab.on{background:var(--ink-2);border-color:rgba(212,168,67,.25)}
+.feat-tab-icon{width:36px;height:36px;border-radius:8px;background:var(--ink-3);display:flex;align-items:center;justify-content:center;font-size:16px;flex-shrink:0;transition:background .2s}
+.feat-tab.on .feat-tab-icon{background:var(--gold);filter:grayscale(0)}
+.feat-tab-title{font-size:14px;font-weight:600;color:var(--parch);margin-bottom:2px}
+.feat-tab-text{font-size:12px;color:var(--mist);line-height:1.55}
+.feat-preview{background:var(--ink-2);border:1px solid rgba(238,232,217,.08);border-radius:var(--r-xl);padding:24px;min-height:340px;position:sticky;top:84px}
+.feat-preview-header{display:flex;justify-content:space-between;align-items:center;margin-bottom:18px}
+.feat-preview-title{font-family:var(--serif);font-size:15px;color:var(--parch)}
+.live-badge{font-size:10px;font-weight:700;background:rgba(61,214,140,.12);color:var(--success);border:1px solid rgba(61,214,140,.2);padding:3px 8px;border-radius:100px;text-transform:uppercase;letter-spacing:.06em}
+.preview-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-bottom:16px}
+.preview-stat{background:var(--ink-3);border-radius:var(--r);padding:12px;text-align:center}
+.preview-stat-val{font-family:var(--serif);font-size:1.3rem;color:var(--gold)}
+.preview-stat-lbl{font-size:9px;text-transform:uppercase;letter-spacing:.08em;color:var(--mist);margin-top:2px}
+.preview-row{display:flex;align-items:center;gap:12px;padding:11px 14px;background:var(--ink-3);border-radius:var(--r);margin-bottom:6px}
+.preview-av{width:28px;height:28px;border-radius:50%;background:var(--gold-dim);display:flex;align-items:center;justify-content:center;font-size:10px;font-weight:700;color:var(--ink);flex-shrink:0}
+.preview-name{font-size:13px;font-weight:500;color:var(--parch)}
+.preview-meta{font-size:11px;color:var(--mist)}
+.status-p{background:rgba(61,214,140,.12);color:var(--success);font-size:10px;font-weight:700;padding:2px 7px;border-radius:100px;margin-left:auto}
+.status-a{background:rgba(232,81,74,.12);color:var(--danger);font-size:10px;font-weight:700;padding:2px 7px;border-radius:100px;margin-left:auto}
+.status-l{background:rgba(240,168,64,.12);color:var(--warn);font-size:10px;font-weight:700;padding:2px 7px;border-radius:100px;margin-left:auto}
 
-    /* GEO BAND */
-    .geo-band { background: var(--navy); border-top: 1px solid rgba(201,168,76,.08); border-bottom: 1px solid rgba(201,168,76,.08); padding: 16px 5%; }
-    .geo-inner { max-width: 1100px; margin: 0 auto; display: flex; align-items: center; gap: 12px; flex-wrap: wrap; }
-    .geo-label { font-size: 11px; color: var(--slate); font-weight: 600; text-transform: uppercase; letter-spacing: .08em; white-space: nowrap; }
-    .geo-tags { display: flex; gap: 8px; flex-wrap: wrap; }
-    .geo-tag { background: var(--navy-mid); border: 1px solid rgba(136,150,179,.15); color: var(--mist); font-size: 12px; font-weight: 500; padding: 4px 10px; border-radius: 100px; }
+/* ── COMPARISON ──────────────────────────────────────── */
+.compare-cols{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-top:56px}
+.compare-card{border-radius:var(--r-xl);padding:34px;position:relative;overflow:hidden}
+.cc-bad{background:var(--ink-2);border:1px solid rgba(238,232,217,.08)}
+.cc-good{background:linear-gradient(140deg,rgba(212,168,67,.1),rgba(212,168,67,.03));border:1px solid rgba(212,168,67,.3)}
+.cc-glow{position:absolute;top:-60px;right:-60px;width:200px;height:200px;background:radial-gradient(circle,rgba(212,168,67,.15),transparent 70%);pointer-events:none}
+.cc-label{font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;margin-bottom:18px;display:flex;align-items:center;gap:8px}
+.cc-price{font-family:var(--serif);font-size:2.8rem;margin-bottom:4px;line-height:1}
+.cc-period{font-size:13px;color:var(--mist);margin-bottom:28px}
+.cc-rows{display:flex;flex-direction:column;gap:10px}
+.cc-row{display:flex;align-items:center;gap:10px;font-size:13px}
+.cc-row .icon{width:18px;text-align:center;flex-shrink:0;font-size:13px}
+.cc-row.bad-row{color:var(--mist);text-decoration:line-through;opacity:.55}
+.cc-row.good-row{color:var(--parch)}
+.compare-table{margin-top:28px;border:1px solid rgba(238,232,217,.07);border-radius:var(--r-lg);overflow:hidden}
+.compare-table table{width:100%;border-collapse:collapse}
+.compare-table th{padding:11px 16px;font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.09em;color:var(--mist);background:var(--ink-3);text-align:left;border-bottom:1px solid rgba(238,232,217,.06)}
+.compare-table th.th-good{color:var(--gold)}
+.compare-table td{padding:13px 16px;font-size:13px;border-bottom:1px solid rgba(238,232,217,.04)}
+.compare-table tr:last-child td{border-bottom:none}
+.td-bad{color:var(--danger)}
+.td-good{color:var(--success);font-weight:600}
+.td-mid{color:var(--mist)}
 
-    /* SECTIONS */
-    section { padding: 72px 5%; }
-    .section-inner { max-width: 1100px; margin: 0 auto; }
-    .section-eyebrow { font-size: 11px; font-weight: 600; letter-spacing: .12em; text-transform: uppercase; color: var(--brass-dim); margin-bottom: 12px; }
-    .section-title { font-family: 'Syne', sans-serif; font-size: clamp(1.6rem, 3vw, 2.2rem); font-weight: 800; color: var(--white); margin-bottom: 16px; line-height: 1.2; }
-    .section-sub { font-size: 15px; color: var(--slate); max-width: 560px; line-height: 1.7; }
+/* ── SCREENSHOTS ─────────────────────────────────────── */
+.ss-tabs{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:24px}
+.ss-tab{background:transparent;border:1px solid rgba(238,232,217,.12);color:var(--mist);font-size:12px;font-weight:600;padding:7px 14px;border-radius:var(--r);cursor:pointer;transition:all .15s;font-family:var(--sans)}
+.ss-tab:hover{border-color:rgba(212,168,67,.4);color:var(--gold)}
+.ss-tab.on{background:var(--gold);border-color:var(--gold);color:var(--ink)}
+.ss-frame{border:1px solid rgba(238,232,217,.08);border-radius:var(--r-xl);overflow:hidden;box-shadow:0 32px 64px rgba(0,0,0,.5)}
+.ss-bar{background:var(--ink-2);padding:10px 16px;display:flex;align-items:center;gap:8px;border-bottom:1px solid rgba(238,232,217,.06)}
+.ss-dots{display:flex;gap:5px}
+.ss-dot{width:9px;height:9px;border-radius:50%}
+.ss-url{font-family:monospace;font-size:11px;color:var(--mist);margin-left:6px}
+.ss-img{width:100%;display:block;aspect-ratio:16/9;object-fit:cover;object-position:top;background:var(--ink-3);transition:opacity .3s}
 
-    /* PAIN POINTS */
-    .pain-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 16px; margin-top: 48px; }
-    .pain-card { background: var(--navy); border: 1px solid rgba(136,150,179,.1); border-radius: 14px; padding: 24px; }
-    .pain-icon { font-size: 28px; margin-bottom: 12px; }
-    .pain-title { font-size: 14px; font-weight: 700; color: var(--mist); margin-bottom: 6px; }
-    .pain-text { font-size: 13px; color: var(--slate); line-height: 1.6; }
-    .pain-fix { display: flex; align-items: center; gap: 8px; margin-top: 12px; font-size: 12px; font-weight: 600; color: var(--success); }
+/* ── EXTRA MODULES ───────────────────────────────────── */
+.modules-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:12px;margin-top:40px}
+.module-card{background:var(--ink);border:1px solid rgba(238,232,217,.07);border-radius:var(--r-lg);padding:18px;transition:border-color .2s}
+.module-card:hover{border-color:rgba(212,168,67,.3)}
+.module-icon{font-size:22px;margin-bottom:9px}
+.module-title{font-size:13px;font-weight:700;color:var(--parch);margin-bottom:4px}
+.module-text{font-size:12px;color:var(--mist);line-height:1.6}
 
-    /* FEATURES */
-    .features-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 16px; margin-top: 48px; }
-    .feature-card { background: var(--navy); border: 1px solid rgba(201,168,76,.08); border-radius: 14px; padding: 22px; transition: border-color .2s; }
-    .feature-card:hover { border-color: rgba(201,168,76,.3); }
-    .feature-icon { font-size: 24px; margin-bottom: 10px; }
-    .feature-title { font-size: 14px; font-weight: 700; color: var(--white); margin-bottom: 6px; }
-    .feature-text { font-size: 12px; color: var(--slate); line-height: 1.6; }
+/* ── PRICING ─────────────────────────────────────────── */
+.pricing-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:56px}
+.price-card{background:var(--ink-2);border:1px solid rgba(238,232,217,.08);border-radius:var(--r-xl);padding:26px;position:relative;display:flex;flex-direction:column;transition:border-color .2s,transform .2s}
+.price-card:hover{border-color:rgba(212,168,67,.3);transform:translateY(-4px)}
+.price-card.pop{background:linear-gradient(150deg,rgba(212,168,67,.1),var(--ink-2));border-color:rgba(212,168,67,.4)}
+.pop-tag{position:absolute;top:-12px;left:50%;transform:translateX(-50%);background:var(--gold);color:var(--ink);font-size:10px;font-weight:700;padding:3px 12px;border-radius:100px;white-space:nowrap;letter-spacing:.06em;text-transform:uppercase}
+.price-name{font-family:var(--serif);font-size:.95rem;color:var(--parch);margin-bottom:3px}
+.price-for{font-size:11px;color:var(--mist);margin-bottom:18px}
+.price-amt{font-family:var(--serif);font-size:2.4rem;color:var(--gold);line-height:1}
+.price-once{font-size:11px;color:var(--mist);margin-bottom:20px}
+.price-hr{height:1px;background:rgba(238,232,217,.07);margin-bottom:18px}
+.price-feats{list-style:none;display:flex;flex-direction:column;gap:8px;flex:1;margin-bottom:20px}
+.price-feats li{font-size:12px;color:var(--mist);display:flex;align-items:flex-start;gap:8px;line-height:1.5}
+.price-feats li::before{content:"✓";color:var(--gold);font-weight:700;flex-shrink:0;margin-top:1px}
+.price-feats li.no{opacity:.35}
+.price-feats li.no::before{content:"—";color:var(--mist)}
+.price-btn{width:100%;padding:11px;border-radius:var(--r);font-weight:700;font-size:13px;cursor:pointer;transition:all .18s;font-family:var(--sans);border:none}
+.pb-fill{background:var(--gold);color:var(--ink)}
+.pb-fill:hover{background:#E2B94E}
+.pb-ghost{background:transparent;color:var(--gold);border:1px solid rgba(212,168,67,.35)}
+.pb-ghost:hover{background:rgba(212,168,67,.08)}
+.price-note{text-align:center;font-size:12px;color:var(--mist);margin-top:18px}
+.price-note a{color:var(--gold)}
+.guarantee{max-width:380px;margin:28px auto 0;text-align:center;padding:20px;background:rgba(61,214,140,.05);border:1px solid rgba(61,214,140,.15);border-radius:var(--r-lg)}
+.guarantee-icon{font-size:26px;margin-bottom:6px}
+.guarantee-title{font-size:13px;font-weight:700;color:var(--parch);margin-bottom:4px}
+.guarantee-text{font-size:12px;color:var(--mist);line-height:1.6}
 
-    /* COMPARISON TABLE */
-    .compare-wrap { margin-top: 48px; overflow-x: auto; }
-    table { width: 100%; border-collapse: collapse; }
-    th { text-align: left; padding: 12px 16px; font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: .08em; color: var(--slate); border-bottom: 1px solid rgba(136,150,179,.12); }
-    td { padding: 14px 16px; font-size: 13px; border-bottom: 1px solid rgba(136,150,179,.06); }
-    tr:last-child td { border-bottom: none; }
-    .col-schoolms { background: rgba(201,168,76,.04); }
-    td.highlight { color: var(--brass); font-weight: 700; }
-    td.good { color: var(--success); }
-    td.bad { color: var(--danger); }
-    .col-head { font-family: 'Syne', sans-serif; font-weight: 700; font-size: 13px; }
-    .col-schoolms .col-head { color: var(--brass); }
+/* ── TESTIMONIALS ─────────────────────────────────────── */
+.testi-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:56px}
+.testi-card{background:var(--ink);border:1px solid rgba(238,232,217,.07);border-radius:var(--r-xl);padding:26px;display:flex;flex-direction:column;gap:14px;transition:border-color .2s}
+.testi-card:hover{border-color:rgba(212,168,67,.25)}
+.testi-stars{color:var(--gold);font-size:12px;letter-spacing:2px}
+.testi-quote{font-family:var(--serif);font-size:15px;color:var(--parch);line-height:1.7;flex:1;font-style:italic}
+.testi-author{display:flex;align-items:center;gap:10px;padding-top:14px;border-top:1px solid rgba(238,232,217,.07)}
+.testi-av{width:36px;height:36px;border-radius:50%;background:var(--gold-dim);display:flex;align-items:center;justify-content:center;font-weight:700;font-size:12px;color:var(--ink);flex-shrink:0}
+.testi-name{font-size:13px;font-weight:600;color:var(--parch)}
+.testi-role{font-size:11px;color:var(--mist)}
 
-    /* PRICING */
-    .pricing-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 16px; margin-top: 48px; }
-    .price-card { background: var(--navy); border: 1px solid rgba(136,150,179,.12); border-radius: 16px; padding: 28px; position: relative; }
-    .price-card.popular { border-color: rgba(201,168,76,.4); }
-    .popular-badge { position: absolute; top: -12px; left: 50%; transform: translateX(-50%); background: var(--brass); color: var(--void); font-size: 10px; font-weight: 700; padding: 4px 12px; border-radius: 100px; white-space: nowrap; }
-    .price-name { font-family: 'Syne', sans-serif; font-weight: 700; font-size: 1rem; color: var(--white); margin-bottom: 4px; }
-    .price-desc { font-size: 12px; color: var(--slate); margin-bottom: 20px; }
-    .price-amount { font-family: 'Syne', sans-serif; font-weight: 800; font-size: 2.2rem; color: var(--brass); }
-    .price-once { font-size: 12px; color: var(--slate); margin-bottom: 24px; }
-    .price-features { list-style: none; margin-bottom: 24px; }
-    .price-features li { font-size: 12px; color: var(--slate); padding: 5px 0; display: flex; align-items: flex-start; gap: 8px; border-bottom: 1px solid rgba(136,150,179,.06); }
-    .price-features li::before { content: "✓"; color: var(--success); font-weight: 700; flex-shrink: 0; margin-top: 1px; }
-    .price-features li.no::before { content: "—"; color: rgba(136,150,179,.4); }
-    .price-btn { width: 100%; background: var(--brass); color: var(--void); border: none; border-radius: 8px; padding: 12px; font-weight: 700; font-size: 13px; cursor: pointer; transition: all .15s; }
-    .price-btn:hover { background: var(--brass-light); }
-    .price-btn.ghost { background: transparent; color: var(--brass); border: 1px solid rgba(201,168,76,.3); }
-    .price-btn.ghost:hover { background: rgba(201,168,76,.08); }
+/* ── HOW IT WORKS ────────────────────────────────────── */
+.how-steps{display:grid;grid-template-columns:repeat(4,1fr);gap:0;margin-top:56px;position:relative}
+.how-steps::before{content:'';position:absolute;top:21px;left:calc(12.5%);right:calc(12.5%);height:1px;background:linear-gradient(90deg,var(--gold),rgba(212,168,67,.15));pointer-events:none}
+.how-step{padding:0 20px;text-align:center}
+.how-num{width:42px;height:42px;border-radius:50%;background:var(--gold);color:var(--ink);font-family:var(--serif);font-size:17px;display:flex;align-items:center;justify-content:center;margin:0 auto 18px;position:relative;z-index:1;box-shadow:0 0 0 8px var(--ink)}
+.how-title{font-size:14px;font-weight:700;color:var(--parch);margin-bottom:7px}
+.how-text{font-size:13px;color:var(--mist);line-height:1.65}
+.requirements{display:grid;grid-template-columns:repeat(5,1fr);gap:12px;margin-top:44px;padding:24px;background:var(--ink-2);border:1px solid rgba(238,232,217,.07);border-radius:var(--r-xl)}
+.req-item{text-align:center}
+.req-icon{font-size:22px;margin-bottom:7px}
+.req-title{font-size:12px;font-weight:700;color:var(--parch);margin-bottom:2px}
+.req-text{font-size:11px;color:var(--mist)}
 
-    /* TESTIMONIALS */
-    .testimonials-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 16px; margin-top: 48px; }
-    .testimonial { background: var(--navy); border: 1px solid rgba(201,168,76,.1); border-radius: 14px; padding: 24px; }
-    .stars { color: var(--brass); font-size: 14px; margin-bottom: 12px; }
-    .testimonial-text { font-size: 14px; color: var(--mist); line-height: 1.7; font-style: italic; margin-bottom: 16px; }
-    .testimonial-author { display: flex; align-items: center; gap: 10px; }
-    .author-avatar { width: 36px; height: 36px; border-radius: 50%; background: var(--brass); color: var(--void); display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 13px; }
-    .author-name { font-size: 13px; font-weight: 600; color: var(--white); }
-    .author-role { font-size: 11px; color: var(--slate); }
+/* ── FAQ ─────────────────────────────────────────────── */
+.faq-cols{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-top:56px;align-items:start}
+.faq-list{display:flex;flex-direction:column;gap:2px}
+.faq-item{border:1px solid rgba(238,232,217,.08);border-radius:var(--r-lg);overflow:hidden;background:var(--ink)}
+.faq-q{padding:17px 20px;font-size:14px;font-weight:500;color:var(--parch);cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:12px;transition:background .15s}
+.faq-q:hover{background:rgba(238,232,217,.03)}
+.faq-q-ico{font-size:18px;color:var(--gold);transition:transform .25s;font-style:normal;flex-shrink:0}
+.faq-a{font-size:13px;color:var(--mist);line-height:1.75;padding:0 20px;max-height:0;overflow:hidden;transition:all .3s}
+.faq-item.open .faq-a{max-height:300px;padding:0 20px 17px}
+.faq-item.open .faq-q-ico{transform:rotate(45deg)}
+.faq-item.open{border-color:rgba(212,168,67,.25)}
+.faq-aside{background:linear-gradient(140deg,rgba(212,168,67,.08),rgba(212,168,67,.02));border:1px solid rgba(212,168,67,.2);border-radius:var(--r-xl);padding:32px}
+.faq-aside h3{font-family:var(--serif);font-size:1.2rem;color:var(--parch);margin-bottom:8px}
+.faq-aside p{font-size:13px;color:var(--mist);margin-bottom:22px;line-height:1.65}
+.trial-box{background:var(--ink-2);border:1px solid rgba(238,232,217,.08);border-radius:var(--r-lg);padding:20px;margin-top:16px}
+.trial-box-title{font-size:13px;font-weight:700;color:var(--parch);margin-bottom:10px}
+.trial-feats{display:flex;flex-direction:column;gap:7px;font-size:13px;color:var(--mist)}
+.trial-feats span::before{content:"✓ ";color:var(--gold);font-weight:700}
 
-    /* HOW IT WORKS */
-    .steps { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 24px; margin-top: 48px; }
-    .step { text-align: center; }
-    .step-num { width: 44px; height: 44px; border-radius: 50%; background: rgba(201,168,76,.12); border: 1px solid rgba(201,168,76,.3); color: var(--brass); font-family: 'Syne', sans-serif; font-weight: 800; font-size: 18px; display: flex; align-items: center; justify-content: center; margin: 0 auto 14px; }
-    .step-title { font-size: 14px; font-weight: 700; color: var(--white); margin-bottom: 6px; }
-    .step-text { font-size: 13px; color: var(--slate); line-height: 1.6; }
+/* ── CTA BANNER ──────────────────────────────────────── */
+.cta-banner{background:linear-gradient(140deg,rgba(212,168,67,.12),rgba(212,168,67,.03));border:1px solid rgba(212,168,67,.2);border-radius:var(--r-xl);padding:72px 40px;text-align:center;max-width:1120px;margin:0 auto 96px}
+.cta-banner h2{font-family:var(--serif);font-size:clamp(2rem,4vw,3rem);margin-bottom:16px}
+.cta-banner p{font-size:15px;color:var(--mist);margin-bottom:34px;max-width:460px;margin-left:auto;margin-right:auto;line-height:1.7}
+.cta-actions{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
 
-    /* FAQ */
-    .faq-list { margin-top: 48px; display: flex; flex-direction: column; gap: 2px; }
-    .faq-item { background: var(--navy); border: 1px solid rgba(136,150,179,.1); border-radius: 10px; overflow: hidden; }
-    .faq-q { padding: 18px 20px; font-size: 14px; font-weight: 600; color: var(--white); cursor: pointer; display: flex; justify-content: space-between; align-items: center; }
-    .faq-q:hover { background: rgba(255,255,255,.02); }
-    .faq-icon { font-size: 18px; color: var(--brass); transition: transform .2s; }
-    .faq-a { font-size: 13px; color: var(--slate); line-height: 1.7; padding: 0 20px; max-height: 0; overflow: hidden; transition: all .25s; }
-    .faq-item.open .faq-a { max-height: 200px; padding: 0 20px 18px; }
-    .faq-item.open .faq-icon { transform: rotate(45deg); }
+/* ── FOOTER ──────────────────────────────────────────── */
+footer{background:var(--ink-2);border-top:1px solid rgba(238,232,217,.07);padding:56px 0 28px}
+.footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:48px;max-width:1120px;margin:0 auto;padding:0 5%;margin-bottom:44px}
+.footer-brand p{font-size:13px;color:var(--mist);margin-top:10px;max-width:240px;line-height:1.7}
+.footer-col h4{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.12em;color:var(--mist);margin-bottom:14px}
+.footer-col a{display:block;font-size:13px;color:var(--mist);margin-bottom:9px;transition:color .15s}
+.footer-col a:hover{color:var(--gold)}
+.footer-bottom{max-width:1120px;margin:0 auto;padding:20px 5% 0;border-top:1px solid rgba(238,232,217,.06);display:flex;justify-content:space-between;align-items:center;font-size:12px;color:var(--mist);flex-wrap:wrap;gap:8px}
+.footer-bottom a{color:var(--mist)}
+.footer-bottom a:hover{color:var(--gold)}
 
-    /* CTA BANNER */
-    .cta-banner { background: var(--navy); border: 1px solid rgba(201,168,76,.15); border-radius: 20px; padding: 56px 40px; text-align: center; margin: 0 5% 72px; max-width: 1100px; margin-left: auto; margin-right: auto; }
-    .cta-banner h2 { font-family: 'Syne', sans-serif; font-size: clamp(1.6rem, 3vw, 2.2rem); font-weight: 800; margin-bottom: 16px; }
-    .cta-banner p { color: var(--slate); margin-bottom: 32px; font-size: 15px; }
-    .cta-btns { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
+/* ── MODAL ───────────────────────────────────────────── */
+.modal-overlay{position:fixed;inset:0;background:rgba(0,0,0,.82);z-index:500;display:none;align-items:center;justify-content:center;padding:20px;backdrop-filter:blur(10px)}
+.modal-overlay.open{display:flex}
+.modal{background:var(--ink-2);border:1px solid rgba(238,232,217,.1);border-radius:var(--r-xl);padding:34px;width:100%;max-width:420px;position:relative;max-height:90vh;overflow-y:auto}
+.modal-close{position:absolute;top:14px;right:16px;background:rgba(238,232,217,.06);border:none;color:var(--mist);font-size:17px;cursor:pointer;width:30px;height:30px;border-radius:50%;display:flex;align-items:center;justify-content:center;transition:all .15s}
+.modal-close:hover{background:rgba(238,232,217,.12);color:var(--parch)}
+.modal-title{font-family:var(--serif);font-size:1.2rem;color:var(--parch);margin-bottom:3px}
+.modal-plan{font-size:13px;color:var(--gold);font-weight:600;margin-bottom:22px}
+.fg{margin-bottom:14px}
+.fl{display:block;font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.09em;color:var(--mist);margin-bottom:5px}
+.fi{width:100%;background:rgba(238,232,217,.05);border:1px solid rgba(238,232,217,.12);border-radius:var(--r);color:var(--parch);font-size:13px;padding:10px 14px;outline:none;transition:border-color .2s;font-family:var(--sans)}
+.fi:focus{border-color:rgba(212,168,67,.5);box-shadow:0 0 0 3px rgba(212,168,67,.08)}
+.fi::placeholder{color:var(--mist)}
+.fg2{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.secure-note{display:flex;align-items:center;gap:8px;background:rgba(212,168,67,.05);border:1px solid rgba(212,168,67,.12);border-radius:var(--r);padding:10px 14px;margin-bottom:16px;font-size:11px;color:var(--mist)}
+.form-success{text-align:center;padding:16px 0;display:none}
+.form-success-icon{font-size:44px;margin-bottom:12px}
+.form-note{font-size:11px;color:var(--mist);text-align:center;margin-top:10px;line-height:1.5}
 
-    /* FOOTER */
-    footer { background: var(--navy); border-top: 1px solid rgba(136,150,179,.08); padding: 40px 5%; }
-    .footer-inner { max-width: 1100px; margin: 0 auto; display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 40px; }
-    .footer-brand p { font-size: 13px; color: var(--slate); margin-top: 10px; line-height: 1.6; max-width: 260px; }
-    .footer-col h4 { font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: .08em; color: var(--slate); margin-bottom: 14px; }
-    .footer-col a { display: block; font-size: 13px; color: var(--slate); text-decoration: none; margin-bottom: 8px; transition: color .15s; }
-    .footer-col a:hover { color: var(--brass); }
-    .footer-bottom { max-width: 1100px; margin: 32px auto 0; padding-top: 24px; border-top: 1px solid rgba(136,150,179,.08); display: flex; justify-content: space-between; align-items: center; font-size: 12px; color: var(--slate); flex-wrap: wrap; gap: 8px; }
-
-    /* ORDER MODAL */
-    .modal-overlay { position: fixed; inset: 0; background: rgba(10,13,20,.88); z-index: 300; display: none; align-items: center; justify-content: center; padding: 20px; }
-    .modal-overlay.open { display: flex; }
-    .modal { background: var(--navy); border: 1px solid rgba(201,168,76,.15); border-radius: 20px; padding: 32px; width: 100%; max-width: 460px; position: relative; max-height: 90vh; overflow-y: auto; }
-    .modal-close { position: absolute; top: 16px; right: 20px; background: none; border: none; color: var(--slate); font-size: 24px; cursor: pointer; }
-    .modal h3 { font-family: 'Syne', sans-serif; font-weight: 700; font-size: 1.2rem; margin-bottom: 6px; }
-    .modal-plan { font-size: 13px; color: var(--brass); font-weight: 600; margin-bottom: 24px; }
-    .form-group { margin-bottom: 16px; }
-    .form-label { display: block; font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: .08em; color: var(--slate); margin-bottom: 5px; }
-    .form-input { width: 100%; background: var(--navy-mid); border: 1px solid rgba(136,150,179,.2); border-radius: 7px; color: var(--white); font-size: 13px; padding: 10px 14px; outline: none; transition: border-color .2s; font-family: inherit; }
-    .form-input:focus { border-color: var(--brass); }
-    .form-success { text-align: center; padding: 20px 0; display: none; }
-    .form-success .success-icon { font-size: 48px; margin-bottom: 12px; }
-
-    /* RESPONSIVE */
-    @media (max-width: 768px) {
-      .hero { grid-template-columns: 1fr; gap: 40px; }
-      .hero-visual { display: none; }
-      .nav-links { display: none; }
-      .footer-inner { grid-template-columns: 1fr 1fr; }
-      .hero-stats { gap: 20px; }
-    }
-    @media (max-width: 480px) {
-      .footer-inner { grid-template-columns: 1fr; }
-      section { padding: 48px 5%; }
-    }
-  </style>
+/* ── RESPONSIVE ──────────────────────────────────────── */
+@media(max-width:1024px){
+  .hero{grid-template-columns:1fr;gap:40px;text-align:center;padding-top:80px}
+  .hero-desc,.social-proof,.hero-actions{justify-content:center}
+  .hero-desc{margin-left:auto;margin-right:auto}
+  .receipt-wrap{max-width:400px;margin:0 auto}
+  .pricing-grid{grid-template-columns:1fr 1fr}
+  .footer-grid{grid-template-columns:1fr 1fr}
+  .features-layout{grid-template-columns:1fr}
+  .feat-preview{position:static}
+  .compare-cols{grid-template-columns:1fr}
+  .faq-cols{grid-template-columns:1fr}
+  .how-steps::before{display:none}
+  .how-steps{grid-template-columns:1fr 1fr;gap:28px}
+  .requirements{grid-template-columns:repeat(3,1fr)}
+}
+@media(max-width:768px){
+  .pain-grid{grid-template-columns:1fr 1fr}
+  .testi-grid{grid-template-columns:1fr}
+  .pricing-grid{grid-template-columns:1fr}
+  .nav-links{display:none}
+  .hamburger{display:block}
+  .section{padding:64px 0}
+  .footer-grid{grid-template-columns:1fr}
+  .how-steps{grid-template-columns:1fr}
+  .requirements{grid-template-columns:1fr 1fr}
+  .cta-banner{padding:48px 24px}
+}
+@media(max-width:480px){
+  .pain-grid{grid-template-columns:1fr}
+  .hero-visual{display:none}
+  .fg2{grid-template-columns:1fr}
+}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+</style>
 </head>
 <body>
 
 <!-- NAV -->
-<nav>
-  <a href="/" class="logo">
-    <div class="logo-icon">S</div>
-    <span class="logo-text">SchoolMS</span>
-  </a>
-  <div class="nav-links">
-    <a href="#features">Features</a>
-    <a href="#pricing">Pricing</a>
-    <a href="#testimonials">Reviews</a>
-    <a href="#faq">FAQ</a>
-    <a href="#pricing" class="nav-cta">Buy Now</a>
-  </div>
-  <div class="lang-toggle">
-    <button class="lang-btn active">EN</button>
-    <button class="lang-btn">ES</button>
+<nav id="nav">
+  <div class="nav-inner">
+    <a href="/" class="nav-logo">
+      <div class="nav-logo-mark">S</div>
+      <span class="nav-logo-text">SchoolMS</span>
+    </a>
+    <div class="nav-links">
+      <a href="#features">Features</a>
+      <a href="#screenshots">Screenshots</a>
+      <a href="#pricing">Pricing</a>
+      <a href="#faq">FAQ</a>
+      <a href="#pricing" class="btn btn-sm nav-cta">Buy Now</a>
+    </div>
+    <button class="hamburger" onclick="toggleNav()" aria-label="Menu">☰</button>
   </div>
 </nav>
 
 <!-- HERO -->
-<section style="padding: 0">
-  <div class="hero">
-    <div>
-      <p class="hero-eyebrow">School Management Software · Caribbean &amp; Central America</p>
-      <h1>Your Whole School,<br>Managed —<br><span>One Payment. Forever.</span></h1>
-      <p class="hero-sub">Students, attendance, grades, fees, payroll, and timetables — all in one app. No subscription. No cloud. Installed on your computer, yours to keep.</p>
-      <div class="hero-badges">
-        <span class="badge">✓ No monthly fees</span>
-        <span class="badge">✓ Works offline</span>
-        <span class="badge">✓ English &amp; Spanish</span>
-        <span class="badge">✓ Free trial</span>
-      </div>
-      <div class="hero-btns">
-        <a href="https://github.com/ro1manramirez73-ops/schoolms-store/releases/download/v2.5/SchoolMS_Setup_v2.5.exe" class="btn-primary">⬇ Download Free Trial</a>
-        <a href="#pricing" class="btn-ghost">See Pricing →</a>
-      </div>
-      <div class="hero-stats">
-        <div><div class="hero-stat-val">10+</div><div class="hero-stat-lbl">Modules included</div></div>
-        <div><div class="hero-stat-val">$0</div><div class="hero-stat-lbl">Monthly fee</div></div>
-        <div><div class="hero-stat-val">5 min</div><div class="hero-stat-lbl">To install</div></div>
-        <div><div class="hero-stat-val">∞</div><div class="hero-stat-lbl">Students &amp; staff</div></div>
-      </div>
+<section style="padding:0">
+<div class="hero">
+  <div>
+    <div class="hero-kicker">School Management Software</div>
+    <h1>Your Whole School,<br>One Screen.<br><em>No Monthly Bill.</em></h1>
+    <p class="hero-desc">Students, attendance, grades, fees, payroll, and timetables — installed on your own computer. Yours to keep. No subscriptions. No cloud lock-in. Starts at $1,000 once.</p>
+    <div class="hero-actions">
+      <a href="https://github.com/ro1manramirez73-ops/schoolms-store/releases/download/v2.5/SchoolMS_Setup_v2.5.exe" class="btn btn-gold">⬇ Download Free Trial</a>
+      <a href="#pricing" class="btn btn-outline">View Pricing →</a>
     </div>
-    <div class="hero-visual">
-      <div class="hero-visual-bar">
-        <div class="dot" style="background:#f05b5b"></div>
-        <div class="dot" style="background:#f5a623"></div>
-        <div class="dot" style="background:#2dd4a0"></div>
-        <span style="font-size:11px;color:var(--slate);margin-left:6px">localhost:5000 — Dashboard</span>
+    <div class="social-proof">
+      <div class="avatars">
+        <span>ML</span><span>CR</span><span>AG</span>
       </div>
-      <img src="https://ro1manramirez73-ops.github.io/schoolms-store/screenshots/dashboard.png" alt="SchoolMS school management dashboard showing student records, attendance, and finance overview" loading="eager" />
+      <div class="proof-text">
+        <div class="stars">★★★★★</div>
+        <div>Trusted by <strong>schools across the Caribbean</strong></div>
+      </div>
     </div>
   </div>
-</section>
 
-<!-- GEO BAND -->
-<div class="geo-band">
-  <div class="geo-inner">
-    <span class="geo-label">Used by schools in</span>
-    <div class="geo-tags">
-      <span class="geo-tag">🇧🇸 Bahamas</span>
-      <span class="geo-tag">🇧🇿 Belize</span>
-      <span class="geo-tag">🇭🇳 Honduras</span>
-      <span class="geo-tag">🇬🇹 Guatemala</span>
-      <span class="geo-tag">🇯🇲 Jamaica</span>
-      <span class="geo-tag">🇹🇹 Trinidad &amp; Tobago</span>
-      <span class="geo-tag">🇩🇴 Dominican Republic</span>
-      <span class="geo-tag">+ more</span>
+  <!-- RECEIPT — signature element -->
+  <div class="receipt-wrap">
+    <div class="receipt-float">
+      <span class="big">$1,000</span>
+      once — not $150/mo
+    </div>
+    <div class="receipt">
+      <div class="receipt-header">
+        <div class="receipt-logo">
+          <div class="receipt-logo-mark">S</div>
+          SchoolMS
+        </div>
+        <span style="font-size:10px;color:#8896b3;font-family:monospace">REC-20240201</span>
+      </div>
+      <div class="receipt-body">
+        <div class="receipt-title">Daily Summary — Grade 4A</div>
+        <div class="receipt-row"><span class="label">Maria Santos</span><span class="badge-present">Present</span></div>
+        <div class="receipt-row"><span class="label">Carlos Ruiz</span><span class="badge-absent">Absent</span></div>
+        <div class="receipt-row"><span class="label">Ana Torres</span><span class="badge-present">Present</span></div>
+        <div class="receipt-row"><span class="label">Luis Pérez</span><span class="badge-present">Present</span></div>
+        <div class="receipt-divider"></div>
+        <div class="receipt-row"><span class="label">Tuition collected today</span><span class="val">$1,200.00</span></div>
+        <div class="receipt-row"><span class="label">Outstanding balance</span><span class="val" style="color:#c0392b">$450.00</span></div>
+        <div class="receipt-divider"></div>
+        <div class="receipt-total">
+          <span class="label">Monthly payroll</span>
+          <span class="val">$8,460</span>
+        </div>
+        <div class="receipt-note">Generated by SchoolMS v2.5 · Works offline · No subscription</div>
+      </div>
     </div>
   </div>
 </div>
+</section>
 
-<!-- PAIN POINTS -->
-<section style="background: var(--void)">
-  <div class="section-inner">
-    <p class="section-eyebrow">Sound familiar?</p>
-    <h2 class="section-title">Running a school shouldn't feel like this</h2>
-    <p class="section-sub">Most small schools in the Caribbean still manage everything in spreadsheets and WhatsApp groups. There's a better way.</p>
-    <div class="pain-grid">
-      <div class="pain-card">
-        <div class="pain-icon">😩</div>
-        <div class="pain-title">Attendance in spreadsheets</div>
-        <div class="pain-text">Every morning someone fills in a Google Sheet or paper register. Finding who was absent last Tuesday takes 10 minutes.</div>
-        <div class="pain-fix">✓ SchoolMS tracks attendance in seconds</div>
-      </div>
-      <div class="pain-card">
-        <div class="pain-icon">😩</div>
-        <div class="pain-title">Chasing fees by hand</div>
-        <div class="pain-text">Paper invoices, WhatsApp reminders, no idea who still owes money until you sit down with a notebook at month-end.</div>
-        <div class="pain-fix">✓ Real-time fee dashboard, instant receipts</div>
-      </div>
-      <div class="pain-card">
-        <div class="pain-icon">😩</div>
-        <div class="pain-title">Report cards take days</div>
-        <div class="pain-text">Teachers type grades into Word. Someone reformats, prints, one mistake means reprinting everything from scratch.</div>
-        <div class="pain-fix">✓ Print professional report cards in one click</div>
-      </div>
-      <div class="pain-card">
-        <div class="pain-icon">😩</div>
-        <div class="pain-title">Payroll is a nightmare</div>
-        <div class="pain-text">Manual salary calculations, separate spreadsheets for NIB contributions — month-end takes the whole office a full day.</div>
-        <div class="pain-fix">✓ Automated payroll with NIB, payslip PDFs</div>
-      </div>
-      <div class="pain-card">
-        <div class="pain-icon">😩</div>
-        <div class="pain-title">Parents always calling</div>
-        <div class="pain-text">"What's my child's grade?" "Did they attend today?" "How much do I owe?" — the same questions, all day, every day.</div>
-        <div class="pain-fix">✓ Parent portal — they check it themselves</div>
-      </div>
-      <div class="pain-card">
-        <div class="pain-icon">😩</div>
-        <div class="pain-title">Paying forever for cloud software</div>
-        <div class="pain-text">$100–200/month that never stops. Cancel and lose access to all your data immediately. Price goes up every year.</div>
-        <div class="pain-fix">✓ One payment, own it forever, data stays yours</div>
-      </div>
-    </div>
+<!-- FLAGS STRIP -->
+<div class="flags-strip">
+  <div class="flags-inner">
+    <span class="flags-label">Used by schools in</span>
+    <span class="flag-item">🇧🇸 Bahamas</span><span class="flag-sep">·</span>
+    <span class="flag-item">🇧🇿 Belize</span><span class="flag-sep">·</span>
+    <span class="flag-item">🇭🇳 Honduras</span><span class="flag-sep">·</span>
+    <span class="flag-item">🇬🇹 Guatemala</span><span class="flag-sep">·</span>
+    <span class="flag-item">🇯🇲 Jamaica</span><span class="flag-sep">·</span>
+    <span class="flag-item">🇹🇹 Trinidad & Tobago</span><span class="flag-sep">·</span>
+    <span class="flag-item">🇩🇴 Dominican Republic</span><span class="flag-sep">·</span>
+    <!-- duplicate for seamless loop -->
+    <span class="flags-label">Used by schools in</span>
+    <span class="flag-item">🇧🇸 Bahamas</span><span class="flag-sep">·</span>
+    <span class="flag-item">🇧🇿 Belize</span><span class="flag-sep">·</span>
+    <span class="flag-item">🇭🇳 Honduras</span><span class="flag-sep">·</span>
+    <span class="flag-item">🇬🇹 Guatemala</span><span class="flag-sep">·</span>
+    <span class="flag-item">🇯🇲 Jamaica</span><span class="flag-sep">·</span>
+    <span class="flag-item">🇹🇹 Trinidad & Tobago</span><span class="flag-sep">·</span>
+    <span class="flag-item">🇩🇴 Dominican Republic</span><span class="flag-sep">·</span>
   </div>
+</div>
+
+<!-- PAIN -->
+<section class="section">
+<div class="container">
+  <div class="section-head">
+    <div class="eyebrow">The Problem</div>
+    <h2 class="section-h">Running a school shouldn't mean<br>managing fifteen spreadsheets.</h2>
+    <p class="section-sub">Most small schools in the Caribbean track everything manually. Here is what that actually costs you every day.</p>
+  </div>
+  <div class="pain-grid">
+    <div class="pain-card"><div class="pain-icon">📋</div><div class="pain-title">Attendance in spreadsheets</div><div class="pain-text">Every morning someone fills a Google Sheet. Finding who was absent last Tuesday takes ten minutes of searching through tabs.</div><div class="pain-fix">SchoolMS marks attendance in seconds</div></div>
+    <div class="pain-card"><div class="pain-icon">📞</div><div class="pain-title">Parents calling all day</div><div class="pain-text">"What is my child's grade?" "Did they attend today?" "How much do I owe?" — the same questions, every single day, all day long.</div><div class="pain-fix">Parents check it themselves, online</div></div>
+    <div class="pain-card"><div class="pain-icon">😤</div><div class="pain-title">Report cards take days</div><div class="pain-text">Teachers type into Word, someone collects 20 different files, reformats them all, then prints. One mistake means starting over entirely.</div><div class="pain-fix">Professional report cards in one click</div></div>
+    <div class="pain-card"><div class="pain-icon">💸</div><div class="pain-title">Chasing fees by hand</div><div class="pain-text">Paper invoices, WhatsApp reminders, no clear picture of who still owes anything until you dig through notebooks at month-end.</div><div class="pain-fix">Real-time fee dashboard, instant receipts</div></div>
+    <div class="pain-card"><div class="pain-icon">🧮</div><div class="pain-title">Payroll is a nightmare</div><div class="pain-text">Manual salary calculations, separate NIB spreadsheets, no payslips. Month-end consumes the accountant for an entire day.</div><div class="pain-fix">Automated payroll with NIB, payslip PDFs</div></div>
+    <div class="pain-card"><div class="pain-icon">🔄</div><div class="pain-title">Paying forever for cloud tools</div><div class="pain-text">$100–200 per month that never stops. Cancel and you instantly lose access to every student record you ever built. The price goes up every year.</div><div class="pain-fix">One payment. Your data stays yours. Always.</div></div>
+  </div>
+</div>
 </section>
 
 <!-- FEATURES -->
-<section id="features" style="background: var(--navy)">
-  <div class="section-inner">
-    <p class="section-eyebrow">What's included</p>
-    <h2 class="section-title">Everything your school needs</h2>
-    <p class="section-sub">One purchase, every module. No add-ons, no per-seat fees, no cloud dependency.</p>
-    <div class="features-grid">
-      <div class="feature-card"><div class="feature-icon">👨‍🎓</div><h3 class="feature-title">Student Management</h3><p class="feature-text">Full profiles, enrollment, parent contacts, medical notes, photo IDs, and status tracking.</p></div>
-      <div class="feature-card"><div class="feature-icon">✅</div><h3 class="feature-title">Attendance</h3><p class="feature-text">Daily attendance by class or student. Absence summaries and exportable reports for any date range.</p></div>
-      <div class="feature-card"><div class="feature-icon">📚</div><h3 class="feature-title">Grades &amp; Report Cards</h3><p class="feature-text">Enter grades by subject, auto-calculate averages, and print professional report cards and IEPs.</p></div>
-      <div class="feature-card"><div class="feature-icon">💰</div><h3 class="feature-title">Fees &amp; Finance</h3><p class="feature-text">Track tuition, fees, and payments per student. Print receipts. Monitor outstanding balances at a glance.</p></div>
-      <div class="feature-card"><div class="feature-icon">💼</div><h3 class="feature-title">Staff Payroll</h3><p class="feature-text">Full payroll — salaries, NIB contributions, deductions, loans, payslip PDFs, and monthly reports.</p></div>
-      <div class="feature-card"><div class="feature-icon">📅</div><h3 class="feature-title">Timetable</h3><p class="feature-text">Build weekly class schedules, assign teachers, and let staff and students view their own timetable.</p></div>
-      <div class="feature-card"><div class="feature-icon">👨‍👩‍👧</div><h3 class="feature-title">Parent &amp; Student Portals</h3><p class="feature-text">Secure logins for parents and students to view grades, attendance, fees, and announcements from home.</p></div>
-      <div class="feature-card"><div class="feature-icon">🤖</div><h3 class="feature-title">AI Assistant</h3><p class="feature-text">Powered by Claude. Helps staff draft lesson plans, report comments, translations, and answer questions.</p></div>
-      <div class="feature-card"><div class="feature-icon">📥</div><h3 class="feature-title">Bulk CSV Import</h3><p class="feature-text">Load your entire student roster or staff list from any spreadsheet. Flexible column auto-detection.</p></div>
-      <div class="feature-card"><div class="feature-icon">🌐</div><h3 class="feature-title">Works on Any Device</h3><p class="feature-text">Open from any phone, tablet, or laptop on the same Wi-Fi. No app install needed on client devices.</p></div>
-      <div class="feature-card"><div class="feature-icon">🪧</div><h3 class="feature-title">Walk-in Kiosk</h3><p class="feature-text">A tablet in the waiting room lets clients self-register and complete intake forms — no staff needed.</p></div>
-      <div class="feature-card"><div class="feature-icon">☁️</div><h3 class="feature-title">Remote Access</h3><p class="feature-text">Optional Cloudflare Tunnel gives your system a real HTTPS URL — accessible from anywhere, free.</p></div>
+<section class="section section-alt" id="features">
+<div class="container">
+  <div class="section-head">
+    <div class="eyebrow">What's Inside</div>
+    <h2 class="section-h">Every module your school needs.<br>Nothing you don't.</h2>
+    <p class="section-sub">One purchase covers everything. No add-ons, no per-seat fees, no features hidden behind a higher tier.</p>
+  </div>
+  <div class="features-layout">
+    <div class="feat-tabs" id="featTabs">
+      <div class="feat-tab on" onclick="selectFeat(this,'att')"><div class="feat-tab-icon">✅</div><div><div class="feat-tab-title">Attendance Tracking</div><div class="feat-tab-text">Daily records by class or student. Summaries and exportable reports for any date range.</div></div></div>
+      <div class="feat-tab" onclick="selectFeat(this,'stu')"><div class="feat-tab-icon">👨‍🎓</div><div><div class="feat-tab-title">Student Management</div><div class="feat-tab-text">Full profiles, enrollment, parent contacts, medical notes, photo IDs, and status tracking.</div></div></div>
+      <div class="feat-tab" onclick="selectFeat(this,'fee')"><div class="feat-tab-icon">💰</div><div><div class="feat-tab-title">Fees & Finance</div><div class="feat-tab-text">Track tuition and payments per student. Print receipts, monitor all balances at a glance.</div></div></div>
+      <div class="feat-tab" onclick="selectFeat(this,'pay')"><div class="feat-tab-icon">💼</div><div><div class="feat-tab-title">Staff Payroll</div><div class="feat-tab-text">Salaries, NIB contributions, deductions, loans, payslip PDFs, and monthly reports.</div></div></div>
+      <div class="feat-tab" onclick="selectFeat(this,'gra')"><div class="feat-tab-icon">📚</div><div><div class="feat-tab-title">Grades & Report Cards</div><div class="feat-tab-text">Enter grades by subject, auto-calculate averages, print professional report cards and IEPs.</div></div></div>
+      <div class="feat-tab" onclick="selectFeat(this,'por')"><div class="feat-tab-icon">👨‍👩‍👧</div><div><div class="feat-tab-title">Parent & Student Portals</div><div class="feat-tab-text">Secure logins to view grades, attendance, fees, and announcements from any device.</div></div></div>
+    </div>
+    <div class="feat-preview" id="featPreview">
+      <div class="feat-preview-header"><span class="feat-preview-title">Attendance — Today</span><span class="live-badge">Live</span></div>
+      <div class="preview-stats">
+        <div class="preview-stat"><div class="preview-stat-val">24</div><div class="preview-stat-lbl">Present</div></div>
+        <div class="preview-stat"><div class="preview-stat-val">2</div><div class="preview-stat-lbl">Absent</div></div>
+        <div class="preview-stat"><div class="preview-stat-val">1</div><div class="preview-stat-lbl">Late</div></div>
+      </div>
+      <div class="preview-row"><div class="preview-av">MS</div><div><div class="preview-name">Maria Santos</div><div class="preview-meta">Grade 4A · ID 1042</div></div><span class="status-p">Present</span></div>
+      <div class="preview-row"><div class="preview-av">CR</div><div><div class="preview-name">Carlos Ruiz</div><div class="preview-meta">Grade 4A · ID 1043</div></div><span class="status-a">Absent</span></div>
+      <div class="preview-row"><div class="preview-av">AT</div><div><div class="preview-name">Ana Torres</div><div class="preview-meta">Grade 4A · ID 1044</div></div><span class="status-p">Present</span></div>
+      <div class="preview-row"><div class="preview-av">LP</div><div><div class="preview-name">Luis Pérez</div><div class="preview-meta">Grade 4A · ID 1045</div></div><span class="status-l">Late</span></div>
     </div>
   </div>
-</section>
-
-<!-- COMPARISON -->
-<section style="background: var(--void)">
-  <div class="section-inner">
-    <p class="section-eyebrow">Own vs rent</p>
-    <h2 class="section-title">Most school software costs more every year</h2>
-    <p class="section-sub">Subscription software charges you forever. The longer you use it, the more you pay.</p>
-    <div class="compare-wrap">
-      <table>
-        <thead>
-          <tr>
-            <th></th>
-            <th>Typical SaaS subscription</th>
-            <th class="col-schoolms"><span class="col-head" style="color:var(--brass)">SchoolMS — One-time</span></th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr><td>Year 1</td><td class="bad">$1,800</td><td class="col-schoolms highlight">$300 — $900</td></tr>
-          <tr><td>Year 2</td><td class="bad">$3,600</td><td class="col-schoolms highlight">$300 — $900</td></tr>
-          <tr><td>Year 5</td><td class="bad">$9,000</td><td class="col-schoolms highlight">$300 — $900</td></tr>
-          <tr><td>Year 10</td><td class="bad">$18,000+</td><td class="col-schoolms highlight">$300 — $900</td></tr>
-          <tr><td>If you cancel</td><td class="bad">Lose all your data</td><td class="col-schoolms good">Data stays on your computer</td></tr>
-          <tr><td>Price increases</td><td class="bad">Yes — every year</td><td class="col-schoolms good">Never</td></tr>
-          <tr><td>Works offline</td><td class="bad">No</td><td class="col-schoolms good">Yes</td></tr>
-          <tr><td>Your data</td><td class="bad">On their servers</td><td class="col-schoolms good">On your computer</td></tr>
-        </tbody>
-      </table>
-    </div>
+  <div class="modules-grid">
+    <div class="module-card"><div class="module-icon">📅</div><div class="module-title">Timetable Builder</div><div class="module-text">Weekly class schedules with teacher assignment and per-role views for staff and students.</div></div>
+    <div class="module-card"><div class="module-icon">🤖</div><div class="module-title">AI Assistant</div><div class="module-text">Claude-powered. Drafts lesson plans, report comments, translations, and answers questions inside the app.</div></div>
+    <div class="module-card"><div class="module-icon">📥</div><div class="module-title">Bulk CSV Import</div><div class="module-text">Load your entire student and staff roster from any Excel spreadsheet in seconds. Flexible column detection.</div></div>
+    <div class="module-card"><div class="module-icon">🪧</div><div class="module-title">Walk-in Kiosk</div><div class="module-text">Tablet in the lobby lets clients self-register and fill intake forms with no staff involvement.</div></div>
+    <div class="module-card"><div class="module-icon">☁️</div><div class="module-title">Remote Access</div><div class="module-text">Optional Cloudflare Tunnel gives your system a real HTTPS URL accessible from anywhere — free to set up.</div></div>
+    <div class="module-card"><div class="module-icon">📧</div><div class="module-title">Automated Emails</div><div class="module-text">Configure SMTP once and the system sends invoices, statements, and notifications automatically.</div></div>
   </div>
+</div>
 </section>
 
 <!-- SCREENSHOTS -->
-<section id="screenshots" style="background: var(--navy)">
-  <div class="section-inner">
-    <p class="section-eyebrow">See it in action</p>
-    <h2 class="section-title">Real screenshots from the app</h2>
-    <p class="section-sub">Every module shown here is included in all plans. No upsells, no locked features.</p>
-    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:16px;margin-top:48px">
-      <div style="background:var(--void);border-radius:12px;overflow:hidden;border:1px solid rgba(136,150,179,.1)">
-        <img src="https://ro1manramirez73-ops.github.io/schoolms-store/screenshots/dashboard.png" alt="SchoolMS dashboard - school management overview with student count, attendance and finance summary" style="width:100%;display:block" loading="lazy" />
-        <div style="padding:12px 16px;font-size:12px;color:var(--slate);font-weight:600">Dashboard</div>
+<section class="section" id="screenshots">
+<div class="container">
+  <div class="section-head">
+    <div class="eyebrow">See It in Action</div>
+    <h2 class="section-h">Real screenshots. No mockups.</h2>
+    <p class="section-sub">Every module shown here is included in all plans. No upsells, no locked features, no surprises.</p>
+  </div>
+  <div class="ss-tabs">
+    <button class="ss-tab on" onclick="showSS(this,'dashboard','localhost:5000 — Dashboard')">Dashboard</button>
+    <button class="ss-tab" onclick="showSS(this,'students','localhost:5000 — Students')">Students</button>
+    <button class="ss-tab" onclick="showSS(this,'finances','localhost:5000 — Finances')">Finances</button>
+    <button class="ss-tab" onclick="showSS(this,'attendance','localhost:5000 — Attendance')">Attendance</button>
+    <button class="ss-tab" onclick="showSS(this,'payroll','localhost:5000 — Payroll')">Payroll</button>
+  </div>
+  <div class="ss-frame">
+    <div class="ss-bar">
+      <div class="ss-dots">
+        <div class="ss-dot" style="background:#FF5F57"></div>
+        <div class="ss-dot" style="background:#FEBC2E"></div>
+        <div class="ss-dot" style="background:#28C840"></div>
       </div>
-      <div style="background:var(--void);border-radius:12px;overflow:hidden;border:1px solid rgba(136,150,179,.1)">
-        <img src="https://ro1manramirez73-ops.github.io/schoolms-store/screenshots/students.png" alt="SchoolMS student management module showing student profiles, enrollment status and contact information" style="width:100%;display:block" loading="lazy" />
-        <div style="padding:12px 16px;font-size:12px;color:var(--slate);font-weight:600">Student Management</div>
+      <span class="ss-url" id="ssUrl">localhost:5000 — Dashboard</span>
+    </div>
+    <img id="ssImg" class="ss-img" src="https://ro1manramirez73-ops.github.io/schoolms-store/screenshots/dashboard.png" alt="SchoolMS dashboard showing student count, attendance rate, fee overview and recent activity" loading="lazy"/>
+  </div>
+</div>
+</section>
+
+<!-- COMPARISON -->
+<section class="section section-alt">
+<div class="container">
+  <div class="section-head">
+    <div class="eyebrow">Own vs. Rent</div>
+    <h2 class="section-h">Most school software costs more<br>every single year.</h2>
+    <p class="section-sub">Subscription tools charge you indefinitely. Cancel and your data disappears. The price goes up whether you use it or not.</p>
+  </div>
+  <div class="compare-cols">
+    <div class="compare-card cc-bad">
+      <div class="cc-label" style="color:var(--danger)">❌ Typical SaaS Subscription</div>
+      <div class="cc-price" style="color:var(--danger)">$150<span style="font-size:1rem;font-weight:500;color:var(--mist)">/month</span></div>
+      <div class="cc-period">average for school management tools</div>
+      <div class="cc-rows">
+        <div class="cc-row bad-row"><span class="icon">💸</span>Year 1: $1,800</div>
+        <div class="cc-row bad-row"><span class="icon">💸</span>Year 5: $9,000</div>
+        <div class="cc-row bad-row"><span class="icon">💸</span>Year 10: $18,000+</div>
+        <div class="cc-row bad-row"><span class="icon">🚫</span>Cancel = lose all your data</div>
+        <div class="cc-row bad-row"><span class="icon">📈</span>Price increases every year</div>
+        <div class="cc-row bad-row"><span class="icon">🌐</span>Requires internet at all times</div>
       </div>
-      <div style="background:var(--void);border-radius:12px;overflow:hidden;border:1px solid rgba(136,150,179,.1)">
-        <img src="https://ro1manramirez73-ops.github.io/schoolms-store/screenshots/finances.png" alt="SchoolMS finance module showing school fees, student balances, payment tracking and invoice management" style="width:100%;display:block" loading="lazy" />
-        <div style="padding:12px 16px;font-size:12px;color:var(--slate);font-weight:600">Fees &amp; Finance</div>
-      </div>
-      <div style="background:var(--void);border-radius:12px;overflow:hidden;border:1px solid rgba(136,150,179,.1)">
-        <img src="https://ro1manramirez73-ops.github.io/schoolms-store/screenshots/attendance.png" alt="SchoolMS attendance tracking module showing daily attendance records by class and student" style="width:100%;display:block" loading="lazy" />
-        <div style="padding:12px 16px;font-size:12px;color:var(--slate);font-weight:600">Attendance</div>
-      </div>
-      <div style="background:var(--void);border-radius:12px;overflow:hidden;border:1px solid rgba(136,150,179,.1)">
-        <img src="https://ro1manramirez73-ops.github.io/schoolms-store/screenshots/payroll.png" alt="SchoolMS payroll module showing staff salaries, NIB contributions, deductions and payslip generation" style="width:100%;display:block" loading="lazy" />
-        <div style="padding:12px 16px;font-size:12px;color:var(--slate);font-weight:600">Staff Payroll</div>
+    </div>
+    <div class="compare-card cc-good">
+      <div class="cc-glow"></div>
+      <div class="cc-label" style="color:var(--gold)">✅ SchoolMS — One-Time Purchase</div>
+      <div class="cc-price" style="color:var(--gold)">$1,000<span style="font-size:1rem;font-weight:500;color:var(--mist)"> once</span></div>
+      <div class="cc-period">Tier 1 — lifetime license</div>
+      <div class="cc-rows">
+        <div class="cc-row good-row"><span class="icon">✅</span>Year 1: $1,000</div>
+        <div class="cc-row good-row"><span class="icon">✅</span>Year 5: still $1,000</div>
+        <div class="cc-row good-row"><span class="icon">✅</span>Year 10: still $1,000</div>
+        <div class="cc-row good-row"><span class="icon">✅</span>Data stays on your computer forever</div>
+        <div class="cc-row good-row"><span class="icon">✅</span>Price never changes</div>
+        <div class="cc-row good-row"><span class="icon">✅</span>Works fully offline — no internet needed</div>
       </div>
     </div>
   </div>
+  <div class="compare-table">
+    <table>
+      <thead><tr><th></th><th>Typical SaaS</th><th class="th-good">SchoolMS</th></tr></thead>
+      <tbody>
+        <tr><td>Annual cost</td><td class="td-bad">$1,200–$2,400/year</td><td class="td-good">$1,000–$2,800 once</td></tr>
+        <tr><td>10-year total cost</td><td class="td-bad">$12,000–$24,000</td><td class="td-good">$1,000–$2,800</td></tr>
+        <tr><td>If you cancel</td><td class="td-bad">Lose all data immediately</td><td class="td-good">Data stays on your computer</td></tr>
+        <tr><td>Works without internet</td><td class="td-bad">No — always requires internet</td><td class="td-good">Yes — fully offline capable</td></tr>
+        <tr><td>Data location</td><td class="td-bad">Their servers, their control</td><td class="td-good">Your own computer</td></tr>
+        <tr><td>Price over time</td><td class="td-bad">Goes up every year</td><td class="td-good">Never changes</td></tr>
+        <tr><td>Remote access</td><td class="td-mid">Cloud-only</td><td class="td-good">Optional Cloudflare Tunnel (free)</td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
 </section>
 
 <!-- PRICING -->
-<section id="pricing" style="background: var(--void)">
-  <div class="section-inner">
-    <p class="section-eyebrow">Simple pricing</p>
-    <h2 class="section-title">One price. Own it forever.</h2>
-    <p class="section-sub">No monthly fees. No per-student charges. Pay once, use it as long as you want.</p>
-    <div class="pricing-grid">
-      <div class="price-card">
-        <div class="price-name">Starter</div>
-        <div class="price-desc">Very small schools &amp; tutoring centres</div>
-        <div class="price-amount">$300</div>
-        <div class="price-once">one-time payment</div>
-        <ul class="price-features">
-          <li>Up to 10 staff accounts</li>
-          <li>All core modules</li>
-          <li>Students, attendance, grades</li>
-          <li>Fees &amp; finance</li>
-          <li>Payroll system</li>
-          <li>Parent &amp; student portals</li>
-          <li>PDF reports &amp; payslips</li>
-          <li>Cloudflare Tunnel support</li>
-          <li class="no">QuickBooks sync</li>
-          <li class="no">Priority support</li>
-        </ul>
-        <button class="price-btn ghost" onclick="openModal('Starter — $300')">Order Starter</button>
+<section class="section" id="pricing">
+<div class="container">
+  <div class="section-head centered">
+    <div class="eyebrow">Pricing</div>
+    <h2 class="section-h">Simple, honest pricing.<br>Pay once. Own it forever.</h2>
+    <p class="section-sub">No monthly fees. No per-student charges. No hidden costs. The price you see today is the only price you will ever pay.</p>
+  </div>
+  <div class="pricing-grid" style="grid-template-columns:repeat(3,1fr)">
+    <div class="price-card">
+      <div class="price-name">Tier 1</div>
+      <div class="price-for">Schools with up to 100 students</div>
+      <div class="price-amt">$1,000</div>
+      <div class="price-once">one-time license</div>
+      <div class="price-hr"></div>
+      <ul class="price-feats">
+        <li>Up to 100 students</li>
+        <li>Up to 10 staff accounts</li>
+        <li>All core modules included</li>
+        <li>Students, attendance, grades</li>
+        <li>Fees & finance tracking</li>
+        <li>Staff payroll with NIB</li>
+        <li>Parent & student portals</li>
+        <li>PDF reports & payslips</li>
+        <li>Cloudflare Tunnel support</li>
+        <li class="no">QuickBooks sync</li>
+        <li class="no">Priority support</li>
+      </ul>
+      <div style="font-size:11px;color:var(--mist);margin-bottom:16px;line-height:1.7">
+        + Setup &amp; training: $300 (optional)<br>+ Annual support &amp; updates: $250/yr (optional)
       </div>
-      <div class="price-card popular">
-        <div class="popular-badge">⭐ Most Popular</div>
-        <div class="price-name">Standard</div>
-        <div class="price-desc">Small and mid-size schools</div>
-        <div class="price-amount">$450</div>
-        <div class="price-once">one-time payment</div>
-        <ul class="price-features">
-          <li>Up to 30 staff accounts</li>
-          <li>All core modules</li>
-          <li>Students, attendance, grades</li>
-          <li>Fees &amp; finance</li>
-          <li>Payroll system</li>
-          <li>Parent &amp; student portals</li>
-          <li>PDF reports &amp; payslips</li>
-          <li>Cloudflare Tunnel support</li>
-          <li>QuickBooks sync</li>
-          <li>Priority email support</li>
-        </ul>
-        <button class="price-btn" onclick="openModal('Standard — $450')">Order Standard</button>
-      </div>
-      <div class="price-card">
-        <div class="price-name">Professional</div>
-        <div class="price-desc">Larger schools with bigger teams</div>
-        <div class="price-amount">$600</div>
-        <div class="price-once">one-time payment</div>
-        <ul class="price-features">
-          <li>Up to 50 staff accounts</li>
-          <li>All core modules</li>
-          <li>Students, attendance, grades</li>
-          <li>Fees &amp; finance</li>
-          <li>Payroll system</li>
-          <li>Parent &amp; student portals</li>
-          <li>PDF reports &amp; payslips</li>
-          <li>Cloudflare Tunnel support</li>
-          <li>QuickBooks sync</li>
-          <li>Priority email + phone support</li>
-          <li>Remote setup assistance</li>
-        </ul>
-        <button class="price-btn ghost" onclick="openModal('Professional — $600')">Order Professional</button>
-      </div>
-      <div class="price-card">
-        <div class="price-name">🏫 Premium</div>
-        <div class="price-desc">Multi-branch organisations</div>
-        <div class="price-amount">$900</div>
-        <div class="price-once">one-time · up to 3 branches</div>
-        <ul class="price-features">
-          <li>Unlimited staff accounts</li>
-          <li>All core modules</li>
-          <li>Up to 3 license keys</li>
-          <li>One install or separate per branch</li>
-          <li>QuickBooks sync</li>
-          <li>Priority email + phone support</li>
-          <li>Remote setup assistance</li>
-        </ul>
-        <button class="price-btn ghost" onclick="openModal('Premium — $900')">Order Premium</button>
-      </div>
+      <button class="price-btn pb-ghost" onclick="openModal('Tier 1','$1,000',false)">Order Tier 1</button>
     </div>
-    <p style="text-align:center;font-size:12px;color:var(--slate);margin-top:24px">All purchases include lifetime access to the version you buy. License key delivered by email within 24 hours. <a href="mailto:ro1manramirez73@gmail.com" style="color:var(--brass)">Need a custom quote?</a></p>
-    <div style="text-align:center;margin-top:32px;padding:20px;background:rgba(45,212,160,.06);border:1px solid rgba(45,212,160,.2);border-radius:12px;max-width:480px;margin-left:auto;margin-right:auto">
-      <div style="font-size:20px;margin-bottom:8px">🛡️</div>
-      <div style="font-size:14px;font-weight:700;color:var(--white);margin-bottom:4px">14-Day Money-Back Guarantee</div>
-      <div style="font-size:12px;color:var(--slate)">If SchoolMS cannot be installed on your computer within 14 days, contact us for a full refund. No questions asked.</div>
+    <div class="price-card pop">
+      <div class="pop-tag">⭐ Most Popular</div>
+      <div class="price-name">Tier 2</div>
+      <div class="price-for">Schools with 100–300 students</div>
+      <div class="price-amt">$1,800</div>
+      <div class="price-once">one-time license</div>
+      <div class="price-hr"></div>
+      <ul class="price-feats">
+        <li>100–300 students</li>
+        <li>Up to 30 staff accounts</li>
+        <li>All core modules included</li>
+        <li>Students, attendance, grades</li>
+        <li>Fees & finance tracking</li>
+        <li>Staff payroll with NIB</li>
+        <li>Parent & student portals</li>
+        <li>PDF reports & payslips</li>
+        <li>Cloudflare Tunnel support</li>
+        <li>QuickBooks sync</li>
+        <li>Priority email support</li>
+      </ul>
+      <div style="font-size:11px;color:var(--mist);margin-bottom:16px;line-height:1.7">
+        + Setup &amp; training: $500 (optional)<br>+ Annual support &amp; updates: $400/yr (optional)
+      </div>
+      <button class="price-btn pb-fill" onclick="openModal('Tier 2','$1,800',false)">Order Tier 2</button>
+    </div>
+    <div class="price-card">
+      <div class="price-name">🏫 Tier 3</div>
+      <div class="price-for">Schools with 300+ students · multi-branch included</div>
+      <div class="price-amt">$2,800</div>
+      <div class="price-once">one-time license</div>
+      <div class="price-hr"></div>
+      <ul class="price-feats">
+        <li>300+ students</li>
+        <li>Up to 50 staff accounts (or unlimited for multi-branch)</li>
+        <li>All core modules included</li>
+        <li>Fees & finance tracking</li>
+        <li>Staff payroll with NIB</li>
+        <li>Parent & student portals</li>
+        <li>PDF reports & payslips</li>
+        <li>Cloudflare Tunnel support</li>
+        <li>QuickBooks sync</li>
+        <li>Priority email + phone support</li>
+        <li>Remote setup assistance</li>
+        <li>Up to 3 license keys</li>
+        <li>One install or separate per branch</li>
+      </ul>
+      <div style="font-size:11px;color:var(--mist);margin-bottom:16px;line-height:1.7">
+        + Setup &amp; training: $800 (optional)<br>+ Annual support &amp; updates: $600/yr (optional)
+      </div>
+      <button class="price-btn pb-ghost" onclick="openModal('Tier 3','$2,800',true)">Order Tier 3</button>
     </div>
   </div>
+  <p class="price-note">All purchases include lifetime access to the version you buy. Setup &amp; training and annual support &amp; updates are optional add-ons, billed separately. License key delivered by email within 24 hours. <a href="mailto:ro1manramirez73@gmail.com">Need a custom quote?</a></p>
+  <div class="guarantee">
+    <div class="guarantee-icon">🛡️</div>
+    <div class="guarantee-title">14-Day Money-Back Guarantee</div>
+    <div class="guarantee-text">If SchoolMS cannot be installed on your computer within 14 days, contact us for a full refund — no questions asked.</div>
+  </div>
+</div>
 </section>
 
 <!-- TESTIMONIALS -->
-<section id="testimonials" style="background: var(--navy)">
-  <div class="section-inner">
-    <p class="section-eyebrow">What schools say</p>
-    <h2 class="section-title">Trusted by school administrators</h2>
-    <div class="testimonials-grid">
-      <div class="testimonial">
-        <div class="stars">★★★★★</div>
-        <p class="testimonial-text">"We were spending $180/month on three separate tools that still didn't talk to each other. SchoolMS replaced all of them. We paid $450 once and haven't paid anything since."</p>
-        <div class="testimonial-author">
-          <div class="author-avatar">ML</div>
-          <div><div class="author-name">Maria L.</div><div class="author-role">School Administrator · Belize</div></div>
-        </div>
-      </div>
-      <div class="testimonial">
-        <div class="stars">★★★★★</div>
-        <p class="testimonial-text">"Payroll used to take my accountant a full day every month — now it takes 20 minutes. NIB contributions are automatic, payslips print in one click. It paid for itself in the first month."</p>
-        <div class="testimonial-author">
-          <div class="author-avatar">CR</div>
-          <div><div class="author-name">Carlos R.</div><div class="author-role">Finance Manager · Honduras</div></div>
-        </div>
-      </div>
-      <div class="testimonial">
-        <div class="stars">★★★★★</div>
-        <p class="testimonial-text">"Parents stopped calling the office to ask about grades and fees — they just check it themselves. Staff phone calls dropped by more than half in the first week."</p>
-        <div class="testimonial-author">
-          <div class="author-avatar">AG</div>
-          <div><div class="author-name">Ana G.</div><div class="author-role">Principal · Guatemala</div></div>
-        </div>
-      </div>
+<section class="section section-alt">
+<div class="container">
+  <div class="section-head centered">
+    <div class="eyebrow">What Schools Say</div>
+    <h2 class="section-h">Trusted by administrators<br>across the Caribbean.</h2>
+  </div>
+  <div class="testi-grid">
+    <div class="testi-card">
+      <div class="testi-stars">★★★★★</div>
+      <p class="testi-quote">"We were spending $180 per month on three separate tools that still did not talk to each other. SchoolMS replaced all of them. We paid $450 once and have not paid anything since."</p>
+      <div class="testi-author"><div class="testi-av">ML</div><div><div class="testi-name">Maria L.</div><div class="testi-role">School Administrator · Belize</div></div></div>
+    </div>
+    <div class="testi-card">
+      <div class="testi-stars">★★★★★</div>
+      <p class="testi-quote">"Payroll used to take my accountant a full day every month — now it takes 20 minutes. NIB contributions are automatic, payslips print in one click. It paid for itself in the first month."</p>
+      <div class="testi-author"><div class="testi-av">CR</div><div><div class="testi-name">Carlos R.</div><div class="testi-role">Finance Manager · Honduras</div></div></div>
+    </div>
+    <div class="testi-card">
+      <div class="testi-stars">★★★★★</div>
+      <p class="testi-quote">"Parents stopped calling the office to ask about grades and fees — they just check it themselves. Staff phone calls dropped by more than half in the first week."</p>
+      <div class="testi-author"><div class="testi-av">AG</div><div><div class="testi-name">Ana G.</div><div class="testi-role">Principal · Guatemala</div></div></div>
     </div>
   </div>
+</div>
 </section>
 
 <!-- HOW IT WORKS -->
-<section style="background: var(--void)">
-  <div class="section-inner">
-    <p class="section-eyebrow">Setup in minutes</p>
-    <h2 class="section-title">How it works</h2>
-    <div class="steps">
-      <div class="step"><div class="step-num">1</div><div class="step-title">Download</div><p class="step-text">Get the free 2.2 MB installer. Works on any Windows 10 or 11 computer made after 2016.</p></div>
-      <div class="step"><div class="step-num">2</div><div class="step-title">Purchase a Key</div><p class="step-text">Choose a plan and send your order. You'll receive a license key by email within 24 hours.</p></div>
-      <div class="step"><div class="step-num">3</div><div class="step-title">Install &amp; Activate</div><p class="step-text">Run the installer, open the app, enter your key. Done in under 5 minutes — no technical skills needed.</p></div>
-      <div class="step"><div class="step-num">4</div><div class="step-title">Go Live</div><p class="step-text">Import your students from CSV, configure your school, and start. Every device on Wi-Fi connects instantly.</p></div>
-    </div>
+<section class="section">
+<div class="container">
+  <div class="section-head centered">
+    <div class="eyebrow">Getting Started</div>
+    <h2 class="section-h">Up and running in under 5 minutes.</h2>
+    <p class="section-sub">No IT team required. No server to configure. If you can install an app, you can install SchoolMS.</p>
   </div>
+  <div class="how-steps">
+    <div class="how-step"><div class="how-num">1</div><div class="how-title">Download</div><p class="how-text">Get the free 2.2 MB installer. Works on any Windows 10 or 11 computer made after 2016.</p></div>
+    <div class="how-step"><div class="how-num">2</div><div class="how-title">Purchase a Key</div><p class="how-text">Choose a plan and send your order. You receive a license key by email within 24 hours.</p></div>
+    <div class="how-step"><div class="how-num">3</div><div class="how-title">Install & Activate</div><p class="how-text">Run the installer, open the app, enter your key. Done in under 5 minutes — no technical skill needed.</p></div>
+    <div class="how-step"><div class="how-num">4</div><div class="how-title">Go Live</div><p class="how-text">Import your students from CSV, configure your school, and start. Every device on Wi-Fi connects instantly.</p></div>
+  </div>
+  <div class="requirements">
+    <div class="req-item"><div class="req-icon">🖥️</div><div class="req-title">Windows 10 or 11</div><div class="req-text">64-bit server machine</div></div>
+    <div class="req-item"><div class="req-icon">⚙️</div><div class="req-title">i3 or better</div><div class="req-text">Any PC made after 2016</div></div>
+    <div class="req-item"><div class="req-icon">🧠</div><div class="req-title">4 GB RAM min</div><div class="req-text">8 GB recommended</div></div>
+    <div class="req-item"><div class="req-icon">💾</div><div class="req-title">10 GB free disk</div><div class="req-text">Grows with your data</div></div>
+    <div class="req-item"><div class="req-icon">📱</div><div class="req-title">Any browser on clients</div><div class="req-text">Phone, tablet, or laptop</div></div>
+  </div>
+</div>
 </section>
 
 <!-- FAQ -->
-<section id="faq" style="background: var(--navy)">
-  <div class="section-inner">
-    <p class="section-eyebrow">Questions</p>
-    <h2 class="section-title">Frequently asked</h2>
+<section class="section section-alt" id="faq">
+<div class="container">
+  <div class="section-head">
+    <div class="eyebrow">FAQ</div>
+    <h2 class="section-h">Questions we get asked most.</h2>
+  </div>
+  <div class="faq-cols">
     <div class="faq-list">
-      <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)">Does SchoolMS work without internet? <span class="faq-icon">+</span></div><div class="faq-a">Yes. After install, the app runs completely offline. Staff access it through your local Wi-Fi — no internet required after the initial download.</div></div>
-      <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)">Is there a monthly subscription or renewal fee? <span class="faq-icon">+</span></div><div class="faq-a">No. Pay once and own that version forever. Future major updates may be available at a discounted upgrade price, but the version you buy never expires.</div></div>
-      <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)">How many students can I add? <span class="faq-icon">+</span></div><div class="faq-a">Unlimited students in all plans. Staff account limits only apply to login accounts (teachers, accountants, front desk), not student records.</div></div>
-      <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)">Can staff and parents access it from home? <span class="faq-icon">+</span></div><div class="faq-a">Yes — using your own Cloudflare Tunnel (free). A setup script included with SchoolMS configures everything automatically and gives your system a real HTTPS URL like school.yourdomain.com.</div></div>
-      <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)">Is it available in Spanish? <span class="faq-icon">+</span></div><div class="faq-a">Yes. Full English and Spanish support is built in. Switch language from the sidebar with one click — no restart needed. Ideal for schools in Honduras, Guatemala, and other Spanish-speaking countries.</div></div>
-      <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)">What countries is SchoolMS available in? <span class="faq-icon">+</span></div><div class="faq-a">SchoolMS is used by schools across the Caribbean and Central America — Bahamas, Belize, Honduras, Guatemala, Jamaica, Trinidad and Tobago, Dominican Republic, and more. It works on any Windows computer worldwide.</div></div>
-      <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)">Can I import my existing student data? <span class="faq-icon">+</span></div><div class="faq-a">Yes. The Import Data page accepts any CSV file exported from Excel. The system auto-detects your column names — it understands common variants like "first name", "firstname", "Mother-Name", and more.</div></div>
-      <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)">Can I get a refund? <span class="faq-icon">+</span></div><div class="faq-a">If SchoolMS cannot be installed or run on your computer within 14 days of purchase, contact us for a full refund — no questions asked. We'll try to resolve it remotely first.</div></div>
+      <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)">Does SchoolMS work without internet? <em class="faq-q-ico">+</em></div><div class="faq-a">Yes. After installation, the app runs completely offline. Staff access it through your local Wi-Fi network — no internet connection required after the initial download.</div></div>
+      <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)">Is there a monthly fee or renewal cost? <em class="faq-q-ico">+</em></div><div class="faq-a">No. Pay once and own that version forever. There are no monthly fees, no per-student charges, and no renewal costs. Future major versions may be available at a discounted upgrade price.</div></div>
+      <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)">How many students can I add? <em class="faq-q-ico">+</em></div><div class="faq-a">Unlimited students in all plans. Staff account limits only apply to login accounts — teachers, accountants, front desk staff — not to student records.</div></div>
+      <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)">Can staff and parents access it from home? <em class="faq-q-ico">+</em></div><div class="faq-a">Yes — using a Cloudflare Tunnel (free). A setup script included with SchoolMS configures everything automatically and gives your system a real HTTPS URL accessible from anywhere in the world.</div></div>
+      <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)">Can I import my existing student data? <em class="faq-q-ico">+</em></div><div class="faq-a">Yes. The Import Data page accepts any CSV file exported from Excel. The system auto-detects your column names and handles common variants like "first name", "firstname", "Mother-Name", and more.</div></div>
+      <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)">What countries is SchoolMS available in? <em class="faq-q-ico">+</em></div><div class="faq-a">SchoolMS is used by schools across the Caribbean and Central America — Bahamas, Belize, Honduras, Guatemala, Jamaica, Trinidad and Tobago, Dominican Republic, and more. It works on any Windows computer worldwide.</div></div>
+      <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)">Can I get a refund if it does not work? <em class="faq-q-ico">+</em></div><div class="faq-a">If SchoolMS cannot be installed or run on your computer within 14 days of purchase, contact us for a full refund — no questions asked. We will try to resolve the issue remotely first.</div></div>
+      <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)">What is new in version 2.5? <em class="faq-q-ico">+</em></div><div class="faq-a">Bulk CSV import for students and staff, a built-in AI Assistant powered by Claude, a Walk-in Kiosk module for tablet self-service intake, in-app SMTP email setup, a first-time setup guide, and desktop shortcut auto-creation on install.</div></div>
+    </div>
+    <div>
+      <div class="faq-aside">
+        <h3>Still have questions?</h3>
+        <p>Email us and we will reply within 24 hours. Happy to help you decide if SchoolMS is the right fit before you buy anything.</p>
+        <a href="mailto:ro1manramirez73@gmail.com" class="btn btn-gold" style="width:100%;justify-content:center">Email Us Directly →</a>
+      </div>
+      <div class="trial-box">
+        <div class="trial-box-title">Free trial includes:</div>
+        <div class="trial-feats">
+          <span>Full access to every module</span>
+          <span>No time limit on the trial</span>
+          <span>Import up to 10 students</span>
+          <span>License key unlocks full use instantly</span>
+        </div>
+        <a href="https://github.com/ro1manramirez73-ops/schoolms-store/releases/download/v2.5/SchoolMS_Setup_v2.5.exe" class="btn btn-outline" style="width:100%;justify-content:center;margin-top:16px">⬇ Download Free Trial</a>
+      </div>
     </div>
   </div>
+</div>
 </section>
 
-<!-- CTA BANNER -->
+<!-- CTA -->
+<div class="container" style="padding-top:96px">
 <div class="cta-banner">
-  <h2>Ready to simplify your school?</h2>
-  <p>One payment. Every feature. No recurring costs — ever.</p>
-  <div class="cta-btns">
-    <a href="#pricing" class="btn-primary">See Pricing →</a>
-    <a href="https://github.com/ro1manramirez73-ops/schoolms-store/releases/download/v2.5/SchoolMS_Setup_v2.5.exe" class="btn-ghost">⬇ Free Download</a>
+  <h2 class="section-h" style="font-size:clamp(2rem,4vw,3rem)">Ready to simplify your<br><span class="gold">entire school?</span></h2>
+  <p>One payment. Every feature. No recurring costs — ever. Join schools across the Caribbean that already made the switch.</p>
+  <div class="cta-actions">
+    <a href="#pricing" class="btn btn-gold" style="font-size:15px;padding:15px 30px">See Pricing →</a>
+    <a href="https://github.com/ro1manramirez73-ops/schoolms-store/releases/download/v2.5/SchoolMS_Setup_v2.5.exe" class="btn btn-outline" style="font-size:15px;padding:14px 28px">⬇ Free Download</a>
   </div>
+</div>
 </div>
 
 <!-- FOOTER -->
 <footer>
-  <div class="footer-inner">
+  <div class="footer-grid">
     <div class="footer-brand">
-      <div class="logo">
-        <div class="logo-icon">S</div>
-        <span class="logo-text">SchoolMS</span>
-      </div>
-      <p>Complete school management software for the Caribbean &amp; Central America. One-time purchase. Yours forever.</p>
+      <a href="/" class="nav-logo"><div class="nav-logo-mark">S</div><span class="nav-logo-text">SchoolMS</span></a>
+      <p>Complete school management for the Caribbean & Central America. One-time purchase. Yours forever.</p>
     </div>
     <div class="footer-col">
       <h4>Product</h4>
@@ -760,7 +810,7 @@
       <a href="#faq">FAQ</a>
       <a href="mailto:ro1manramirez73@gmail.com">Email Support</a>
       <a href="https://github.com/ro1manramirez73-ops/schoolms-store">GitHub</a>
-      <a href="https://github.com/ro1manramirez73-ops/schoolms-store/releases/download/v2.5/SchoolMS_Setup_v2.5.exe">Download</a>
+      <a href="https://github.com/ro1manramirez73-ops/schoolms-store/releases/download/v2.5/SchoolMS_Setup_v2.5.exe">Download v2.5</a>
     </div>
     <div class="footer-col">
       <h4>Countries</h4>
@@ -769,12 +819,12 @@
       <a href="#">Honduras</a>
       <a href="#">Guatemala</a>
       <a href="#">Jamaica</a>
-      <a href="#">Trinidad &amp; Tobago</a>
+      <a href="#">Trinidad & Tobago</a>
     </div>
   </div>
   <div class="footer-bottom">
-    <span>© 2026 SchoolMS · <a href="https://rampastor.com" style="color:var(--brass);text-decoration:none">RamPastor</a></span>
-    <span>Nassau, Bahamas · <a href="mailto:ro1manramirez73@gmail.com" style="color:var(--slate);text-decoration:none">ro1manramirez73@gmail.com</a></span>
+    <span>© 2026 SchoolMS · <a href="https://rampastor.com">RamPastor</a> · Nassau, Bahamas</span>
+    <a href="mailto:ro1manramirez73@gmail.com">ro1manramirez73@gmail.com</a>
   </div>
 </footer>
 
@@ -782,64 +832,157 @@
 <div class="modal-overlay" id="orderModal">
   <div class="modal">
     <button class="modal-close" onclick="closeModal()">×</button>
-    <h3>Place Your Order</h3>
-    <div class="modal-plan" id="modalPlan">Standard — $450</div>
+    <div class="modal-title">Place Your Order</div>
+    <div class="modal-plan" id="modalPlan">Tier 1 — $1,000</div>
     <div id="orderForm">
-      <div class="form-group"><label class="form-label">Your Name *</label><input type="text" class="form-input" id="orderName" placeholder="Juan Pérez" /></div>
-      <div class="form-group"><label class="form-label">Email Address *</label><input type="email" class="form-input" id="orderEmail" placeholder="you@school.com" /></div>
-      <div class="form-group"><label class="form-label">School / Organisation *</label><input type="text" class="form-input" id="orderSchool" placeholder="St. Mary's Academy" /></div>
-      <div class="form-group"><label class="form-label">Country</label><input type="text" class="form-input" id="orderCountry" placeholder="Bahamas, Belize, Honduras..." /></div>
-      <div class="form-group"><label class="form-label">Payment Method *</label>
-        <select class="form-input" id="orderPayment">
-          <option value="">— select —</option>
-          <option>Bank Transfer</option><option>PayPal</option><option>Zelle</option>
-          <option>Cash App</option><option>Western Union / MoneyGram</option><option>Other</option>
+      <div class="secure-note">🔒 Your information is used only to process your order.</div>
+      <div class="fg2">
+        <div class="fg"><label class="fl">First Name *</label><input type="text" class="fi" id="oFirst" placeholder="Juan"/></div>
+        <div class="fg"><label class="fl">Last Name *</label><input type="text" class="fi" id="oLast" placeholder="Pérez"/></div>
+      </div>
+      <div class="fg"><label class="fl">Email Address *</label><input type="email" class="fi" id="oEmail" placeholder="you@school.com"/></div>
+      <div class="fg"><label class="fl">School / Organisation *</label><input type="text" class="fi" id="oSchool" placeholder="St. Mary's Academy"/></div>
+      <div class="fg2">
+        <div class="fg"><label class="fl">Country</label><input type="text" class="fi" id="oCountry" placeholder="Bahamas"/></div>
+        <div class="fg"><label class="fl">Payment Method *</label>
+          <select class="fi" id="oPayment">
+            <option value="">— select —</option>
+            <option>Bank Transfer</option>
+            <option>PayPal</option>
+            <option>Zelle</option>
+            <option>Cash App</option>
+            <option>Western Union / MoneyGram</option>
+            <option>Other</option>
+          </select>
+        </div>
+      </div>
+      <div class="fg" id="deployRow" style="display:none">
+        <label class="fl">Deployment Mode *</label>
+        <select class="fi" id="oDeploy">
+          <option value="One install — all branches share one server (1 license key)">One install for all branches (1 license key)</option>
+          <option value="Separate install per branch (up to 3 license keys)">Separate install per branch (up to 3 license keys)</option>
         </select>
       </div>
-      <div class="form-group"><label class="form-label">Notes (optional)</label><textarea class="form-input" id="orderNotes" rows="2" placeholder="Any questions or special requirements..."></textarea></div>
-      <button class="price-btn" onclick="submitOrder()" style="margin-top:8px">Send Order Request</button>
-      <p style="font-size:11px;color:var(--slate);margin-top:12px;text-align:center">We'll reply within 24 hours with payment instructions and your license key.</p>
+      <div class="fg"><label class="fl">Notes (optional)</label><textarea class="fi" id="oNotes" rows="2" placeholder="Questions or special requirements..."></textarea></div>
+      <button class="btn btn-gold" style="width:100%;padding:13px;font-size:14px;margin-top:4px" id="submitBtn" onclick="submitOrder()">Send Order Request</button>
+      <p class="form-note">We reply within 24 hours with payment instructions and your license key.</p>
     </div>
     <div class="form-success" id="orderSuccess">
-      <div class="success-icon">✅</div>
-      <h3 style="margin-bottom:8px">Request received!</h3>
-      <p style="font-size:13px;color:var(--slate)">We'll email you within 24 hours with payment details and your license key.</p>
+      <div class="form-success-icon">✅</div>
+      <div style="font-family:var(--serif);font-size:1.2rem;color:var(--parch);margin-bottom:8px">Request received!</div>
+      <p style="font-size:13px;color:var(--mist)">We will email <strong id="successEmail" style="color:var(--parch)"></strong> with payment details and your license key within 24 hours.</p>
     </div>
   </div>
 </div>
 
 <script>
-function toggleFaq(el) {
-  var item = el.parentElement;
-  var isOpen = item.classList.contains('open');
-  document.querySelectorAll('.faq-item').forEach(function(i) { i.classList.remove('open'); });
-  if (!isOpen) item.classList.add('open');
+// Nav
+window.addEventListener('scroll',()=>document.getElementById('nav').classList.toggle('stuck',scrollY>20));
+
+// Mobile nav
+let navOpen=false;
+function toggleNav(){
+  navOpen=!navOpen;
+  const links=document.querySelector('.nav-links');
+  links.style.cssText=navOpen?'display:flex;flex-direction:column;position:fixed;top:60px;left:0;right:0;background:rgba(14,17,23,.98);padding:16px 5%;gap:2px;border-bottom:1px solid rgba(238,232,217,.07);backdrop-filter:blur(14px);z-index:99':'';
 }
 
-function openModal(plan) {
-  document.getElementById('modalPlan').textContent = plan;
+// Screenshots
+const ssMap={
+  dashboard:{url:'localhost:5000 — Dashboard',src:'https://ro1manramirez73-ops.github.io/schoolms-store/screenshots/dashboard.png',alt:'SchoolMS dashboard'},
+  students:{url:'localhost:5000 — Students',src:'https://ro1manramirez73-ops.github.io/schoolms-store/screenshots/students.png',alt:'SchoolMS students'},
+  finances:{url:'localhost:5000 — Finances',src:'https://ro1manramirez73-ops.github.io/schoolms-store/screenshots/finances.png',alt:'SchoolMS finances'},
+  attendance:{url:'localhost:5000 — Attendance',src:'https://ro1manramirez73-ops.github.io/schoolms-store/screenshots/attendance.png',alt:'SchoolMS attendance'},
+  payroll:{url:'localhost:5000 — Payroll',src:'https://ro1manramirez73-ops.github.io/schoolms-store/screenshots/payroll.png',alt:'SchoolMS payroll'}
+};
+function showSS(btn,key,url){
+  document.querySelectorAll('.ss-tab').forEach(b=>b.classList.remove('on'));
+  btn.classList.add('on');
+  const s=ssMap[key];
+  document.getElementById('ssUrl').textContent=s.url;
+  const img=document.getElementById('ssImg');
+  img.style.opacity='0';
+  img.src=s.src;img.alt=s.alt;
+  img.onload=()=>{img.style.transition='opacity .3s';img.style.opacity='1'};
+}
+
+// Feature preview
+const previews={
+  att:`<div class="feat-preview-header"><span class="feat-preview-title">Attendance — Today</span><span class="live-badge">Live</span></div><div class="preview-stats"><div class="preview-stat"><div class="preview-stat-val">24</div><div class="preview-stat-lbl">Present</div></div><div class="preview-stat"><div class="preview-stat-val">2</div><div class="preview-stat-lbl">Absent</div></div><div class="preview-stat"><div class="preview-stat-val">1</div><div class="preview-stat-lbl">Late</div></div></div><div class="preview-row"><div class="preview-av">MS</div><div><div class="preview-name">Maria Santos</div><div class="preview-meta">Grade 4A · ID 1042</div></div><span class="status-p">Present</span></div><div class="preview-row"><div class="preview-av">CR</div><div><div class="preview-name">Carlos Ruiz</div><div class="preview-meta">Grade 4A · ID 1043</div></div><span class="status-a">Absent</span></div><div class="preview-row"><div class="preview-av">AT</div><div><div class="preview-name">Ana Torres</div><div class="preview-meta">Grade 4A · ID 1044</div></div><span class="status-p">Present</span></div>`,
+  stu:`<div class="feat-preview-header"><span class="feat-preview-title">Student Roster</span><span class="live-badge">104 Students</span></div><div class="preview-stats"><div class="preview-stat"><div class="preview-stat-val">104</div><div class="preview-stat-lbl">Total</div></div><div class="preview-stat"><div class="preview-stat-val">98</div><div class="preview-stat-lbl">Active</div></div><div class="preview-stat"><div class="preview-stat-val">6</div><div class="preview-stat-lbl">Alumni</div></div></div><div class="preview-row"><div class="preview-av">MS</div><div><div class="preview-name">Maria Santos</div><div class="preview-meta">Grade 4 · DOB Mar 12 2014</div></div><span class="status-p">Active</span></div><div class="preview-row"><div class="preview-av">CR</div><div><div class="preview-name">Carlos Ruiz</div><div class="preview-meta">Grade 3 · DOB Jul 8 2015</div></div><span class="status-p">Active</span></div><div class="preview-row"><div class="preview-av">AT</div><div><div class="preview-name">Ana Torres</div><div class="preview-meta">Grade 5 · DOB Jan 22 2013</div></div><span class="status-p">Active</span></div>`,
+  fee:`<div class="feat-preview-header"><span class="feat-preview-title">Fee Dashboard</span><span class="live-badge">This Month</span></div><div class="preview-stats"><div class="preview-stat"><div class="preview-stat-val" style="color:var(--success)">$5,200</div><div class="preview-stat-lbl">Collected</div></div><div class="preview-stat"><div class="preview-stat-val" style="color:var(--warn)">$1,400</div><div class="preview-stat-lbl">Outstanding</div></div><div class="preview-stat"><div class="preview-stat-val">$6,600</div><div class="preview-stat-lbl">Total Billed</div></div></div><div class="preview-row"><div class="preview-av">MS</div><div><div class="preview-name">Maria Santos</div><div class="preview-meta">Invoice #1042 · $600</div></div><span class="status-p">Paid</span></div><div class="preview-row"><div class="preview-av">LP</div><div><div class="preview-name">Luis Pérez</div><div class="preview-meta">Invoice #1045 · $600</div></div><span class="status-a">Overdue</span></div><div class="preview-row"><div class="preview-av">AT</div><div><div class="preview-name">Ana Torres</div><div class="preview-meta">Invoice #1044 · $600</div></div><span class="status-p">Paid</span></div>`,
+  pay:`<div class="feat-preview-header"><span class="feat-preview-title">Payroll — January 2026</span><span class="live-badge">14 Staff</span></div><div class="preview-stats"><div class="preview-stat"><div class="preview-stat-val" style="color:var(--success)">$12,400</div><div class="preview-stat-lbl">Net Pay</div></div><div class="preview-stat"><div class="preview-stat-val">$1,488</div><div class="preview-stat-lbl">NIB</div></div><div class="preview-stat"><div class="preview-stat-val">$13,888</div><div class="preview-stat-lbl">Gross</div></div></div><div class="preview-row"><div class="preview-av">JD</div><div><div class="preview-name">Jane Davis</div><div class="preview-meta">Teacher · Gross $1,200</div></div><span class="status-p">Processed</span></div><div class="preview-row"><div class="preview-av">RM</div><div><div class="preview-name">Robert Mills</div><div class="preview-meta">Admin · Gross $900</div></div><span class="status-p">Processed</span></div>`,
+  gra:`<div class="feat-preview-header"><span class="feat-preview-title">Grades — Grade 4A</span><span class="live-badge">Term 2</span></div><div class="preview-stats"><div class="preview-stat"><div class="preview-stat-val">87</div><div class="preview-stat-lbl">Class Avg</div></div><div class="preview-stat"><div class="preview-stat-val">3</div><div class="preview-stat-lbl">A Grades</div></div><div class="preview-stat"><div class="preview-stat-val">0</div><div class="preview-stat-lbl">Failing</div></div></div><div class="preview-row"><div class="preview-av">MS</div><div><div class="preview-name">Maria Santos</div><div class="preview-meta">Math 95 · English 88 · Avg A</div></div><span class="status-p">A</span></div><div class="preview-row"><div class="preview-av">CR</div><div><div class="preview-name">Carlos Ruiz</div><div class="preview-meta">Math 78 · English 82 · Avg B+</div></div><span class="status-l">B+</span></div>`,
+  por:`<div class="feat-preview-header"><span class="feat-preview-title">Parent Portal</span><span class="live-badge">Maria Santos</span></div><div class="preview-row"><div class="preview-av">📚</div><div><div class="preview-name">Latest Grades</div><div class="preview-meta">Math: 95 · English: 88 · Science: 91</div></div><span class="status-p">Term 2</span></div><div class="preview-row"><div class="preview-av">✅</div><div><div class="preview-name">Attendance</div><div class="preview-meta">Present 47/50 days this term</div></div><span class="status-p">94%</span></div><div class="preview-row"><div class="preview-av">💰</div><div><div class="preview-name">Fees</div><div class="preview-meta">Invoice #1042 · $600</div></div><span class="status-p">Paid</span></div><div class="preview-row"><div class="preview-av">📢</div><div><div class="preview-name">Announcement</div><div class="preview-meta">Sports Day — Friday, Feb 7th</div></div><span class="status-l">New</span></div>`
+};
+function selectFeat(el,key){
+  document.querySelectorAll('.feat-tab').forEach(t=>t.classList.remove('on'));
+  el.classList.add('on');
+  document.getElementById('featPreview').innerHTML=previews[key];
+}
+
+// FAQ
+function toggleFaq(el){
+  const item=el.parentElement;
+  const open=item.classList.contains('open');
+  document.querySelectorAll('.faq-item').forEach(i=>i.classList.remove('open'));
+  if(!open)item.classList.add('open');
+}
+
+// Modal
+let currentPlan='', currentPrice='';
+function openModal(plan,price,showDeploy){
+  currentPlan=plan; currentPrice=price;
+  document.getElementById('modalPlan').textContent=plan+' — '+price;
+  document.getElementById('deployRow').style.display=showDeploy?'':'none';
   document.getElementById('orderModal').classList.add('open');
-  document.getElementById('orderForm').style.display = '';
-  document.getElementById('orderSuccess').style.display = 'none';
+  document.getElementById('orderForm').style.display='';
+  document.getElementById('orderSuccess').style.display='none';
+  document.body.style.overflow='hidden';
 }
-
-function closeModal() {
+function closeModal(){
   document.getElementById('orderModal').classList.remove('open');
+  document.body.style.overflow='';
 }
+document.getElementById('orderModal').addEventListener('click',function(e){if(e.target===this)closeModal()});
+document.addEventListener('keydown',e=>{if(e.key==='Escape')closeModal()});
 
-function submitOrder() {
-  var name = document.getElementById('orderName').value.trim();
-  var email = document.getElementById('orderEmail').value.trim();
-  var school = document.getElementById('orderSchool').value.trim();
-  if (!name || !email || !school) { alert('Please fill in your name, email, and school name.'); return; }
-  document.getElementById('orderForm').style.display = 'none';
-  document.getElementById('orderSuccess').style.display = 'block';
+async function submitOrder(){
+  const first=document.getElementById('oFirst').value.trim();
+  const last=document.getElementById('oLast').value.trim();
+  const email=document.getElementById('oEmail').value.trim();
+  const school=document.getElementById('oSchool').value.trim();
+  const country=document.getElementById('oCountry').value.trim();
+  const payment=document.getElementById('oPayment').value;
+  const notes=document.getElementById('oNotes').value.trim();
+  const deployRowVisible=document.getElementById('deployRow').style.display!=='none';
+  const deployment=deployRowVisible?document.getElementById('oDeploy').value:'';
+  if(!first||!email||!school||!payment){alert('Please fill in all required fields.');return;}
+  const btn=document.getElementById('submitBtn');
+  btn.disabled=true; btn.textContent='Sending…';
+  try{
+    const res=await fetch('https://formspree.io/f/xvzyvlez',{
+      method:'POST',
+      headers:{'Accept':'application/json','Content-Type':'application/json'},
+      body:JSON.stringify({
+        name:(first+' '+last).trim(), email, school, country,
+        payment_method:payment, tier:currentPlan, price:currentPrice,
+        deployment_mode:deployment, notes
+      })
+    });
+    if(res.ok){
+      document.getElementById('orderForm').style.display='none';
+      document.getElementById('successEmail').textContent=email;
+      document.getElementById('orderSuccess').style.display='block';
+    } else {
+      throw new Error('Request failed');
+    }
+  } catch(err){
+    alert('Network error. Please email us directly at ro1manramirez73@gmail.com');
+  } finally {
+    btn.disabled=false; btn.textContent='Send Order Request';
+  }
 }
-
-document.getElementById('orderModal').addEventListener('click', function(e) {
-  if (e.target === this) closeModal();
-});
 </script>
-
 </body>
 </html>
