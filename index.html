@@ -627,6 +627,7 @@ footer{background:var(--ink-2);border-top:1px solid rgba(238,232,217,.07);paddin
         + Setup &amp; training: $300 (optional)<br>+ Annual support &amp; updates: $250/yr (optional)
       </div>
       <button class="price-btn pb-ghost" onclick="openModal('Tier 1','$1,000',false)">Order Tier 1</button>
+      <button class="price-btn" style="margin-top:8px;background:#ffc439;color:#001c3d;border:none" onclick="openPaypalOrder('Tier 1','$1,000',1000,false)">💳 Pay with PayPal — Instant</button>
     </div>
     <div class="price-card pop">
       <div class="pop-tag">⭐ Most Popular</div>
@@ -652,6 +653,7 @@ footer{background:var(--ink-2);border-top:1px solid rgba(238,232,217,.07);paddin
         + Setup &amp; training: $500 (optional)<br>+ Annual support &amp; updates: $400/yr (optional)
       </div>
       <button class="price-btn pb-fill" onclick="openModal('Tier 2','$1,800',false)">Order Tier 2</button>
+      <button class="price-btn" style="margin-top:8px;background:#ffc439;color:#001c3d;border:none" onclick="openPaypalOrder('Tier 2','$1,800',1800,false)">💳 Pay with PayPal — Instant</button>
     </div>
     <div class="price-card">
       <div class="price-name">🏫 Tier 3</div>
@@ -678,6 +680,7 @@ footer{background:var(--ink-2);border-top:1px solid rgba(238,232,217,.07);paddin
         + Setup &amp; training: $800 (optional)<br>+ Annual support &amp; updates: $600/yr (optional)
       </div>
       <button class="price-btn pb-ghost" onclick="openModal('Tier 3','$2,800',true)">Order Tier 3</button>
+      <button class="price-btn" style="margin-top:8px;background:#ffc439;color:#001c3d;border:none" onclick="openPaypalOrder('Tier 3','$2,800',2800,true)">💳 Pay with PayPal — Instant</button>
     </div>
   </div>
   <p class="price-note">All purchases include lifetime access to the version you buy. Setup &amp; training and annual support &amp; updates are optional add-ons, billed separately. License key delivered by email within 24 hours. <a href="mailto:ro1manramirez73@gmail.com">Need a custom quote?</a></p>
@@ -844,7 +847,7 @@ footer{background:var(--ink-2);border-top:1px solid rgba(238,232,217,.07);paddin
       <div class="fg"><label class="fl">School / Organisation *</label><input type="text" class="fi" id="oSchool" placeholder="St. Mary's Academy"/></div>
       <div class="fg2">
         <div class="fg"><label class="fl">Country</label><input type="text" class="fi" id="oCountry" placeholder="Bahamas"/></div>
-        <div class="fg"><label class="fl">Payment Method *</label>
+        <div class="fg" id="paymentMethodRow"><label class="fl">Payment Method *</label>
           <select class="fi" id="oPayment">
             <option value="">— select —</option>
             <option>Bank Transfer</option>
@@ -866,6 +869,10 @@ footer{background:var(--ink-2);border-top:1px solid rgba(238,232,217,.07);paddin
       <div class="fg"><label class="fl">Notes (optional)</label><textarea class="fi" id="oNotes" rows="2" placeholder="Questions or special requirements..."></textarea></div>
       <button class="btn btn-gold" style="width:100%;padding:13px;font-size:14px;margin-top:4px" id="submitBtn" onclick="submitOrder()">Send Order Request</button>
       <p class="form-note">We reply within 24 hours with payment instructions and your license key.</p>
+      <div id="paypalButtonRow" style="display:none;margin-top:4px">
+        <div id="paypal-button-container"></div>
+        <p class="form-note">Secure checkout via PayPal — pay by PayPal balance, debit, or credit card. Your license key follows by email within 24 hours.</p>
+      </div>
     </div>
     <div class="form-success" id="orderSuccess">
       <div class="form-success-icon">✅</div>
@@ -930,16 +937,93 @@ function toggleFaq(el){
 }
 
 // Modal
-let currentPlan='', currentPrice='';
+let currentPlan='', currentPrice='', currentTierAmount=0;
 function openModal(plan,price,showDeploy){
   currentPlan=plan; currentPrice=price;
   document.getElementById('modalPlan').textContent=plan+' — '+price;
   document.getElementById('deployRow').style.display=showDeploy?'':'none';
+  document.getElementById('paymentMethodRow').style.display='';
+  document.getElementById('submitBtn').style.display='';
+  document.getElementById('paypalButtonRow').style.display='none';
   document.getElementById('orderModal').classList.add('open');
   document.getElementById('orderForm').style.display='';
   document.getElementById('orderSuccess').style.display='none';
   document.body.style.overflow='hidden';
 }
+
+function openPaypalOrder(plan,price,amount,showDeploy){
+  currentPlan=plan; currentPrice=price; currentTierAmount=amount;
+  document.getElementById('modalPlan').textContent=plan+' — '+price+' (PayPal — Instant)';
+  document.getElementById('deployRow').style.display=showDeploy?'':'none';
+  document.getElementById('paymentMethodRow').style.display='none';
+  document.getElementById('submitBtn').style.display='none';
+  document.getElementById('paypalButtonRow').style.display='';
+  document.getElementById('orderModal').classList.add('open');
+  document.getElementById('orderForm').style.display='';
+  document.getElementById('orderSuccess').style.display='none';
+  document.body.style.overflow='hidden';
+  renderPaypalButton();
+}
+
+function renderPaypalButton(){
+  const container=document.getElementById('paypal-button-container');
+  container.innerHTML='';
+  if (typeof paypal === 'undefined') {
+    container.innerHTML='<p style="color:var(--danger);font-size:12px">PayPal could not load. Please refresh the page or email us directly.</p>';
+    return;
+  }
+  paypal.Buttons({
+    style: { layout:'vertical', color:'gold', shape:'rect', label:'pay' },
+    onClick: function(data, actions){
+      const first=document.getElementById('oFirst').value.trim();
+      const email=document.getElementById('oEmail').value.trim();
+      const school=document.getElementById('oSchool').value.trim();
+      if(!first || !email || !school){
+        alert('Please fill in your name, email, and school name before paying.');
+        return actions.reject();
+      }
+      return actions.resolve();
+    },
+    createOrder: function(data, actions){
+      const school=document.getElementById('oSchool').value.trim();
+      const country=document.getElementById('oCountry').value.trim();
+      return actions.order.create({
+        purchase_units: [{
+          description: (currentPlan+' — SchoolMS license ('+school+(country?', '+country:'')+')').slice(0,127),
+          amount: { value: currentTierAmount.toString(), currency_code:'USD' }
+        }]
+      });
+    },
+    onApprove: function(data, actions){
+      return actions.order.capture().then(function(details){
+        const first=document.getElementById('oFirst').value.trim();
+        const last=document.getElementById('oLast').value.trim();
+        const email=document.getElementById('oEmail').value.trim();
+        const school=document.getElementById('oSchool').value.trim();
+        const country=document.getElementById('oCountry').value.trim();
+        const deployRowVisible=document.getElementById('deployRow').style.display!=='none';
+        const deployment=deployRowVisible?document.getElementById('oDeploy').value:'';
+        fetch('https://formspree.io/f/xvzyvlez',{
+          method:'POST',
+          headers:{'Accept':'application/json','Content-Type':'application/json'},
+          body:JSON.stringify({
+            name:(first+' '+last).trim(), email, school, country,
+            payment_method:'PayPal — PAID (order '+data.orderID+')',
+            tier:currentPlan, price:currentPrice, deployment_mode:deployment,
+            notes:document.getElementById('oNotes').value.trim()
+          })
+        }).catch(function(){});
+        document.getElementById('orderForm').style.display='none';
+        document.getElementById('successEmail').textContent=email;
+        document.getElementById('orderSuccess').style.display='block';
+      });
+    },
+    onError: function(err){
+      alert('Something went wrong with PayPal checkout. Please try again or email us directly at ro1manramirez73@gmail.com');
+    }
+  }).render('#paypal-button-container');
+}
+
 function closeModal(){
   document.getElementById('orderModal').classList.remove('open');
   document.body.style.overflow='';
@@ -984,5 +1068,6 @@ async function submitOrder(){
   }
 }
 </script>
+<script src="https://www.paypal.com/sdk/js?client-id=AVM0l-5U0RqAyUBec3kggKh1VsXBn7_SmgH9oPHrAc8436g8Vo8kNHtxz2d7aVKL6cTs5krwoYK37SbZ&currency=USD"></script>
 </body>
 </html>
