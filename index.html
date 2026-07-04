@@ -881,6 +881,22 @@ footer{background:var(--ink-2);border-top:1px solid rgba(238,232,217,.07);paddin
       <div style="font-family:var(--serif);font-size:1.2rem;color:var(--parch);margin-bottom:8px">Request received!</div>
       <p style="font-size:13px;color:var(--mist)">We will email <strong id="successEmail" style="color:var(--parch)"></strong> with payment details and your license key within 24 hours.</p>
     </div>
+    <div class="form-success" id="orderSuccessPaid" style="display:none">
+      <div class="form-success-icon">✅</div>
+      <div style="font-family:var(--serif);font-size:1.2rem;color:var(--parch);margin-bottom:4px">Payment Confirmed! 🎉</div>
+      <p style="font-size:13px;color:var(--mist);margin-bottom:14px">
+        Thank you for your purchase! Your payment has been received and confirmed.<br>
+        Your license key will be emailed to <strong id="successEmailPaid" style="color:var(--parch)"></strong> within 24 hours.<br>
+        <span style="font-size:12px">Tip: check your spam/junk folder if you don't see it. Questions? Email us at ro1manramirez73@gmail.com</span>
+      </p>
+      <hr style="border-color:rgba(238,232,217,.1);margin:14px 0">
+      <div style="font-family:var(--serif);font-size:1.1rem;color:var(--parch);margin-bottom:4px">¡Pago Confirmado! 🎉</div>
+      <p style="font-size:13px;color:var(--mist)">
+        ¡Gracias por tu compra! Hemos recibido y confirmado tu pago.<br>
+        Tu clave de licencia será enviada a <strong id="successEmailPaidEs" style="color:var(--parch)"></strong> dentro de 24 horas.<br>
+        <span style="font-size:12px">Consejo: revisa tu carpeta de spam si no la ves. ¿Preguntas? Escríbenos a ro1manramirez73@gmail.com</span>
+      </p>
+    </div>
   </div>
 </div>
 
@@ -950,6 +966,7 @@ function openModal(plan,price,showDeploy){
   document.getElementById('orderModal').classList.add('open');
   document.getElementById('orderForm').style.display='';
   document.getElementById('orderSuccess').style.display='none';
+  document.getElementById('orderSuccessPaid').style.display='none';
   document.body.style.overflow='hidden';
 }
 
@@ -963,6 +980,7 @@ function openPaypalOrder(plan,price,amount,showDeploy){
   document.getElementById('orderModal').classList.add('open');
   document.getElementById('orderForm').style.display='';
   document.getElementById('orderSuccess').style.display='none';
+  document.getElementById('orderSuccessPaid').style.display='none';
   document.body.style.overflow='hidden';
   renderPaypalButton();
 }
@@ -1016,8 +1034,9 @@ function renderPaypalButton(){
           })
         }).catch(function(){});
         document.getElementById('orderForm').style.display='none';
-        document.getElementById('successEmail').textContent=email;
-        document.getElementById('orderSuccess').style.display='block';
+        document.getElementById('successEmailPaid').textContent=email;
+        document.getElementById('successEmailPaidEs').textContent=email;
+        document.getElementById('orderSuccessPaid').style.display='block';
       });
     },
     onError: function(err){
