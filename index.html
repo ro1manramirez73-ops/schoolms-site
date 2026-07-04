@@ -68,6 +68,9 @@ nav.stuck{background:rgba(14,17,23,.96);border-bottom:1px solid rgba(238,232,217
 .nav-links a{font-size:13px;font-weight:500;color:var(--mist);padding:7px 13px;border-radius:var(--r);transition:color .15s}
 .nav-links a:hover{color:var(--parch)}
 .nav-cta{background:var(--gold)!important;color:var(--ink)!important;font-weight:700!important}
+.lang-btn{background:none;border:none;cursor:pointer;font-size:12px;font-weight:700;color:var(--mist);padding:4px 10px;border-radius:100px;transition:.15s}
+.lang-btn.active{background:var(--gold);color:var(--ink)}
+.lang-btn:hover:not(.active){color:var(--gold)}
 .nav-cta:hover{background:#E2B94E!important}
 .hamburger{display:none;background:none;border:none;color:var(--parch);cursor:pointer;padding:4px;font-size:20px}
 
@@ -362,11 +365,13 @@ footer{background:var(--ink-2);border-top:1px solid rgba(238,232,217,.07);paddin
       <span class="nav-logo-text">SchoolMS</span>
     </a>
     <div class="nav-links">
-      <a href="#features">Features</a>
-      <a href="#screenshots">Screenshots</a>
-      <a href="#pricing">Pricing</a>
-      <a href="#faq">FAQ</a>
-      <a href="#pricing" class="btn btn-sm nav-cta">Buy Now</a>
+      <a href="#features" data-en="Features" data-es="Funciones">Features</a>
+      <a href="#screenshots" data-en="Screenshots" data-es="Capturas">Screenshots</a>
+      <a href="#pricing" data-en="Pricing" data-es="Precios">Pricing</a>
+      <a href="#faq" data-en="FAQ" data-es="Preguntas">FAQ</a>
+      <button class="lang-btn active" id="btn-en" onclick="setLang('en')">EN</button>
+      <button class="lang-btn" id="btn-es" onclick="setLang('es')">ES</button>
+      <a href="#pricing" class="btn btn-sm nav-cta" data-en="Buy Now" data-es="Comprar Ahora">Buy Now</a>
     </div>
     <button class="hamburger" onclick="toggleNav()" aria-label="Menu">☰</button>
   </div>
@@ -376,12 +381,12 @@ footer{background:var(--ink-2);border-top:1px solid rgba(238,232,217,.07);paddin
 <section style="padding:0">
 <div class="hero">
   <div>
-    <div class="hero-kicker">School Management Software</div>
-    <h1>Your Whole School,<br>One Screen.<br><em>No Monthly Bill.</em></h1>
-    <p class="hero-desc">Students, attendance, grades, fees, payroll, and timetables — installed on your own computer. Yours to keep. No subscriptions. No cloud lock-in. Starts at $1,000 once.</p>
+    <div class="hero-kicker" data-en="School Management Software" data-es="Software de Gestión Escolar">School Management Software</div>
+    <h1 data-en="Your Whole School,<br>One Screen.<br><em>No Monthly Bill.</em>" data-es="Tu Escuela Completa,<br>Una Pantalla.<br><em>Sin Cuota Mensual.</em>">Your Whole School,<br>One Screen.<br><em>No Monthly Bill.</em></h1>
+    <p class="hero-desc" data-en="Students, attendance, grades, fees, payroll, and timetables — installed on your own computer. Yours to keep. No subscriptions. No cloud lock-in. Starts at $1,000 once." data-es="Estudiantes, asistencia, calificaciones, cuotas, nómina y horarios — instalado en tu propia computadora. Tuyo para siempre. Sin suscripciones. Sin dependencia de la nube. Desde $1,000 pago único.">Students, attendance, grades, fees, payroll, and timetables — installed on your own computer. Yours to keep. No subscriptions. No cloud lock-in. Starts at $1,000 once.</p>
     <div class="hero-actions">
-      <a href="https://github.com/ro1manramirez73-ops/schoolms-store/releases/download/v2.6.3/SchoolMS_Setup_v2.6.3.exe" class="btn btn-gold">⬇ Download Free Trial</a>
-      <a href="#pricing" class="btn btn-outline">View Pricing →</a>
+      <a href="https://github.com/ro1manramirez73-ops/schoolms-store/releases/download/v2.6.3/SchoolMS_Setup_v2.6.3.exe" class="btn btn-gold" data-en="⬇ Download Free Trial" data-es="⬇ Descargar Prueba Gratis">⬇ Download Free Trial</a>
+      <a href="#pricing" class="btn btn-outline" data-en="View Pricing →" data-es="Ver Precios →">View Pricing →</a>
     </div>
     <div class="social-proof">
       <div class="avatars">
@@ -389,7 +394,7 @@ footer{background:var(--ink-2);border-top:1px solid rgba(238,232,217,.07);paddin
       </div>
       <div class="proof-text">
         <div class="stars">★★★★★</div>
-        <div>Trusted by <strong>schools across the Caribbean</strong></div>
+        <div data-en="Trusted by <strong>schools across the Caribbean</strong>" data-es="Con la confianza de <strong>escuelas en todo el Caribe</strong>">Trusted by <strong>schools across the Caribbean</strong></div>
       </div>
     </div>
   </div>
@@ -398,7 +403,7 @@ footer{background:var(--ink-2);border-top:1px solid rgba(238,232,217,.07);paddin
   <div class="receipt-wrap">
     <div class="receipt-float">
       <span class="big">$1,000</span>
-      once — not $150/mo
+      <span data-en="once — not $150/mo" data-es="pago único — no $150/mes">once — not $150/mo</span>
     </div>
     <div class="receipt">
       <div class="receipt-header">
@@ -409,20 +414,20 @@ footer{background:var(--ink-2);border-top:1px solid rgba(238,232,217,.07);paddin
         <span style="font-size:10px;color:#8896b3;font-family:monospace">REC-20240201</span>
       </div>
       <div class="receipt-body">
-        <div class="receipt-title">Daily Summary — Grade 4A</div>
-        <div class="receipt-row"><span class="label">Maria Santos</span><span class="badge-present">Present</span></div>
-        <div class="receipt-row"><span class="label">Carlos Ruiz</span><span class="badge-absent">Absent</span></div>
-        <div class="receipt-row"><span class="label">Ana Torres</span><span class="badge-present">Present</span></div>
-        <div class="receipt-row"><span class="label">Luis Pérez</span><span class="badge-present">Present</span></div>
+        <div class="receipt-title" data-en="Daily Summary — Grade 4A" data-es="Resumen Diario — Grado 4A">Daily Summary — Grade 4A</div>
+        <div class="receipt-row"><span class="label">Maria Santos</span><span class="badge-present" data-en="Present" data-es="Presente">Present</span></div>
+        <div class="receipt-row"><span class="label">Carlos Ruiz</span><span class="badge-absent" data-en="Absent" data-es="Ausente">Absent</span></div>
+        <div class="receipt-row"><span class="label">Ana Torres</span><span class="badge-present" data-en="Present" data-es="Presente">Present</span></div>
+        <div class="receipt-row"><span class="label">Luis Pérez</span><span class="badge-present" data-en="Present" data-es="Presente">Present</span></div>
         <div class="receipt-divider"></div>
-        <div class="receipt-row"><span class="label">Tuition collected today</span><span class="val">$1,200.00</span></div>
-        <div class="receipt-row"><span class="label">Outstanding balance</span><span class="val" style="color:#c0392b">$450.00</span></div>
+        <div class="receipt-row"><span class="label" data-en="Tuition collected today" data-es="Colegiatura cobrada hoy">Tuition collected today</span><span class="val">$1,200.00</span></div>
+        <div class="receipt-row"><span class="label" data-en="Outstanding balance" data-es="Saldo pendiente">Outstanding balance</span><span class="val" style="color:#c0392b">$450.00</span></div>
         <div class="receipt-divider"></div>
         <div class="receipt-total">
-          <span class="label">Monthly payroll</span>
+          <span class="label" data-en="Monthly payroll" data-es="Nómina mensual">Monthly payroll</span>
           <span class="val">$8,460</span>
         </div>
-        <div class="receipt-note">Generated by SchoolMS v2.6.3 · Works offline · No subscription</div>
+        <div class="receipt-note" data-en="Generated by SchoolMS v2.6.3 · Works offline · No subscription" data-es="Generado por SchoolMS v2.6.3 · Funciona sin internet · Sin suscripción">Generated by SchoolMS v2.6.3 · Works offline · No subscription</div>
       </div>
     </div>
   </div>
@@ -432,7 +437,7 @@ footer{background:var(--ink-2);border-top:1px solid rgba(238,232,217,.07);paddin
 <!-- FLAGS STRIP -->
 <div class="flags-strip">
   <div class="flags-inner">
-    <span class="flags-label">Used by schools in</span>
+    <span class="flags-label" data-en="Used by schools in" data-es="Usado por escuelas en">Used by schools in</span>
     <span class="flag-item">🇧🇸 Bahamas</span><span class="flag-sep">·</span>
     <span class="flag-item">🇧🇿 Belize</span><span class="flag-sep">·</span>
     <span class="flag-item">🇭🇳 Honduras</span><span class="flag-sep">·</span>
@@ -441,7 +446,7 @@ footer{background:var(--ink-2);border-top:1px solid rgba(238,232,217,.07);paddin
     <span class="flag-item">🇹🇹 Trinidad & Tobago</span><span class="flag-sep">·</span>
     <span class="flag-item">🇩🇴 Dominican Republic</span><span class="flag-sep">·</span>
     <!-- duplicate for seamless loop -->
-    <span class="flags-label">Used by schools in</span>
+    <span class="flags-label" data-en="Used by schools in" data-es="Usado por escuelas en">Used by schools in</span>
     <span class="flag-item">🇧🇸 Bahamas</span><span class="flag-sep">·</span>
     <span class="flag-item">🇧🇿 Belize</span><span class="flag-sep">·</span>
     <span class="flag-item">🇭🇳 Honduras</span><span class="flag-sep">·</span>
@@ -456,17 +461,17 @@ footer{background:var(--ink-2);border-top:1px solid rgba(238,232,217,.07);paddin
 <section class="section">
 <div class="container">
   <div class="section-head">
-    <div class="eyebrow">The Problem</div>
-    <h2 class="section-h">Running a school shouldn't mean<br>managing fifteen spreadsheets.</h2>
-    <p class="section-sub">Most small schools in the Caribbean track everything manually. Here is what that actually costs you every day.</p>
+    <div class="eyebrow" data-en="The Problem" data-es="El Problema">The Problem</div>
+    <h2 class="section-h" data-en="Running a school shouldn't mean<br>managing fifteen spreadsheets." data-es="Dirigir una escuela no debería significar<br>administrar quince hojas de cálculo.">Running a school shouldn't mean<br>managing fifteen spreadsheets.</h2>
+    <p class="section-sub" data-en="Most small schools in the Caribbean track everything manually. Here is what that actually costs you every day." data-es="La mayoría de las escuelas pequeñas en el Caribe llevan todo manualmente. Esto es lo que realmente te cuesta cada día.">Most small schools in the Caribbean track everything manually. Here is what that actually costs you every day.</p>
   </div>
   <div class="pain-grid">
-    <div class="pain-card"><div class="pain-icon">📋</div><div class="pain-title">Attendance in spreadsheets</div><div class="pain-text">Every morning someone fills a Google Sheet. Finding who was absent last Tuesday takes ten minutes of searching through tabs.</div><div class="pain-fix">SchoolMS marks attendance in seconds</div></div>
-    <div class="pain-card"><div class="pain-icon">📞</div><div class="pain-title">Parents calling all day</div><div class="pain-text">"What is my child's grade?" "Did they attend today?" "How much do I owe?" — the same questions, every single day, all day long.</div><div class="pain-fix">Parents check it themselves, online</div></div>
-    <div class="pain-card"><div class="pain-icon">😤</div><div class="pain-title">Report cards take days</div><div class="pain-text">Teachers type into Word, someone collects 20 different files, reformats them all, then prints. One mistake means starting over entirely.</div><div class="pain-fix">Professional report cards in one click</div></div>
-    <div class="pain-card"><div class="pain-icon">💸</div><div class="pain-title">Chasing fees by hand</div><div class="pain-text">Paper invoices, WhatsApp reminders, no clear picture of who still owes anything until you dig through notebooks at month-end.</div><div class="pain-fix">Real-time fee dashboard, instant receipts</div></div>
-    <div class="pain-card"><div class="pain-icon">🧮</div><div class="pain-title">Payroll is a nightmare</div><div class="pain-text">Manual salary calculations, separate NIB spreadsheets, no payslips. Month-end consumes the accountant for an entire day.</div><div class="pain-fix">Automated payroll with NIB, payslip PDFs</div></div>
-    <div class="pain-card"><div class="pain-icon">🔄</div><div class="pain-title">Paying forever for cloud tools</div><div class="pain-text">$100–200 per month that never stops. Cancel and you instantly lose access to every student record you ever built. The price goes up every year.</div><div class="pain-fix">One payment. Your data stays yours. Always.</div></div>
+    <div class="pain-card"><div class="pain-icon">📋</div><div class="pain-title" data-en="Attendance in spreadsheets" data-es="Asistencia en hojas de cálculo">Attendance in spreadsheets</div><div class="pain-text" data-en="Every morning someone fills a Google Sheet. Finding who was absent last Tuesday takes ten minutes of searching through tabs." data-es="Cada mañana alguien llena una hoja de cálculo. Encontrar quién faltó el martes pasado toma diez minutos buscando en pestañas.">Every morning someone fills a Google Sheet. Finding who was absent last Tuesday takes ten minutes of searching through tabs.</div><div class="pain-fix" data-en="SchoolMS marks attendance in seconds" data-es="SchoolMS marca la asistencia en segundos">SchoolMS marks attendance in seconds</div></div>
+    <div class="pain-card"><div class="pain-icon">📞</div><div class="pain-title" data-en="Parents calling all day" data-es="Padres llamando todo el día">Parents calling all day</div><div class="pain-text" data-en="&quot;What is my child's grade?&quot; &quot;Did they attend today?&quot; &quot;How much do I owe?&quot; — the same questions, every single day, all day long." data-es="&quot;¿Cuál es la calificación de mi hijo?&quot; &quot;¿Asistió hoy?&quot; &quot;¿Cuánto debo?&quot; — las mismas preguntas, todos los días, todo el día.">"What is my child's grade?" "Did they attend today?" "How much do I owe?" — the same questions, every single day, all day long.</div><div class="pain-fix" data-en="Parents check it themselves, online" data-es="Los padres lo revisan ellos mismos, en línea">Parents check it themselves, online</div></div>
+    <div class="pain-card"><div class="pain-icon">😤</div><div class="pain-title" data-en="Report cards take days" data-es="Las boletas tardan días">Report cards take days</div><div class="pain-text" data-en="Teachers type into Word, someone collects 20 different files, reformats them all, then prints. One mistake means starting over entirely." data-es="Los maestros escriben en Word, alguien recopila 20 archivos distintos, los reformatea y los imprime. Un error significa empezar de nuevo.">Teachers type into Word, someone collects 20 different files, reformats them all, then prints. One mistake means starting over entirely.</div><div class="pain-fix" data-en="Professional report cards in one click" data-es="Boletas profesionales con un clic">Professional report cards in one click</div></div>
+    <div class="pain-card"><div class="pain-icon">💸</div><div class="pain-title" data-en="Chasing fees by hand" data-es="Cobrando cuotas a mano">Chasing fees by hand</div><div class="pain-text" data-en="Paper invoices, WhatsApp reminders, no clear picture of who still owes anything until you dig through notebooks at month-end." data-es="Facturas en papel, recordatorios por WhatsApp, sin idea clara de quién debe hasta revisar cuadernos a fin de mes.">Paper invoices, WhatsApp reminders, no clear picture of who still owes anything until you dig through notebooks at month-end.</div><div class="pain-fix" data-en="Real-time fee dashboard, instant receipts" data-es="Panel de cuotas en tiempo real, recibos instantáneos">Real-time fee dashboard, instant receipts</div></div>
+    <div class="pain-card"><div class="pain-icon">🧮</div><div class="pain-title" data-en="Payroll is a nightmare" data-es="La nómina es una pesadilla">Payroll is a nightmare</div><div class="pain-text" data-en="Manual salary calculations, separate NIB spreadsheets, no payslips. Month-end consumes the accountant for an entire day." data-es="Cálculos de salario manuales, hojas de cálculo separadas para el NIB, sin recibos de pago. El cierre de mes le toma un día entero al contador.">Manual salary calculations, separate NIB spreadsheets, no payslips. Month-end consumes the accountant for an entire day.</div><div class="pain-fix" data-en="Automated payroll with NIB, payslip PDFs" data-es="Nómina automática con NIB, recibos en PDF">Automated payroll with NIB, payslip PDFs</div></div>
+    <div class="pain-card"><div class="pain-icon">🔄</div><div class="pain-title" data-en="Paying forever for cloud tools" data-es="Pagando para siempre por herramientas en la nube">Paying forever for cloud tools</div><div class="pain-text" data-en="$100–200 per month that never stops. Cancel and you instantly lose access to every student record you ever built. The price goes up every year." data-es="$100–200 al mes que nunca se detiene. Si cancelas, pierdes acceso a todos los registros de tus estudiantes al instante. El precio sube cada año.">$100–200 per month that never stops. Cancel and you instantly lose access to every student record you ever built. The price goes up every year.</div><div class="pain-fix" data-en="One payment. Your data stays yours. Always." data-es="Un solo pago. Tus datos siguen siendo tuyos. Siempre.">One payment. Your data stays yours. Always.</div></div>
   </div>
 </div>
 </section>
@@ -475,39 +480,39 @@ footer{background:var(--ink-2);border-top:1px solid rgba(238,232,217,.07);paddin
 <section class="section section-alt" id="features">
 <div class="container">
   <div class="section-head">
-    <div class="eyebrow">What's Inside</div>
-    <h2 class="section-h">Every module your school needs.<br>Nothing you don't.</h2>
-    <p class="section-sub">One purchase covers everything. No add-ons, no per-seat fees, no features hidden behind a higher tier.</p>
+    <div class="eyebrow" data-en="What's Inside" data-es="Qué Incluye">What's Inside</div>
+    <h2 class="section-h" data-en="Every module your school needs.<br>Nothing you don't." data-es="Cada módulo que tu escuela necesita.<br>Nada que no necesites.">Every module your school needs.<br>Nothing you don't.</h2>
+    <p class="section-sub" data-en="One purchase covers everything. No add-ons, no per-seat fees, no features hidden behind a higher tier." data-es="Una sola compra lo cubre todo. Sin extras, sin cargos por usuario, sin funciones escondidas detrás de un nivel superior.">One purchase covers everything. No add-ons, no per-seat fees, no features hidden behind a higher tier.</p>
   </div>
   <div class="features-layout">
     <div class="feat-tabs" id="featTabs">
-      <div class="feat-tab on" onclick="selectFeat(this,'att')"><div class="feat-tab-icon">✅</div><div><div class="feat-tab-title">Attendance Tracking</div><div class="feat-tab-text">Daily records by class or student. Summaries and exportable reports for any date range.</div></div></div>
-      <div class="feat-tab" onclick="selectFeat(this,'stu')"><div class="feat-tab-icon">👨‍🎓</div><div><div class="feat-tab-title">Student Management</div><div class="feat-tab-text">Full profiles, enrollment, parent contacts, medical notes, photo IDs, and status tracking.</div></div></div>
-      <div class="feat-tab" onclick="selectFeat(this,'fee')"><div class="feat-tab-icon">💰</div><div><div class="feat-tab-title">Fees & Finance</div><div class="feat-tab-text">Track tuition and payments per student. Print receipts, monitor all balances at a glance.</div></div></div>
-      <div class="feat-tab" onclick="selectFeat(this,'pay')"><div class="feat-tab-icon">💼</div><div><div class="feat-tab-title">Staff Payroll</div><div class="feat-tab-text">Salaries, NIB contributions, deductions, loans, payslip PDFs, and monthly reports.</div></div></div>
-      <div class="feat-tab" onclick="selectFeat(this,'gra')"><div class="feat-tab-icon">📚</div><div><div class="feat-tab-title">Grades & Report Cards</div><div class="feat-tab-text">Enter grades by subject, auto-calculate averages, print professional report cards and IEPs.</div></div></div>
-      <div class="feat-tab" onclick="selectFeat(this,'por')"><div class="feat-tab-icon">👨‍👩‍👧</div><div><div class="feat-tab-title">Parent & Student Portals</div><div class="feat-tab-text">Secure logins to view grades, attendance, fees, and announcements from any device.</div></div></div>
+      <div class="feat-tab on" onclick="selectFeat(this,'att')"><div class="feat-tab-icon">✅</div><div><div class="feat-tab-title" data-en="Attendance Tracking" data-es="Control de Asistencia">Attendance Tracking</div><div class="feat-tab-text" data-en="Daily records by class or student. Summaries and exportable reports for any date range." data-es="Registros diarios por clase o estudiante. Resúmenes y reportes exportables para cualquier rango de fechas.">Daily records by class or student. Summaries and exportable reports for any date range.</div></div></div>
+      <div class="feat-tab" onclick="selectFeat(this,'stu')"><div class="feat-tab-icon">👨‍🎓</div><div><div class="feat-tab-title" data-en="Student Management" data-es="Gestión de Estudiantes">Student Management</div><div class="feat-tab-text" data-en="Full profiles, enrollment, parent contacts, medical notes, photo IDs, and status tracking." data-es="Perfiles completos, inscripción, contactos de padres, notas médicas, fotos y seguimiento de estado.">Full profiles, enrollment, parent contacts, medical notes, photo IDs, and status tracking.</div></div></div>
+      <div class="feat-tab" onclick="selectFeat(this,'fee')"><div class="feat-tab-icon">💰</div><div><div class="feat-tab-title" data-en="Fees &amp; Finance" data-es="Cuotas y Finanzas">Fees &amp; Finance</div><div class="feat-tab-text" data-en="Track tuition and payments per student. Print receipts, monitor all balances at a glance." data-es="Registra colegiaturas y pagos por estudiante. Imprime recibos, monitorea saldos de un vistazo.">Track tuition and payments per student. Print receipts, monitor all balances at a glance.</div></div></div>
+      <div class="feat-tab" onclick="selectFeat(this,'pay')"><div class="feat-tab-icon">💼</div><div><div class="feat-tab-title" data-en="Staff Payroll" data-es="Nómina del Personal">Staff Payroll</div><div class="feat-tab-text" data-en="Salaries, NIB contributions, deductions, loans, payslip PDFs, and monthly reports." data-es="Salarios, contribuciones al NIB, deducciones, préstamos, recibos en PDF e informes mensuales.">Salaries, NIB contributions, deductions, loans, payslip PDFs, and monthly reports.</div></div></div>
+      <div class="feat-tab" onclick="selectFeat(this,'gra')"><div class="feat-tab-icon">📚</div><div><div class="feat-tab-title" data-en="Grades &amp; Report Cards" data-es="Calificaciones y Boletas">Grades &amp; Report Cards</div><div class="feat-tab-text" data-en="Enter grades by subject, auto-calculate averages, print professional report cards and IEPs." data-es="Ingresa calificaciones por materia, calcula promedios automáticamente e imprime boletas y PEIs profesionales.">Enter grades by subject, auto-calculate averages, print professional report cards and IEPs.</div></div></div>
+      <div class="feat-tab" onclick="selectFeat(this,'por')"><div class="feat-tab-icon">👨‍👩‍👧</div><div><div class="feat-tab-title" data-en="Parent &amp; Student Portals" data-es="Portales para Padres y Estudiantes">Parent &amp; Student Portals</div><div class="feat-tab-text" data-en="Secure logins to view grades, attendance, fees, and announcements from any device." data-es="Accesos seguros para ver calificaciones, asistencia, cuotas y avisos desde cualquier dispositivo.">Secure logins to view grades, attendance, fees, and announcements from any device.</div></div></div>
     </div>
     <div class="feat-preview" id="featPreview">
-      <div class="feat-preview-header"><span class="feat-preview-title">Attendance — Today</span><span class="live-badge">Live</span></div>
+      <div class="feat-preview-header"><span class="feat-preview-title" data-en="Attendance — Today" data-es="Asistencia — Hoy">Attendance — Today</span><span class="live-badge" data-en="Live" data-es="En Vivo">Live</span></div>
       <div class="preview-stats">
-        <div class="preview-stat"><div class="preview-stat-val">24</div><div class="preview-stat-lbl">Present</div></div>
-        <div class="preview-stat"><div class="preview-stat-val">2</div><div class="preview-stat-lbl">Absent</div></div>
-        <div class="preview-stat"><div class="preview-stat-val">1</div><div class="preview-stat-lbl">Late</div></div>
+        <div class="preview-stat"><div class="preview-stat-val">24</div><div class="preview-stat-lbl" data-en="Present" data-es="Presente">Present</div></div>
+        <div class="preview-stat"><div class="preview-stat-val">2</div><div class="preview-stat-lbl" data-en="Absent" data-es="Ausente">Absent</div></div>
+        <div class="preview-stat"><div class="preview-stat-val">1</div><div class="preview-stat-lbl" data-en="Late" data-es="Tarde">Late</div></div>
       </div>
-      <div class="preview-row"><div class="preview-av">MS</div><div><div class="preview-name">Maria Santos</div><div class="preview-meta">Grade 4A · ID 1042</div></div><span class="status-p">Present</span></div>
-      <div class="preview-row"><div class="preview-av">CR</div><div><div class="preview-name">Carlos Ruiz</div><div class="preview-meta">Grade 4A · ID 1043</div></div><span class="status-a">Absent</span></div>
-      <div class="preview-row"><div class="preview-av">AT</div><div><div class="preview-name">Ana Torres</div><div class="preview-meta">Grade 4A · ID 1044</div></div><span class="status-p">Present</span></div>
-      <div class="preview-row"><div class="preview-av">LP</div><div><div class="preview-name">Luis Pérez</div><div class="preview-meta">Grade 4A · ID 1045</div></div><span class="status-l">Late</span></div>
+      <div class="preview-row"><div class="preview-av">MS</div><div><div class="preview-name">Maria Santos</div><div class="preview-meta">Grade 4A · ID 1042</div></div><span class="status-p" data-en="Present" data-es="Presente">Present</span></div>
+      <div class="preview-row"><div class="preview-av">CR</div><div><div class="preview-name">Carlos Ruiz</div><div class="preview-meta">Grade 4A · ID 1043</div></div><span class="status-a" data-en="Absent" data-es="Ausente">Absent</span></div>
+      <div class="preview-row"><div class="preview-av">AT</div><div><div class="preview-name">Ana Torres</div><div class="preview-meta">Grade 4A · ID 1044</div></div><span class="status-p" data-en="Present" data-es="Presente">Present</span></div>
+      <div class="preview-row"><div class="preview-av">LP</div><div><div class="preview-name">Luis Pérez</div><div class="preview-meta">Grade 4A · ID 1045</div></div><span class="status-l" data-en="Late" data-es="Tarde">Late</span></div>
     </div>
   </div>
   <div class="modules-grid">
-    <div class="module-card"><div class="module-icon">📅</div><div class="module-title">Timetable Builder</div><div class="module-text">Weekly class schedules with teacher assignment and per-role views for staff and students.</div></div>
-    <div class="module-card"><div class="module-icon">🤖</div><div class="module-title">AI Assistant</div><div class="module-text">Claude-powered. Drafts lesson plans, report comments, translations, and answers questions inside the app.</div></div>
-    <div class="module-card"><div class="module-icon">📥</div><div class="module-title">Bulk CSV Import</div><div class="module-text">Load your entire student and staff roster from any Excel spreadsheet in seconds. Flexible column detection.</div></div>
-    <div class="module-card"><div class="module-icon">🪧</div><div class="module-title">Walk-in Kiosk</div><div class="module-text">Tablet in the lobby lets clients self-register and fill intake forms with no staff involvement.</div></div>
-    <div class="module-card"><div class="module-icon">☁️</div><div class="module-title">Remote Access</div><div class="module-text">Optional Cloudflare Tunnel gives your system a real HTTPS URL accessible from anywhere — free to set up.</div></div>
-    <div class="module-card"><div class="module-icon">📧</div><div class="module-title">Automated Emails</div><div class="module-text">Configure SMTP once and the system sends invoices, statements, and notifications automatically.</div></div>
+    <div class="module-card"><div class="module-icon">📅</div><div class="module-title" data-en="Timetable Builder" data-es="Creador de Horarios">Timetable Builder</div><div class="module-text" data-en="Weekly class schedules with teacher assignment and per-role views for staff and students." data-es="Horarios semanales con asignación de maestros y vistas por rol para personal y estudiantes.">Weekly class schedules with teacher assignment and per-role views for staff and students.</div></div>
+    <div class="module-card"><div class="module-icon">🤖</div><div class="module-title" data-en="AI Assistant" data-es="Asistente de IA">AI Assistant</div><div class="module-text" data-en="Claude-powered. Drafts lesson plans, report comments, translations, and answers questions inside the app." data-es="Impulsado por Claude. Redacta planes de clase, comentarios, traducciones y responde preguntas dentro de la app.">Claude-powered. Drafts lesson plans, report comments, translations, and answers questions inside the app.</div></div>
+    <div class="module-card"><div class="module-icon">📥</div><div class="module-title" data-en="Bulk CSV Import" data-es="Importación Masiva CSV">Bulk CSV Import</div><div class="module-text" data-en="Load your entire student and staff roster from any Excel spreadsheet in seconds. Flexible column detection." data-es="Carga todo tu listado de estudiantes y personal desde cualquier hoja de cálculo en segundos. Detección flexible de columnas.">Load your entire student and staff roster from any Excel spreadsheet in seconds. Flexible column detection.</div></div>
+    <div class="module-card"><div class="module-icon">🪧</div><div class="module-title" data-en="Walk-in Kiosk" data-es="Kiosco de Clientes">Walk-in Kiosk</div><div class="module-text" data-en="Tablet in the lobby lets clients self-register and fill intake forms with no staff involvement." data-es="Una tableta en la recepción permite el auto-registro y llenado de formularios sin ayuda del personal.">Tablet in the lobby lets clients self-register and fill intake forms with no staff involvement.</div></div>
+    <div class="module-card"><div class="module-icon">☁️</div><div class="module-title" data-en="Remote Access" data-es="Acceso Remoto">Remote Access</div><div class="module-text" data-en="Optional Cloudflare Tunnel gives your system a real HTTPS URL accessible from anywhere — free to set up." data-es="Un Cloudflare Tunnel opcional le da a tu sistema una URL HTTPS real accesible desde cualquier lugar — gratis de configurar.">Optional Cloudflare Tunnel gives your system a real HTTPS URL accessible from anywhere — free to set up.</div></div>
+    <div class="module-card"><div class="module-icon">📧</div><div class="module-title" data-en="Automated Emails" data-es="Correos Automáticos">Automated Emails</div><div class="module-text" data-en="Configure SMTP once and the system sends invoices, statements, and notifications automatically." data-es="Configura el SMTP una vez y el sistema envía facturas, estados de cuenta y notificaciones automáticamente.">Configure SMTP once and the system sends invoices, statements, and notifications automatically.</div></div>
   </div>
 </div>
 </section>
@@ -516,16 +521,16 @@ footer{background:var(--ink-2);border-top:1px solid rgba(238,232,217,.07);paddin
 <section class="section" id="screenshots">
 <div class="container">
   <div class="section-head">
-    <div class="eyebrow">See It in Action</div>
-    <h2 class="section-h">Real screenshots. No mockups.</h2>
-    <p class="section-sub">Every module shown here is included in all plans. No upsells, no locked features, no surprises.</p>
+    <div class="eyebrow" data-en="See It in Action" data-es="Míralo en Acción">See It in Action</div>
+    <h2 class="section-h" data-en="Real screenshots. No mockups." data-es="Capturas reales. Sin montajes.">Real screenshots. No mockups.</h2>
+    <p class="section-sub" data-en="Every module shown here is included in all plans. No upsells, no locked features, no surprises." data-es="Cada módulo mostrado aquí está incluido en todos los planes. Sin ventas adicionales, sin funciones bloqueadas, sin sorpresas.">Every module shown here is included in all plans. No upsells, no locked features, no surprises.</p>
   </div>
   <div class="ss-tabs">
-    <button class="ss-tab on" onclick="showSS(this,'dashboard','localhost:5000 — Dashboard')">Dashboard</button>
-    <button class="ss-tab" onclick="showSS(this,'students','localhost:5000 — Students')">Students</button>
-    <button class="ss-tab" onclick="showSS(this,'finances','localhost:5000 — Finances')">Finances</button>
-    <button class="ss-tab" onclick="showSS(this,'attendance','localhost:5000 — Attendance')">Attendance</button>
-    <button class="ss-tab" onclick="showSS(this,'payroll','localhost:5000 — Payroll')">Payroll</button>
+    <button class="ss-tab on" onclick="showSS(this,'dashboard','localhost:5000 — Dashboard')" data-en="Dashboard" data-es="Panel Principal">Dashboard</button>
+    <button class="ss-tab" onclick="showSS(this,'students','localhost:5000 — Students')" data-en="Students" data-es="Estudiantes">Students</button>
+    <button class="ss-tab" onclick="showSS(this,'finances','localhost:5000 — Finances')" data-en="Finances" data-es="Finanzas">Finances</button>
+    <button class="ss-tab" onclick="showSS(this,'attendance','localhost:5000 — Attendance')" data-en="Attendance" data-es="Asistencia">Attendance</button>
+    <button class="ss-tab" onclick="showSS(this,'payroll','localhost:5000 — Payroll')" data-en="Payroll" data-es="Nómina">Payroll</button>
   </div>
   <div class="ss-frame">
     <div class="ss-bar">
@@ -545,50 +550,50 @@ footer{background:var(--ink-2);border-top:1px solid rgba(238,232,217,.07);paddin
 <section class="section section-alt">
 <div class="container">
   <div class="section-head">
-    <div class="eyebrow">Own vs. Rent</div>
-    <h2 class="section-h">Most school software costs more<br>every single year.</h2>
-    <p class="section-sub">Subscription tools charge you indefinitely. Cancel and your data disappears. The price goes up whether you use it or not.</p>
+    <div class="eyebrow" data-en="Own vs. Rent" data-es="Ser Dueño vs. Alquilar">Own vs. Rent</div>
+    <h2 class="section-h" data-en="Most school software costs more<br>every single year." data-es="La mayoría del software escolar cuesta más<br>cada año.">Most school software costs more<br>every single year.</h2>
+    <p class="section-sub" data-en="Subscription tools charge you indefinitely. Cancel and your data disappears. The price goes up whether you use it or not." data-es="Las herramientas por suscripción te cobran indefinidamente. Si cancelas, tus datos desaparecen. El precio sube lo uses o no.">Subscription tools charge you indefinitely. Cancel and your data disappears. The price goes up whether you use it or not.</p>
   </div>
   <div class="compare-cols">
     <div class="compare-card cc-bad">
-      <div class="cc-label" style="color:var(--danger)">❌ Typical SaaS Subscription</div>
-      <div class="cc-price" style="color:var(--danger)">$150<span style="font-size:1rem;font-weight:500;color:var(--mist)">/month</span></div>
-      <div class="cc-period">average for school management tools</div>
+      <div class="cc-label" style="color:var(--danger)" data-en="❌ Typical SaaS Subscription" data-es="❌ Suscripción SaaS Típica">❌ Typical SaaS Subscription</div>
+      <div class="cc-price" style="color:var(--danger)">$150<span style="font-size:1rem;font-weight:500;color:var(--mist)" data-en="/month" data-es="/mes">/month</span></div>
+      <div class="cc-period" data-en="average for school management tools" data-es="promedio para herramientas de gestión escolar">average for school management tools</div>
       <div class="cc-rows">
-        <div class="cc-row bad-row"><span class="icon">💸</span>Year 1: $1,800</div>
-        <div class="cc-row bad-row"><span class="icon">💸</span>Year 5: $9,000</div>
-        <div class="cc-row bad-row"><span class="icon">💸</span>Year 10: $18,000+</div>
-        <div class="cc-row bad-row"><span class="icon">🚫</span>Cancel = lose all your data</div>
-        <div class="cc-row bad-row"><span class="icon">📈</span>Price increases every year</div>
-        <div class="cc-row bad-row"><span class="icon">🌐</span>Requires internet at all times</div>
+        <div class="cc-row bad-row"><span class="icon">💸</span><span data-en="Year 1: $1,800" data-es="Año 1: $1,800">Year 1: $1,800</span></div>
+        <div class="cc-row bad-row"><span class="icon">💸</span><span data-en="Year 5: $9,000" data-es="Año 5: $9,000">Year 5: $9,000</span></div>
+        <div class="cc-row bad-row"><span class="icon">💸</span><span data-en="Year 10: $18,000+" data-es="Año 10: $18,000+">Year 10: $18,000+</span></div>
+        <div class="cc-row bad-row"><span class="icon">🚫</span><span data-en="Cancel = lose all your data" data-es="Cancelar = pierdes todos tus datos">Cancel = lose all your data</span></div>
+        <div class="cc-row bad-row"><span class="icon">📈</span><span data-en="Price increases every year" data-es="El precio sube cada año">Price increases every year</span></div>
+        <div class="cc-row bad-row"><span class="icon">🌐</span><span data-en="Requires internet at all times" data-es="Requiere internet todo el tiempo">Requires internet at all times</span></div>
       </div>
     </div>
     <div class="compare-card cc-good">
       <div class="cc-glow"></div>
-      <div class="cc-label" style="color:var(--gold)">✅ SchoolMS — One-Time Purchase</div>
-      <div class="cc-price" style="color:var(--gold)">$1,000<span style="font-size:1rem;font-weight:500;color:var(--mist)"> once</span></div>
-      <div class="cc-period">Tier 1 — lifetime license</div>
+      <div class="cc-label" style="color:var(--gold)" data-en="✅ SchoolMS — One-Time Purchase" data-es="✅ SchoolMS — Pago Único">✅ SchoolMS — One-Time Purchase</div>
+      <div class="cc-price" style="color:var(--gold)">$1,000<span style="font-size:1rem;font-weight:500;color:var(--mist)" data-en=" once" data-es=" pago único"> once</span></div>
+      <div class="cc-period" data-en="Tier 1 — lifetime license" data-es="Nivel 1 — licencia de por vida">Tier 1 — lifetime license</div>
       <div class="cc-rows">
-        <div class="cc-row good-row"><span class="icon">✅</span>Year 1: $1,000</div>
-        <div class="cc-row good-row"><span class="icon">✅</span>Year 5: still $1,000</div>
-        <div class="cc-row good-row"><span class="icon">✅</span>Year 10: still $1,000</div>
-        <div class="cc-row good-row"><span class="icon">✅</span>Data stays on your computer forever</div>
-        <div class="cc-row good-row"><span class="icon">✅</span>Price never changes</div>
-        <div class="cc-row good-row"><span class="icon">✅</span>Works fully offline — no internet needed</div>
+        <div class="cc-row good-row"><span class="icon">✅</span><span data-en="Year 1: $1,000" data-es="Año 1: $1,000">Year 1: $1,000</span></div>
+        <div class="cc-row good-row"><span class="icon">✅</span><span data-en="Year 5: still $1,000" data-es="Año 5: sigue $1,000">Year 5: still $1,000</span></div>
+        <div class="cc-row good-row"><span class="icon">✅</span><span data-en="Year 10: still $1,000" data-es="Año 10: sigue $1,000">Year 10: still $1,000</span></div>
+        <div class="cc-row good-row"><span class="icon">✅</span><span data-en="Data stays on your computer forever" data-es="Los datos se quedan en tu computadora para siempre">Data stays on your computer forever</span></div>
+        <div class="cc-row good-row"><span class="icon">✅</span><span data-en="Price never changes" data-es="El precio nunca cambia">Price never changes</span></div>
+        <div class="cc-row good-row"><span class="icon">✅</span><span data-en="Works fully offline — no internet needed" data-es="Funciona sin internet — no lo necesita">Works fully offline — no internet needed</span></div>
       </div>
     </div>
   </div>
   <div class="compare-table">
     <table>
-      <thead><tr><th></th><th>Typical SaaS</th><th class="th-good">SchoolMS</th></tr></thead>
+      <thead><tr><th></th><th data-en="Typical SaaS" data-es="SaaS Típico">Typical SaaS</th><th class="th-good">SchoolMS</th></tr></thead>
       <tbody>
-        <tr><td>Annual cost</td><td class="td-bad">$1,200–$2,400/year</td><td class="td-good">$1,000–$2,800 once</td></tr>
-        <tr><td>10-year total cost</td><td class="td-bad">$12,000–$24,000</td><td class="td-good">$1,000–$2,800</td></tr>
-        <tr><td>If you cancel</td><td class="td-bad">Lose all data immediately</td><td class="td-good">Data stays on your computer</td></tr>
-        <tr><td>Works without internet</td><td class="td-bad">No — always requires internet</td><td class="td-good">Yes — fully offline capable</td></tr>
-        <tr><td>Data location</td><td class="td-bad">Their servers, their control</td><td class="td-good">Your own computer</td></tr>
-        <tr><td>Price over time</td><td class="td-bad">Goes up every year</td><td class="td-good">Never changes</td></tr>
-        <tr><td>Remote access</td><td class="td-mid">Cloud-only</td><td class="td-good">Optional Cloudflare Tunnel (free)</td></tr>
+        <tr><td data-en="Annual cost" data-es="Costo anual">Annual cost</td><td class="td-bad">$1,200–$2,400/year</td><td class="td-good" data-en="$1,000–$2,800 once" data-es="$1,000–$2,800 pago único">$1,000–$2,800 once</td></tr>
+        <tr><td data-en="10-year total cost" data-es="Costo total en 10 años">10-year total cost</td><td class="td-bad">$12,000–$24,000</td><td class="td-good">$1,000–$2,800</td></tr>
+        <tr><td data-en="If you cancel" data-es="Si cancelas">If you cancel</td><td class="td-bad" data-en="Lose all data immediately" data-es="Pierdes todos los datos de inmediato">Lose all data immediately</td><td class="td-good" data-en="Data stays on your computer" data-es="Los datos se quedan en tu computadora">Data stays on your computer</td></tr>
+        <tr><td data-en="Works without internet" data-es="Funciona sin internet">Works without internet</td><td class="td-bad" data-en="No — always requires internet" data-es="No — siempre requiere internet">No — always requires internet</td><td class="td-good" data-en="Yes — fully offline capable" data-es="Sí — funciona sin conexión">Yes — fully offline capable</td></tr>
+        <tr><td data-en="Data location" data-es="Ubicación de los datos">Data location</td><td class="td-bad" data-en="Their servers, their control" data-es="Sus servidores, su control">Their servers, their control</td><td class="td-good" data-en="Your own computer" data-es="Tu propia computadora">Your own computer</td></tr>
+        <tr><td data-en="Price over time" data-es="Precio a través del tiempo">Price over time</td><td class="td-bad" data-en="Goes up every year" data-es="Sube cada año">Goes up every year</td><td class="td-good" data-en="Never changes" data-es="Nunca cambia">Never changes</td></tr>
+        <tr><td data-en="Remote access" data-es="Acceso remoto">Remote access</td><td class="td-mid" data-en="Cloud-only" data-es="Solo en la nube">Cloud-only</td><td class="td-good" data-en="Optional Cloudflare Tunnel (free)" data-es="Cloudflare Tunnel opcional (gratis)">Optional Cloudflare Tunnel (free)</td></tr>
       </tbody>
     </table>
   </div>
@@ -599,95 +604,95 @@ footer{background:var(--ink-2);border-top:1px solid rgba(238,232,217,.07);paddin
 <section class="section" id="pricing">
 <div class="container">
   <div class="section-head centered">
-    <div class="eyebrow">Pricing</div>
-    <h2 class="section-h">Simple, honest pricing.<br>Pay once. Own it forever.</h2>
-    <p class="section-sub">No monthly fees. No per-student charges. No hidden costs. The price you see today is the only price you will ever pay.</p>
+    <div class="eyebrow" data-en="Pricing" data-es="Precios">Pricing</div>
+    <h2 class="section-h" data-en="Simple, honest pricing.<br>Pay once. Own it forever." data-es="Precios simples y honestos.<br>Paga una vez. Es tuyo para siempre.">Simple, honest pricing.<br>Pay once. Own it forever.</h2>
+    <p class="section-sub" data-en="No monthly fees. No per-student charges. No hidden costs. The price you see today is the only price you will ever pay." data-es="Sin cuotas mensuales. Sin cargos por estudiante. Sin costos ocultos. El precio que ves hoy es el único que pagarás.">No monthly fees. No per-student charges. No hidden costs. The price you see today is the only price you will ever pay.</p>
   </div>
   <div class="pricing-grid" style="grid-template-columns:repeat(3,1fr)">
     <div class="price-card">
       <div class="price-name">Tier 1</div>
-      <div class="price-for">Schools with up to 100 students</div>
+      <div class="price-for" data-en="Schools with up to 100 students" data-es="Escuelas con hasta 100 estudiantes">Schools with up to 100 students</div>
       <div class="price-amt">$1,000</div>
-      <div class="price-once">one-time license</div>
+      <div class="price-once" data-en="one-time license" data-es="licencia de pago único">one-time license</div>
       <div class="price-hr"></div>
       <ul class="price-feats">
-        <li>Up to 100 students</li>
-        <li>Up to 10 staff accounts</li>
-        <li>All core modules included</li>
-        <li>Students, attendance, grades</li>
-        <li>Fees & finance tracking</li>
-        <li>Staff payroll with NIB</li>
-        <li>Parent & student portals</li>
-        <li>PDF reports & payslips</li>
-        <li>Cloudflare Tunnel support</li>
-        <li class="no">QuickBooks sync</li>
-        <li class="no">Priority support</li>
+        <li data-en="Up to 100 students" data-es="Hasta 100 estudiantes">Up to 100 students</li>
+        <li data-en="Up to 10 staff accounts" data-es="Hasta 10 cuentas de personal">Up to 10 staff accounts</li>
+        <li data-en="All core modules included" data-es="Todos los módulos principales incluidos">All core modules included</li>
+        <li data-en="Students, attendance, grades" data-es="Estudiantes, asistencia, calificaciones">Students, attendance, grades</li>
+        <li data-en="Fees &amp; finance tracking" data-es="Control de cuotas y finanzas">Fees &amp; finance tracking</li>
+        <li data-en="Staff payroll with NIB" data-es="Nómina del personal con NIB">Staff payroll with NIB</li>
+        <li data-en="Parent &amp; student portals" data-es="Portales para padres y estudiantes">Parent &amp; student portals</li>
+        <li data-en="PDF reports &amp; payslips" data-es="Reportes en PDF y recibos de pago">PDF reports &amp; payslips</li>
+        <li data-en="Cloudflare Tunnel support" data-es="Soporte para Cloudflare Tunnel">Cloudflare Tunnel support</li>
+        <li class="no" data-en="QuickBooks sync" data-es="Sincronización con QuickBooks">QuickBooks sync</li>
+        <li class="no" data-en="Priority support" data-es="Soporte prioritario">Priority support</li>
       </ul>
-      <div style="font-size:11px;color:var(--mist);margin-bottom:16px;line-height:1.7">
+      <div style="font-size:11px;color:var(--mist);margin-bottom:16px;line-height:1.7" data-en="+ Setup &amp; training: $300 (optional)<br>+ Annual support &amp; updates: $250/yr (optional)" data-es="+ Configuración y capacitación: $300 (opcional)<br>+ Soporte y actualizaciones anuales: $250/año (opcional)">
         + Setup &amp; training: $300 (optional)<br>+ Annual support &amp; updates: $250/yr (optional)
       </div>
-      <button class="price-btn pb-ghost" onclick="openModal('Tier 1','$1,000',false)">Order Tier 1</button>
-      <button class="price-btn" style="margin-top:8px;background:#ffc439;color:#001c3d;border:none" onclick="openPaypalOrder('Tier 1','$1,000',1000,false)">💳 Pay with PayPal — Instant</button>
+      <button class="price-btn pb-ghost" onclick="openModal('Tier 1','$1,000',false)" data-en="Order Tier 1" data-es="Ordenar Nivel 1">Order Tier 1</button>
+      <button class="price-btn" style="margin-top:8px;background:#ffc439;color:#001c3d;border:none" onclick="openPaypalOrder('Tier 1','$1,000',1000,false)" data-en="💳 Pay with PayPal — Instant" data-es="💳 Pagar con PayPal — Instantáneo">💳 Pay with PayPal — Instant</button>
     </div>
     <div class="price-card pop">
-      <div class="pop-tag">⭐ Most Popular</div>
+      <div class="pop-tag" data-en="⭐ Most Popular" data-es="⭐ Más Popular">⭐ Most Popular</div>
       <div class="price-name">Tier 2</div>
-      <div class="price-for">Schools with 100–300 students</div>
+      <div class="price-for" data-en="Schools with 100–300 students" data-es="Escuelas con 100–300 estudiantes">Schools with 100–300 students</div>
       <div class="price-amt">$1,800</div>
-      <div class="price-once">one-time license</div>
+      <div class="price-once" data-en="one-time license" data-es="licencia de pago único">one-time license</div>
       <div class="price-hr"></div>
       <ul class="price-feats">
-        <li>100–300 students</li>
-        <li>Up to 30 staff accounts</li>
-        <li>All core modules included</li>
-        <li>Students, attendance, grades</li>
-        <li>Fees & finance tracking</li>
-        <li>Staff payroll with NIB</li>
-        <li>Parent & student portals</li>
-        <li>PDF reports & payslips</li>
-        <li>Cloudflare Tunnel support</li>
-        <li>QuickBooks sync</li>
-        <li>Priority email support</li>
+        <li data-en="100–300 students" data-es="100–300 estudiantes">100–300 students</li>
+        <li data-en="Up to 30 staff accounts" data-es="Hasta 30 cuentas de personal">Up to 30 staff accounts</li>
+        <li data-en="All core modules included" data-es="Todos los módulos principales incluidos">All core modules included</li>
+        <li data-en="Students, attendance, grades" data-es="Estudiantes, asistencia, calificaciones">Students, attendance, grades</li>
+        <li data-en="Fees &amp; finance tracking" data-es="Control de cuotas y finanzas">Fees &amp; finance tracking</li>
+        <li data-en="Staff payroll with NIB" data-es="Nómina del personal con NIB">Staff payroll with NIB</li>
+        <li data-en="Parent &amp; student portals" data-es="Portales para padres y estudiantes">Parent &amp; student portals</li>
+        <li data-en="PDF reports &amp; payslips" data-es="Reportes en PDF y recibos de pago">PDF reports &amp; payslips</li>
+        <li data-en="Cloudflare Tunnel support" data-es="Soporte para Cloudflare Tunnel">Cloudflare Tunnel support</li>
+        <li data-en="QuickBooks sync" data-es="Sincronización con QuickBooks">QuickBooks sync</li>
+        <li data-en="Priority email support" data-es="Soporte prioritario por correo">Priority email support</li>
       </ul>
-      <div style="font-size:11px;color:var(--mist);margin-bottom:16px;line-height:1.7">
+      <div style="font-size:11px;color:var(--mist);margin-bottom:16px;line-height:1.7" data-en="+ Setup &amp; training: $500 (optional)<br>+ Annual support &amp; updates: $400/yr (optional)" data-es="+ Configuración y capacitación: $500 (opcional)<br>+ Soporte y actualizaciones anuales: $400/año (opcional)">
         + Setup &amp; training: $500 (optional)<br>+ Annual support &amp; updates: $400/yr (optional)
       </div>
-      <button class="price-btn pb-fill" onclick="openModal('Tier 2','$1,800',false)">Order Tier 2</button>
-      <button class="price-btn" style="margin-top:8px;background:#ffc439;color:#001c3d;border:none" onclick="openPaypalOrder('Tier 2','$1,800',1800,false)">💳 Pay with PayPal — Instant</button>
+      <button class="price-btn pb-fill" onclick="openModal('Tier 2','$1,800',false)" data-en="Order Tier 2" data-es="Ordenar Nivel 2">Order Tier 2</button>
+      <button class="price-btn" style="margin-top:8px;background:#ffc439;color:#001c3d;border:none" onclick="openPaypalOrder('Tier 2','$1,800',1800,false)" data-en="💳 Pay with PayPal — Instant" data-es="💳 Pagar con PayPal — Instantáneo">💳 Pay with PayPal — Instant</button>
     </div>
     <div class="price-card">
       <div class="price-name">🏫 Tier 3</div>
-      <div class="price-for">Schools with 300+ students · multi-branch included</div>
+      <div class="price-for" data-en="Schools with 300+ students · multi-branch included" data-es="Escuelas con más de 300 estudiantes · incluye multi-sucursal">Schools with 300+ students · multi-branch included</div>
       <div class="price-amt">$2,800</div>
-      <div class="price-once">one-time license</div>
+      <div class="price-once" data-en="one-time license" data-es="licencia de pago único">one-time license</div>
       <div class="price-hr"></div>
       <ul class="price-feats">
-        <li>300+ students</li>
-        <li>Up to 50 staff accounts (or unlimited for multi-branch)</li>
-        <li>All core modules included</li>
-        <li>Fees & finance tracking</li>
-        <li>Staff payroll with NIB</li>
-        <li>Parent & student portals</li>
-        <li>PDF reports & payslips</li>
-        <li>Cloudflare Tunnel support</li>
-        <li>QuickBooks sync</li>
-        <li>Priority email + phone support</li>
-        <li>Remote setup assistance</li>
-        <li>Up to 3 license keys</li>
-        <li>One install or separate per branch</li>
+        <li data-en="300+ students" data-es="Más de 300 estudiantes">300+ students</li>
+        <li data-en="Up to 50 staff accounts (or unlimited for multi-branch)" data-es="Hasta 50 cuentas de personal (o ilimitadas en modo multi-sucursal)">Up to 50 staff accounts (or unlimited for multi-branch)</li>
+        <li data-en="All core modules included" data-es="Todos los módulos principales incluidos">All core modules included</li>
+        <li data-en="Fees &amp; finance tracking" data-es="Control de cuotas y finanzas">Fees &amp; finance tracking</li>
+        <li data-en="Staff payroll with NIB" data-es="Nómina del personal con NIB">Staff payroll with NIB</li>
+        <li data-en="Parent &amp; student portals" data-es="Portales para padres y estudiantes">Parent &amp; student portals</li>
+        <li data-en="PDF reports &amp; payslips" data-es="Reportes en PDF y recibos de pago">PDF reports &amp; payslips</li>
+        <li data-en="Cloudflare Tunnel support" data-es="Soporte para Cloudflare Tunnel">Cloudflare Tunnel support</li>
+        <li data-en="QuickBooks sync" data-es="Sincronización con QuickBooks">QuickBooks sync</li>
+        <li data-en="Priority email + phone support" data-es="Soporte prioritario por correo y teléfono">Priority email + phone support</li>
+        <li data-en="Remote setup assistance" data-es="Asistencia de configuración remota">Remote setup assistance</li>
+        <li data-en="Up to 3 license keys" data-es="Hasta 3 claves de licencia">Up to 3 license keys</li>
+        <li data-en="One install or separate per branch" data-es="Una instalación o separada por sucursal">One install or separate per branch</li>
       </ul>
-      <div style="font-size:11px;color:var(--mist);margin-bottom:16px;line-height:1.7">
+      <div style="font-size:11px;color:var(--mist);margin-bottom:16px;line-height:1.7" data-en="+ Setup &amp; training: $800 (optional)<br>+ Annual support &amp; updates: $600/yr (optional)" data-es="+ Configuración y capacitación: $800 (opcional)<br>+ Soporte y actualizaciones anuales: $600/año (opcional)">
         + Setup &amp; training: $800 (optional)<br>+ Annual support &amp; updates: $600/yr (optional)
       </div>
-      <button class="price-btn pb-ghost" onclick="openModal('Tier 3','$2,800',true)">Order Tier 3</button>
-      <button class="price-btn" style="margin-top:8px;background:#ffc439;color:#001c3d;border:none" onclick="openPaypalOrder('Tier 3','$2,800',2800,true)">💳 Pay with PayPal — Instant</button>
+      <button class="price-btn pb-ghost" onclick="openModal('Tier 3','$2,800',true)" data-en="Order Tier 3" data-es="Ordenar Nivel 3">Order Tier 3</button>
+      <button class="price-btn" style="margin-top:8px;background:#ffc439;color:#001c3d;border:none" onclick="openPaypalOrder('Tier 3','$2,800',2800,true)" data-en="💳 Pay with PayPal — Instant" data-es="💳 Pagar con PayPal — Instantáneo">💳 Pay with PayPal — Instant</button>
     </div>
   </div>
-  <p class="price-note">All purchases include lifetime access to the version you buy. Setup &amp; training and annual support &amp; updates are optional add-ons, billed separately. License key delivered by email within 24 hours. <a href="mailto:ro1manramirez73@gmail.com">Need a custom quote?</a></p>
+  <p class="price-note" data-en="All purchases include lifetime access to the version you buy. Setup &amp; training and annual support &amp; updates are optional add-ons, billed separately. License key delivered by email within 24 hours. <a href=&quot;mailto:ro1manramirez73@gmail.com&quot;>Need a custom quote?</a>" data-es="Todas las compras incluyen acceso de por vida a la versión que compras. Configuración y capacitación, y soporte y actualizaciones anuales son adicionales opcionales, facturados por separado. La clave de licencia se entrega por correo dentro de 24 horas. <a href=&quot;mailto:ro1manramirez73@gmail.com&quot;>¿Necesitas una cotización personalizada?</a>">All purchases include lifetime access to the version you buy. Setup &amp; training and annual support &amp; updates are optional add-ons, billed separately. License key delivered by email within 24 hours. <a href="mailto:ro1manramirez73@gmail.com">Need a custom quote?</a></p>
   <div class="guarantee">
     <div class="guarantee-icon">🛡️</div>
-    <div class="guarantee-title">14-Day Money-Back Guarantee</div>
-    <div class="guarantee-text">If SchoolMS cannot be installed on your computer within 14 days, contact us for a full refund — no questions asked.</div>
+    <div class="guarantee-title" data-en="14-Day Money-Back Guarantee" data-es="Garantía de Devolución de 14 Días">14-Day Money-Back Guarantee</div>
+    <div class="guarantee-text" data-en="If SchoolMS cannot be installed on your computer within 14 days, contact us for a full refund — no questions asked." data-es="Si SchoolMS no puede instalarse en tu computadora dentro de 14 días, contáctanos para un reembolso completo — sin preguntas.">If SchoolMS cannot be installed on your computer within 14 days, contact us for a full refund — no questions asked.</div>
   </div>
 </div>
 </section>
@@ -696,24 +701,24 @@ footer{background:var(--ink-2);border-top:1px solid rgba(238,232,217,.07);paddin
 <section class="section section-alt">
 <div class="container">
   <div class="section-head centered">
-    <div class="eyebrow">What Schools Say</div>
-    <h2 class="section-h">Trusted by administrators<br>across the Caribbean.</h2>
+    <div class="eyebrow" data-en="What Schools Say" data-es="Lo Que Dicen las Escuelas">What Schools Say</div>
+    <h2 class="section-h" data-en="Trusted by administrators<br>across the Caribbean." data-es="Con la confianza de administradores<br>en todo el Caribe.">Trusted by administrators<br>across the Caribbean.</h2>
   </div>
   <div class="testi-grid">
     <div class="testi-card">
       <div class="testi-stars">★★★★★</div>
-      <p class="testi-quote">"We were spending $180 per month on three separate tools that still did not talk to each other. SchoolMS replaced all of them. We paid $1,000 once and have not paid anything since."</p>
-      <div class="testi-author"><div class="testi-av">ML</div><div><div class="testi-name">Maria L.</div><div class="testi-role">School Administrator · Belize</div></div></div>
+      <p class="testi-quote" data-en="&quot;We were spending $180 per month on three separate tools that still did not talk to each other. SchoolMS replaced all of them. We paid $1,000 once and have not paid anything since.&quot;" data-es="&quot;Gastábamos $180 al mes en tres herramientas separadas que ni siquiera se comunicaban entre sí. SchoolMS las reemplazó todas. Pagamos $1,000 una vez y no hemos pagado nada desde entonces.&quot;">"We were spending $180 per month on three separate tools that still did not talk to each other. SchoolMS replaced all of them. We paid $1,000 once and have not paid anything since."</p>
+      <div class="testi-author"><div class="testi-av">ML</div><div><div class="testi-name">Maria L.</div><div class="testi-role" data-en="School Administrator · Belize" data-es="Administradora Escolar · Belice">School Administrator · Belize</div></div></div>
     </div>
     <div class="testi-card">
       <div class="testi-stars">★★★★★</div>
-      <p class="testi-quote">"Payroll used to take my accountant a full day every month — now it takes 20 minutes. NIB contributions are automatic, payslips print in one click. It paid for itself in the first month."</p>
-      <div class="testi-author"><div class="testi-av">CR</div><div><div class="testi-name">Carlos R.</div><div class="testi-role">Finance Manager · Honduras</div></div></div>
+      <p class="testi-quote" data-en="&quot;Payroll used to take my accountant a full day every month — now it takes 20 minutes. NIB contributions are automatic, payslips print in one click. It paid for itself in the first month.&quot;" data-es="&quot;La nómina solía tomarle a mi contador un día entero cada mes — ahora toma 20 minutos. Las contribuciones al NIB son automáticas, los recibos se imprimen con un clic. Se pagó solo en el primer mes.&quot;">"Payroll used to take my accountant a full day every month — now it takes 20 minutes. NIB contributions are automatic, payslips print in one click. It paid for itself in the first month."</p>
+      <div class="testi-author"><div class="testi-av">CR</div><div><div class="testi-name">Carlos R.</div><div class="testi-role" data-en="Finance Manager · Honduras" data-es="Gerente Financiero · Honduras">Finance Manager · Honduras</div></div></div>
     </div>
     <div class="testi-card">
       <div class="testi-stars">★★★★★</div>
-      <p class="testi-quote">"Parents stopped calling the office to ask about grades and fees — they just check it themselves. Staff phone calls dropped by more than half in the first week."</p>
-      <div class="testi-author"><div class="testi-av">AG</div><div><div class="testi-name">Ana G.</div><div class="testi-role">Principal · Guatemala</div></div></div>
+      <p class="testi-quote" data-en="&quot;Parents stopped calling the office to ask about grades and fees — they just check it themselves. Staff phone calls dropped by more than half in the first week.&quot;" data-es="&quot;Los padres dejaron de llamar a la oficina para preguntar por calificaciones y cuotas — ahora lo revisan ellos mismos. Las llamadas al personal bajaron más de la mitad en la primera semana.&quot;">"Parents stopped calling the office to ask about grades and fees — they just check it themselves. Staff phone calls dropped by more than half in the first week."</p>
+      <div class="testi-author"><div class="testi-av">AG</div><div><div class="testi-name">Ana G.</div><div class="testi-role" data-en="Principal · Guatemala" data-es="Directora · Guatemala">Principal · Guatemala</div></div></div>
     </div>
   </div>
 </div>
@@ -723,22 +728,22 @@ footer{background:var(--ink-2);border-top:1px solid rgba(238,232,217,.07);paddin
 <section class="section">
 <div class="container">
   <div class="section-head centered">
-    <div class="eyebrow">Getting Started</div>
-    <h2 class="section-h">Up and running in under 5 minutes.</h2>
-    <p class="section-sub">No IT team required. No server to configure. If you can install an app, you can install SchoolMS.</p>
+    <div class="eyebrow" data-en="Getting Started" data-es="Primeros Pasos">Getting Started</div>
+    <h2 class="section-h" data-en="Up and running in under 5 minutes." data-es="Funcionando en menos de 5 minutos.">Up and running in under 5 minutes.</h2>
+    <p class="section-sub" data-en="No IT team required. No server to configure. If you can install an app, you can install SchoolMS." data-es="No necesitas equipo de TI. No hay servidor que configurar. Si puedes instalar una app, puedes instalar SchoolMS.">No IT team required. No server to configure. If you can install an app, you can install SchoolMS.</p>
   </div>
   <div class="how-steps">
-    <div class="how-step"><div class="how-num">1</div><div class="how-title">Download</div><p class="how-text">Get the free 2.2 MB installer. Works on any Windows 10 or 11 computer made after 2016.</p></div>
-    <div class="how-step"><div class="how-num">2</div><div class="how-title">Purchase a Key</div><p class="how-text">Choose a plan and send your order. You receive a license key by email within 24 hours.</p></div>
-    <div class="how-step"><div class="how-num">3</div><div class="how-title">Install & Activate</div><p class="how-text">Run the installer, open the app, enter your key. Done in under 5 minutes — no technical skill needed.</p></div>
-    <div class="how-step"><div class="how-num">4</div><div class="how-title">Go Live</div><p class="how-text">Import your students from CSV, configure your school, and start. Every device on Wi-Fi connects instantly.</p></div>
+    <div class="how-step"><div class="how-num">1</div><div class="how-title" data-en="Download" data-es="Descargar">Download</div><p class="how-text" data-en="Get the free 2.2 MB installer. Works on any Windows 10 or 11 computer made after 2016." data-es="Descarga el instalador gratuito. Funciona en cualquier computadora con Windows 10 u 11 fabricada después de 2016.">Get the free 2.2 MB installer. Works on any Windows 10 or 11 computer made after 2016.</p></div>
+    <div class="how-step"><div class="how-num">2</div><div class="how-title" data-en="Purchase a Key" data-es="Compra una Clave">Purchase a Key</div><p class="how-text" data-en="Choose a plan and send your order. You receive a license key by email within 24 hours." data-es="Elige un plan y envía tu pedido. Recibes una clave de licencia por correo dentro de 24 horas.">Choose a plan and send your order. You receive a license key by email within 24 hours.</p></div>
+    <div class="how-step"><div class="how-num">3</div><div class="how-title" data-en="Install &amp; Activate" data-es="Instalar y Activar">Install &amp; Activate</div><p class="how-text" data-en="Run the installer, open the app, enter your key. Done in under 5 minutes — no technical skill needed." data-es="Ejecuta el instalador, abre la app, ingresa tu clave. Listo en menos de 5 minutos — sin necesitar conocimientos técnicos.">Run the installer, open the app, enter your key. Done in under 5 minutes — no technical skill needed.</p></div>
+    <div class="how-step"><div class="how-num">4</div><div class="how-title" data-en="Go Live" data-es="Comenzar">Go Live</div><p class="how-text" data-en="Import your students from CSV, configure your school, and start. Every device on Wi-Fi connects instantly." data-es="Importa tus estudiantes desde CSV, configura tu escuela y comienza. Cada dispositivo en la red Wi-Fi se conecta al instante.">Import your students from CSV, configure your school, and start. Every device on Wi-Fi connects instantly.</p></div>
   </div>
   <div class="requirements">
-    <div class="req-item"><div class="req-icon">🖥️</div><div class="req-title">Windows 10 or 11</div><div class="req-text">64-bit server machine</div></div>
-    <div class="req-item"><div class="req-icon">⚙️</div><div class="req-title">i3 or better</div><div class="req-text">Any PC made after 2016</div></div>
-    <div class="req-item"><div class="req-icon">🧠</div><div class="req-title">4 GB RAM min</div><div class="req-text">8 GB recommended</div></div>
-    <div class="req-item"><div class="req-icon">💾</div><div class="req-title">10 GB free disk</div><div class="req-text">Grows with your data</div></div>
-    <div class="req-item"><div class="req-icon">📱</div><div class="req-title">Any browser on clients</div><div class="req-text">Phone, tablet, or laptop</div></div>
+    <div class="req-item"><div class="req-icon">🖥️</div><div class="req-title" data-en="Windows 10 or 11" data-es="Windows 10 u 11">Windows 10 or 11</div><div class="req-text" data-en="64-bit server machine" data-es="Máquina servidor de 64 bits">64-bit server machine</div></div>
+    <div class="req-item"><div class="req-icon">⚙️</div><div class="req-title" data-en="i3 or better" data-es="i3 o superior">i3 or better</div><div class="req-text" data-en="Any PC made after 2016" data-es="Cualquier PC fabricada después de 2016">Any PC made after 2016</div></div>
+    <div class="req-item"><div class="req-icon">🧠</div><div class="req-title" data-en="4 GB RAM min" data-es="4 GB RAM mín.">4 GB RAM min</div><div class="req-text" data-en="8 GB recommended" data-es="8 GB recomendado">8 GB recommended</div></div>
+    <div class="req-item"><div class="req-icon">💾</div><div class="req-title" data-en="10 GB free disk" data-es="10 GB libres en disco">10 GB free disk</div><div class="req-text" data-en="Grows with your data" data-es="Crece con tus datos">Grows with your data</div></div>
+    <div class="req-item"><div class="req-icon">📱</div><div class="req-title" data-en="Any browser on clients" data-es="Cualquier navegador en clientes">Any browser on clients</div><div class="req-text" data-en="Phone, tablet, or laptop" data-es="Teléfono, tableta o laptop">Phone, tablet, or laptop</div></div>
   </div>
 </div>
 </section>
@@ -747,35 +752,35 @@ footer{background:var(--ink-2);border-top:1px solid rgba(238,232,217,.07);paddin
 <section class="section section-alt" id="faq">
 <div class="container">
   <div class="section-head">
-    <div class="eyebrow">FAQ</div>
-    <h2 class="section-h">Questions we get asked most.</h2>
+    <div class="eyebrow" data-en="FAQ" data-es="Preguntas Frecuentes">FAQ</div>
+    <h2 class="section-h" data-en="Questions we get asked most." data-es="Las preguntas más frecuentes.">Questions we get asked most.</h2>
   </div>
   <div class="faq-cols">
     <div class="faq-list">
-      <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)">Does SchoolMS work without internet? <em class="faq-q-ico">+</em></div><div class="faq-a">Yes. After installation, the app runs completely offline. Staff access it through your local Wi-Fi network — no internet connection required after the initial download.</div></div>
-      <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)">Is there a monthly fee or renewal cost? <em class="faq-q-ico">+</em></div><div class="faq-a">No. Pay once and own that version forever. There are no monthly fees, no per-student charges, and no renewal costs. Future major versions may be available at a discounted upgrade price.</div></div>
-      <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)">How many students can I add? <em class="faq-q-ico">+</em></div><div class="faq-a">Unlimited students in all plans. Staff account limits only apply to login accounts — teachers, accountants, front desk staff — not to student records.</div></div>
-      <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)">Can staff and parents access it from home? <em class="faq-q-ico">+</em></div><div class="faq-a">Yes — using a Cloudflare Tunnel (free). A setup script included with SchoolMS configures everything automatically and gives your system a real HTTPS URL accessible from anywhere in the world.</div></div>
-      <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)">Can I import my existing student data? <em class="faq-q-ico">+</em></div><div class="faq-a">Yes. The Import Data page accepts any CSV file exported from Excel. The system auto-detects your column names and handles common variants like "first name", "firstname", "Mother-Name", and more.</div></div>
-      <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)">What countries is SchoolMS available in? <em class="faq-q-ico">+</em></div><div class="faq-a">SchoolMS is used by schools across the Caribbean and Central America — Bahamas, Belize, Honduras, Guatemala, Jamaica, Trinidad and Tobago, Dominican Republic, and more. It works on any Windows computer worldwide.</div></div>
-      <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)">Can I get a refund if it does not work? <em class="faq-q-ico">+</em></div><div class="faq-a">If SchoolMS cannot be installed or run on your computer within 14 days of purchase, contact us for a full refund — no questions asked. We will try to resolve the issue remotely first.</div></div>
-      <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)">What is new in version 2.6? <em class="faq-q-ico">+</em></div><div class="faq-a">A fully self-contained installer that bundles its own private copy of Python and every dependency — no separate Python install and no internet connection needed to set up. Restored and hardened the license activation system. Version 2.5 introduced: bulk CSV import for students and staff, a built-in AI Assistant powered by Claude, a Walk-in Kiosk module for tablet self-service intake, in-app SMTP email setup, a first-time setup guide, and desktop shortcut auto-creation on install.</div></div>
+      <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)"><span data-en="Does SchoolMS work without internet?" data-es="¿SchoolMS funciona sin internet?">Does SchoolMS work without internet?</span> <em class="faq-q-ico">+</em></div><div class="faq-a" data-en="Yes. After installation, the app runs completely offline. Staff access it through your local Wi-Fi network — no internet connection required after the initial download." data-es="Sí. Después de instalarlo, la app funciona completamente sin conexión. El personal accede por la red Wi-Fi local — no se necesita internet después de la descarga inicial.">Yes. After installation, the app runs completely offline. Staff access it through your local Wi-Fi network — no internet connection required after the initial download.</div></div>
+      <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)"><span data-en="Is there a monthly fee or renewal cost?" data-es="¿Hay una cuota mensual o de renovación?">Is there a monthly fee or renewal cost?</span> <em class="faq-q-ico">+</em></div><div class="faq-a" data-en="No. Pay once and own that version forever. There are no monthly fees, no per-student charges, and no renewal costs. Future major versions may be available at a discounted upgrade price." data-es="No. Paga una vez y esa versión es tuya para siempre. No hay cuotas mensuales, ni cargos por estudiante, ni costos de renovación. Futuras versiones mayores pueden ofrecerse con descuento de actualización.">No. Pay once and own that version forever. There are no monthly fees, no per-student charges, and no renewal costs. Future major versions may be available at a discounted upgrade price.</div></div>
+      <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)"><span data-en="How many students can I add?" data-es="¿Cuántos estudiantes puedo agregar?">How many students can I add?</span> <em class="faq-q-ico">+</em></div><div class="faq-a" data-en="Unlimited students in all plans. Staff account limits only apply to login accounts — teachers, accountants, front desk staff — not to student records." data-es="Estudiantes ilimitados en todos los planes. Los límites de cuentas solo aplican al personal — maestros, contadores, recepción — no a los registros de estudiantes.">Unlimited students in all plans. Staff account limits only apply to login accounts — teachers, accountants, front desk staff — not to student records.</div></div>
+      <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)"><span data-en="Can staff and parents access it from home?" data-es="¿El personal y los padres pueden acceder desde casa?">Can staff and parents access it from home?</span> <em class="faq-q-ico">+</em></div><div class="faq-a" data-en="Yes — using a Cloudflare Tunnel (free). A setup script included with SchoolMS configures everything automatically and gives your system a real HTTPS URL accessible from anywhere in the world." data-es="Sí — usando un Cloudflare Tunnel (gratis). Un script incluido con SchoolMS configura todo automáticamente y le da a tu sistema una URL HTTPS real accesible desde cualquier lugar del mundo.">Yes — using a Cloudflare Tunnel (free). A setup script included with SchoolMS configures everything automatically and gives your system a real HTTPS URL accessible from anywhere in the world.</div></div>
+      <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)"><span data-en="Can I import my existing student data?" data-es="¿Puedo importar mis datos existentes de estudiantes?">Can I import my existing student data?</span> <em class="faq-q-ico">+</em></div><div class="faq-a" data-en="Yes. The Import Data page accepts any CSV file exported from Excel. The system auto-detects your column names and handles common variants like &quot;first name&quot;, &quot;firstname&quot;, &quot;Mother-Name&quot;, and more." data-es="Sí. La página de Importar Datos acepta cualquier archivo CSV exportado de Excel. El sistema detecta automáticamente los nombres de columna y maneja variantes comunes.">Yes. The Import Data page accepts any CSV file exported from Excel. The system auto-detects your column names and handles common variants like "first name", "firstname", "Mother-Name", and more.</div></div>
+      <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)"><span data-en="What countries is SchoolMS available in?" data-es="¿En qué países está disponible SchoolMS?">What countries is SchoolMS available in?</span> <em class="faq-q-ico">+</em></div><div class="faq-a" data-en="SchoolMS is used by schools across the Caribbean and Central America — Bahamas, Belize, Honduras, Guatemala, Jamaica, Trinidad and Tobago, Dominican Republic, and more. It works on any Windows computer worldwide." data-es="SchoolMS es usado por escuelas en todo el Caribe y Centroamérica — Bahamas, Belice, Honduras, Guatemala, Jamaica, Trinidad y Tobago, República Dominicana y más. Funciona en cualquier computadora con Windows en el mundo.">SchoolMS is used by schools across the Caribbean and Central America — Bahamas, Belize, Honduras, Guatemala, Jamaica, Trinidad and Tobago, Dominican Republic, and more. It works on any Windows computer worldwide.</div></div>
+      <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)"><span data-en="Can I get a refund if it does not work?" data-es="¿Puedo obtener un reembolso si no funciona?">Can I get a refund if it does not work?</span> <em class="faq-q-ico">+</em></div><div class="faq-a" data-en="If SchoolMS cannot be installed or run on your computer within 14 days of purchase, contact us for a full refund — no questions asked. We will try to resolve the issue remotely first." data-es="Si SchoolMS no puede instalarse o funcionar en tu computadora dentro de 14 días de la compra, contáctanos para un reembolso completo — sin preguntas. Intentaremos resolverlo remotamente primero.">If SchoolMS cannot be installed or run on your computer within 14 days of purchase, contact us for a full refund — no questions asked. We will try to resolve the issue remotely first.</div></div>
+      <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)"><span data-en="What is new in version 2.6?" data-es="¿Qué hay de nuevo en la versión 2.6?">What is new in version 2.6?</span> <em class="faq-q-ico">+</em></div><div class="faq-a" data-en="A fully self-contained installer that bundles its own private copy of Python and every dependency — no separate Python install and no internet connection needed to set up. Restored and hardened the license activation system. Version 2.5 introduced: bulk CSV import for students and staff, a built-in AI Assistant powered by Claude, a Walk-in Kiosk module for tablet self-service intake, in-app SMTP email setup, a first-time setup guide, and desktop shortcut auto-creation on install." data-es="Un instalador totalmente autónomo que incluye su propia copia de Python y todas las dependencias — sin instalación separada de Python ni conexión a internet para configurarlo. Sistema de activación de licencia restaurado y reforzado. La versión 2.5 introdujo: importación masiva CSV, un Asistente de IA con Claude, un Kiosco de Clientes, configuración de correo SMTP en la app, guía de configuración inicial y creación automática de acceso directo.">A fully self-contained installer that bundles its own private copy of Python and every dependency — no separate Python install and no internet connection needed to set up. Restored and hardened the license activation system. Version 2.5 introduced: bulk CSV import for students and staff, a built-in AI Assistant powered by Claude, a Walk-in Kiosk module for tablet self-service intake, in-app SMTP email setup, a first-time setup guide, and desktop shortcut auto-creation on install.</div></div>
     </div>
     <div>
       <div class="faq-aside">
-        <h3>Still have questions?</h3>
-        <p>Email us and we will reply within 24 hours. Happy to help you decide if SchoolMS is the right fit before you buy anything.</p>
-        <a href="mailto:ro1manramirez73@gmail.com" class="btn btn-gold" style="width:100%;justify-content:center">Email Us Directly →</a>
+        <h3 data-en="Still have questions?" data-es="¿Aún tienes preguntas?">Still have questions?</h3>
+        <p data-en="Email us and we will reply within 24 hours. Happy to help you decide if SchoolMS is the right fit before you buy anything." data-es="Escríbenos y responderemos dentro de 24 horas. Con gusto te ayudamos a decidir si SchoolMS es adecuado para ti antes de comprar.">Email us and we will reply within 24 hours. Happy to help you decide if SchoolMS is the right fit before you buy anything.</p>
+        <a href="mailto:ro1manramirez73@gmail.com" class="btn btn-gold" style="width:100%;justify-content:center" data-en="Email Us Directly →" data-es="Escríbenos Directamente →">Email Us Directly →</a>
       </div>
       <div class="trial-box">
-        <div class="trial-box-title">Free trial includes:</div>
+        <div class="trial-box-title" data-en="Free trial includes:" data-es="La prueba gratis incluye:">Free trial includes:</div>
         <div class="trial-feats">
-          <span>Full access to every module</span>
-          <span>No time limit on the trial</span>
-          <span>Import up to 10 students</span>
-          <span>License key unlocks full use instantly</span>
+          <span data-en="Full access to every module" data-es="Acceso completo a todos los módulos">Full access to every module</span>
+          <span data-en="No time limit on the trial" data-es="Sin límite de tiempo en la prueba">No time limit on the trial</span>
+          <span data-en="Import up to 10 students" data-es="Importa hasta 10 estudiantes">Import up to 10 students</span>
+          <span data-en="License key unlocks full use instantly" data-es="La clave de licencia desbloquea el uso completo al instante">License key unlocks full use instantly</span>
         </div>
-        <a href="https://github.com/ro1manramirez73-ops/schoolms-store/releases/download/v2.6.3/SchoolMS_Setup_v2.6.3.exe" class="btn btn-outline" style="width:100%;justify-content:center;margin-top:16px">⬇ Download Free Trial</a>
+        <a href="https://github.com/ro1manramirez73-ops/schoolms-store/releases/download/v2.6.3/SchoolMS_Setup_v2.6.3.exe" class="btn btn-outline" style="width:100%;justify-content:center;margin-top:16px" data-en="⬇ Download Free Trial" data-es="⬇ Descargar Prueba Gratis">⬇ Download Free Trial</a>
       </div>
     </div>
   </div>
@@ -785,12 +790,12 @@ footer{background:var(--ink-2);border-top:1px solid rgba(238,232,217,.07);paddin
 <!-- CTA -->
 <div class="container" style="padding-top:96px">
 <div class="cta-banner">
-  <h2 class="section-h" style="font-size:clamp(2rem,4vw,3rem)">Ready to simplify your<br><span class="gold">entire school?</span></h2>
-  <p>One payment. Every feature. No recurring costs — ever. Join schools across the Caribbean that already made the switch.</p>
+  <h2 class="section-h" style="font-size:clamp(2rem,4vw,3rem)" data-en="Ready to simplify your<br><span class=&quot;gold&quot;>entire school?</span>" data-es="¿Listo para simplificar<br><span class=&quot;gold&quot;>toda tu escuela?</span>">Ready to simplify your<br><span class="gold">entire school?</span></h2>
+  <p data-en="One payment. Every feature. No recurring costs — ever. Join schools across the Caribbean that already made the switch." data-es="Un pago. Todas las funciones. Sin costos recurrentes — nunca. Únete a las escuelas del Caribe que ya hicieron el cambio.">One payment. Every feature. No recurring costs — ever. Join schools across the Caribbean that already made the switch.</p>
   <div class="cta-actions">
-    <a href="#pricing" class="btn btn-gold" style="font-size:15px;padding:15px 30px">See Pricing →</a>
-    <a href="https://github.com/ro1manramirez73-ops/schoolms-store/releases/download/v2.6.3/SchoolMS_Setup_v2.6.3.exe" class="btn btn-outline" style="font-size:15px;padding:14px 28px">⬇ Download v2.6.3 — Latest</a>
-    <a href="https://github.com/ro1manramirez73-ops/schoolms-store/releases/download/v2.5/SchoolMS_Setup_v2.5.exe" class="btn btn-outline" style="font-size:15px;padding:14px 28px">⬇ Download v2.5 — Stable</a>
+    <a href="#pricing" class="btn btn-gold" style="font-size:15px;padding:15px 30px" data-en="See Pricing →" data-es="Ver Precios →">See Pricing →</a>
+    <a href="https://github.com/ro1manramirez73-ops/schoolms-store/releases/download/v2.6.3/SchoolMS_Setup_v2.6.3.exe" class="btn btn-outline" style="font-size:15px;padding:14px 28px" data-en="⬇ Download v2.6.3 — Latest" data-es="⬇ Descargar v2.6.3 — Última">⬇ Download v2.6.3 — Latest</a>
+    <a href="https://github.com/ro1manramirez73-ops/schoolms-store/releases/download/v2.5/SchoolMS_Setup_v2.5.exe" class="btn btn-outline" style="font-size:15px;padding:14px 28px" data-en="⬇ Download v2.5 — Stable" data-es="⬇ Descargar v2.5 — Estable">⬇ Download v2.5 — Stable</a>
   </div>
 </div>
 </div>
@@ -800,25 +805,25 @@ footer{background:var(--ink-2);border-top:1px solid rgba(238,232,217,.07);paddin
   <div class="footer-grid">
     <div class="footer-brand">
       <a href="/" class="nav-logo"><div class="nav-logo-mark">S</div><span class="nav-logo-text">SchoolMS</span></a>
-      <p>Complete school management for the Caribbean & Central America. One-time purchase. Yours forever.</p>
+      <p data-en="Complete school management for the Caribbean &amp; Central America. One-time purchase. Yours forever." data-es="Gestión escolar completa para el Caribe y Centroamérica. Pago único. Tuyo para siempre.">Complete school management for the Caribbean &amp; Central America. One-time purchase. Yours forever.</p>
     </div>
     <div class="footer-col">
-      <h4>Product</h4>
-      <a href="#features">Features</a>
-      <a href="#screenshots">Screenshots</a>
-      <a href="#pricing">Pricing</a>
-      <a href="#faq">How It Works</a>
+      <h4 data-en="Product" data-es="Producto">Product</h4>
+      <a href="#features" data-en="Features" data-es="Funciones">Features</a>
+      <a href="#screenshots" data-en="Screenshots" data-es="Capturas">Screenshots</a>
+      <a href="#pricing" data-en="Pricing" data-es="Precios">Pricing</a>
+      <a href="#faq" data-en="How It Works" data-es="Cómo Funciona">How It Works</a>
     </div>
     <div class="footer-col">
-      <h4>Support</h4>
-      <a href="#faq">FAQ</a>
-      <a href="mailto:ro1manramirez73@gmail.com">Email Support</a>
+      <h4 data-en="Support" data-es="Soporte">Support</h4>
+      <a href="#faq" data-en="FAQ" data-es="Preguntas">FAQ</a>
+      <a href="mailto:ro1manramirez73@gmail.com" data-en="Email Support" data-es="Soporte por Correo">Email Support</a>
       <a href="https://github.com/ro1manramirez73-ops/schoolms-store">GitHub</a>
-      <a href="https://github.com/ro1manramirez73-ops/schoolms-store/releases/download/v2.6.3/SchoolMS_Setup_v2.6.3.exe">Download v2.6.3 (Latest)</a>
-      <a href="https://github.com/ro1manramirez73-ops/schoolms-store/releases/download/v2.5/SchoolMS_Setup_v2.5.exe">Download v2.5 (Stable)</a>
+      <a href="https://github.com/ro1manramirez73-ops/schoolms-store/releases/download/v2.6.3/SchoolMS_Setup_v2.6.3.exe" data-en="Download v2.6.3 (Latest)" data-es="Descargar v2.6.3 (Última)">Download v2.6.3 (Latest)</a>
+      <a href="https://github.com/ro1manramirez73-ops/schoolms-store/releases/download/v2.5/SchoolMS_Setup_v2.5.exe" data-en="Download v2.5 (Stable)" data-es="Descargar v2.5 (Estable)">Download v2.5 (Stable)</a>
     </div>
     <div class="footer-col">
-      <h4>Countries</h4>
+      <h4 data-en="Countries" data-es="Países">Countries</h4>
       <a href="#">Bahamas</a>
       <a href="#">Belize</a>
       <a href="#">Honduras</a>
@@ -837,49 +842,49 @@ footer{background:var(--ink-2);border-top:1px solid rgba(238,232,217,.07);paddin
 <div class="modal-overlay" id="orderModal">
   <div class="modal">
     <button class="modal-close" onclick="closeModal()">×</button>
-    <div class="modal-title">Place Your Order</div>
+    <div class="modal-title" data-en="Place Your Order" data-es="Realiza tu Pedido">Place Your Order</div>
     <div class="modal-plan" id="modalPlan">Tier 1 — $1,000</div>
     <div id="orderForm">
-      <div class="secure-note">🔒 Your information is used only to process your order.</div>
+      <div class="secure-note" data-en="🔒 Your information is used only to process your order." data-es="🔒 Tu información se usa solo para procesar tu pedido.">🔒 Your information is used only to process your order.</div>
       <div class="fg2">
-        <div class="fg"><label class="fl">First Name *</label><input type="text" class="fi" id="oFirst" placeholder="Juan"/></div>
-        <div class="fg"><label class="fl">Last Name *</label><input type="text" class="fi" id="oLast" placeholder="Pérez"/></div>
+        <div class="fg"><label class="fl" data-en="First Name *" data-es="Nombre *">First Name *</label><input type="text" class="fi" id="oFirst" placeholder="Juan"/></div>
+        <div class="fg"><label class="fl" data-en="Last Name *" data-es="Apellido *">Last Name *</label><input type="text" class="fi" id="oLast" placeholder="Pérez"/></div>
       </div>
-      <div class="fg"><label class="fl">Email Address *</label><input type="email" class="fi" id="oEmail" placeholder="you@school.com"/></div>
-      <div class="fg"><label class="fl">School / Organisation *</label><input type="text" class="fi" id="oSchool" placeholder="St. Mary's Academy"/></div>
+      <div class="fg"><label class="fl" data-en="Email Address *" data-es="Correo Electrónico *">Email Address *</label><input type="email" class="fi" id="oEmail" placeholder="you@school.com"/></div>
+      <div class="fg"><label class="fl" data-en="School / Organisation *" data-es="Escuela / Organización *">School / Organisation *</label><input type="text" class="fi" id="oSchool" placeholder="St. Mary's Academy"/></div>
       <div class="fg2">
-        <div class="fg"><label class="fl">Country</label><input type="text" class="fi" id="oCountry" placeholder="Bahamas"/></div>
-        <div class="fg" id="paymentMethodRow"><label class="fl">Payment Method *</label>
+        <div class="fg"><label class="fl" data-en="Country" data-es="País">Country</label><input type="text" class="fi" id="oCountry" placeholder="Bahamas"/></div>
+        <div class="fg" id="paymentMethodRow"><label class="fl" data-en="Payment Method *" data-es="Método de Pago *">Payment Method *</label>
           <select class="fi" id="oPayment">
-            <option value="">— select —</option>
-            <option>Bank Transfer</option>
+            <option value="" data-en="— select —" data-es="— seleccionar —">— select —</option>
+            <option data-en="Bank Transfer" data-es="Transferencia Bancaria">Bank Transfer</option>
             <option>PayPal</option>
             <option>Zelle</option>
-            <option>Cash App</option>
-            <option>Western Union / MoneyGram</option>
-            <option>Other</option>
+            <option data-en="Cash App" data-es="Cash App">Cash App</option>
+            <option data-en="Western Union / MoneyGram" data-es="Western Union / MoneyGram">Western Union / MoneyGram</option>
+            <option data-en="Other" data-es="Otro">Other</option>
           </select>
         </div>
       </div>
       <div class="fg" id="deployRow" style="display:none">
-        <label class="fl">Deployment Mode *</label>
+        <label class="fl" data-en="Deployment Mode *" data-es="Modo de Instalación *">Deployment Mode *</label>
         <select class="fi" id="oDeploy">
-          <option value="One install — all branches share one server (1 license key)">One install for all branches (1 license key)</option>
-          <option value="Separate install per branch (up to 3 license keys)">Separate install per branch (up to 3 license keys)</option>
+          <option value="One install — all branches share one server (1 license key)" data-en="One install for all branches (1 license key)" data-es="Una instalación para todas las sucursales (1 clave)">One install for all branches (1 license key)</option>
+          <option value="Separate install per branch (up to 3 license keys)" data-en="Separate install per branch (up to 3 license keys)" data-es="Instalación separada por sucursal (hasta 3 claves)">Separate install per branch (up to 3 license keys)</option>
         </select>
       </div>
-      <div class="fg"><label class="fl">Notes (optional)</label><textarea class="fi" id="oNotes" rows="2" placeholder="Questions or special requirements..."></textarea></div>
-      <button class="btn btn-gold" style="width:100%;padding:13px;font-size:14px;margin-top:4px" id="submitBtn" onclick="submitOrder()">Send Order Request</button>
-      <p class="form-note">We reply within 24 hours with payment instructions and your license key.</p>
+      <div class="fg"><label class="fl" data-en="Notes (optional)" data-es="Notas (opcional)">Notes (optional)</label><textarea class="fi" id="oNotes" rows="2" placeholder="Questions or special requirements..."></textarea></div>
+      <button class="btn btn-gold" style="width:100%;padding:13px;font-size:14px;margin-top:4px" id="submitBtn" onclick="submitOrder()" data-en="Send Order Request" data-es="Enviar Pedido">Send Order Request</button>
+      <p class="form-note" data-en="We reply within 24 hours with payment instructions and your license key." data-es="Respondemos dentro de 24 horas con instrucciones de pago y tu clave de licencia.">We reply within 24 hours with payment instructions and your license key.</p>
       <div id="paypalButtonRow" style="display:none;margin-top:4px">
         <div id="paypal-button-container"></div>
-        <p class="form-note">Secure checkout via PayPal — pay by PayPal balance, debit, or credit card. Your license key follows by email within 24 hours.</p>
+        <p class="form-note" data-en="Secure checkout via PayPal — pay by PayPal balance, debit, or credit card. Your license key follows by email within 24 hours." data-es="Pago seguro vía PayPal — paga con saldo de PayPal, débito o crédito. Tu clave de licencia llega por correo dentro de 24 horas.">Secure checkout via PayPal — pay by PayPal balance, debit, or credit card. Your license key follows by email within 24 hours.</p>
       </div>
     </div>
     <div class="form-success" id="orderSuccess">
       <div class="form-success-icon">✅</div>
-      <div style="font-family:var(--serif);font-size:1.2rem;color:var(--parch);margin-bottom:8px">Request received!</div>
-      <p style="font-size:13px;color:var(--mist)">We will email <strong id="successEmail" style="color:var(--parch)"></strong> with payment details and your license key within 24 hours.</p>
+      <div style="font-family:var(--serif);font-size:1.2rem;color:var(--parch);margin-bottom:8px" data-en="Request received!" data-es="¡Solicitud recibida!">Request received!</div>
+      <p style="font-size:13px;color:var(--mist)"><span data-en="We will email" data-es="Te enviaremos un correo a">We will email</span> <strong id="successEmail" style="color:var(--parch)"></strong> <span data-en="with payment details and your license key within 24 hours." data-es="con los detalles de pago y tu clave de licencia dentro de 24 horas.">with payment details and your license key within 24 hours.</span></p>
     </div>
     <div class="form-success" id="orderSuccessPaid" style="display:none">
       <div class="form-success-icon">✅</div>
@@ -1085,9 +1090,48 @@ async function submitOrder(){
   } catch(err){
     alert('Network error. Please email us directly at ro1manramirez73@gmail.com');
   } finally {
-    btn.disabled=false; btn.textContent='Send Order Request';
+    btn.disabled=false;
+    btn.textContent = document.documentElement.lang==='es' ? 'Enviar Pedido' : 'Send Order Request';
   }
 }
+</script>
+
+<script>
+/* Language System */
+const ES = {};
+
+function setLang(lang) {
+  document.getElementById('btn-en').classList.toggle('active', lang==='en');
+  document.getElementById('btn-es').classList.toggle('active', lang==='es');
+  document.documentElement.lang = lang;
+  localStorage.setItem('schoolms_lang', lang);
+
+  if (lang === 'en') {
+    document.querySelectorAll('[data-en]').forEach(el => { el.innerHTML = el.dataset.en; });
+    return;
+  }
+
+  // Apply Spanish — data-es first, then ES dictionary lookup
+  document.querySelectorAll('[data-en]').forEach(el => {
+    const t = el.dataset.es || ES[el.dataset.en] || ES[(el.dataset.en||'').replace(/&amp;/g,'&')];
+    if (t) el.innerHTML = t;
+  });
+
+  // Leaf-node fallback: elements without data-en
+  document.querySelectorAll('h3,h4,button,a,label,span,p,li,div').forEach(el => {
+    if (el.dataset.en || el.children.length > 0) return;
+    const txt = el.innerHTML.trim();
+    if (!txt || txt.length > 250) return;
+    const t = ES[txt] || ES[txt.replace(/&amp;/g,'&')] || ES[txt.replace(/&/g,'&amp;')];
+    if (t) { el.dataset.en = txt; el.innerHTML = t; }
+  });
+}
+
+(function(){
+  const s = localStorage.getItem('schoolms_lang');
+  const b = (navigator.language||'').startsWith('es') ? 'es' : 'en';
+  if ((s||b) === 'es') setLang('es');
+})();
 </script>
 <script src="https://www.paypal.com/sdk/js?client-id=AVM0l-5U0RqAyUBec3kggKh1VsXBn7_SmgH9oPHrAc8436g8Vo8kNHtxz2d7aVKL6cTs5krwoYK37SbZ&currency=USD"></script>
 </body>
