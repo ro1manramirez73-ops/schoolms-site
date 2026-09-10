@@ -1,0 +1,19 @@
+# SchoolMS
+
+> School management software for small schools in the Caribbean and Central America. A Windows desktop application, bought once from $1,000 USD, that runs completely offline after installation.
+
+## Product
+
+- [SchoolMS](https://schoolms.rampastor.com/): single-page overview — modules, product screenshots, pricing and FAQ.
+- [Pricing](https://schoolms.rampastor.com/#pricing): three one-time licence tiers — $1,000 (up to 100 students), $1,800 (100–300 students), $2,800 (300+ students, multi-branch included). No subscription, no per-student charge.
+- [Features](https://schoolms.rampastor.com/#features): students, attendance, grades, fees, payroll (with NIB), timetables.
+- [FAQ](https://schoolms.rampastor.com/#faq): offline operation, absence of recurring fees, student limits, remote access over a Cloudflare Tunnel, CSV import, refunds.
+
+## Downloads
+
+- [SchoolMS 2.6.3 installer (latest)](https://github.com/ro1manramirez73-ops/schoolms-store/releases/download/v2.6.3/SchoolMS_Setup_v2.6.3.exe)
+- [SchoolMS 2.5 installer (stable)](https://github.com/ro1manramirez73-ops/schoolms-store/releases/download/v2.5/SchoolMS_Setup_v2.5.exe)
+
+## Contact
+
+- Email: ro1manramirez73@gmail.com
