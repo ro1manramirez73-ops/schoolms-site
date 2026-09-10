@@ -1,0 +1,68 @@
+name: Sync sitemap lastmod
+
+# Keeps <lastmod> in sitemap.xml equal to the date index.html last actually
+# changed, so the sitemap stops drifting behind the content.
+#
+# Why this cannot loop:
+#   1. `paths: index.html` — the commit this workflow makes touches only
+#      sitemap.xml, so it does not match the trigger.
+#   2. Pushes authenticated with the default GITHUB_TOKEN do not start further
+#      workflow runs, by GitHub's own recursion guard.
+# Either one is sufficient; both are in place.
+#
+# The sitemap commit DOES trigger a fresh Cloudflare Workers build, which is
+# wanted — that is what publishes the new sitemap.
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'index.html'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: sitemap-lastmod-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          # Full history: the script reads the last commit date for index.html,
+          # which a shallow clone cannot answer.
+          fetch-depth: 0
+
+      - name: Read the real last-modified date and update sitemap.xml
+        id: sync
+        run: node scripts/update-sitemap-lastmod.mjs
+
+      - name: Commit the sitemap
+        if: steps.sync.outputs.changed == 'true'
+        env:
+          DATE: ${{ steps.sync.outputs.date }}
+        run: |
+          set -euo pipefail
+          if git diff --quiet -- sitemap.xml; then
+            echo "Script reported a change but the file is identical; nothing to commit."
+            exit 0
+          fi
+          git config user.name  "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add sitemap.xml
+          git commit -m "Sync sitemap lastmod to ${DATE}" \
+                     -m "index.html last changed on ${DATE}; sitemap.xml updated to match. Automated by .github/workflows/sitemap-lastmod.yml."
+          git push
+
+      - name: Summary
+        run: |
+          {
+            echo "### Sitemap lastmod"
+            echo
+            echo "- date from git history: \`${{ steps.sync.outputs.date }}\`"
+            echo "- sitemap changed: \`${{ steps.sync.outputs.changed }}\`"
+          } >> "$GITHUB_STEP_SUMMARY"
