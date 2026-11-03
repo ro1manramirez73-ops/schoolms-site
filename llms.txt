@@ -1,13 +1,13 @@
 # SchoolMS
 
-> School management software for small schools in the Caribbean and Central America. A Windows desktop application, bought once from $1,000 USD, that runs completely offline after installation.
+> School management software for small schools in the Caribbean and Central America. A Windows desktop application, billed yearly from $900 USD with updates and support included, that runs completely offline after installation.
 
 ## Product
 
 - [SchoolMS](https://schoolms.rampastor.com/): single-page overview — modules, product screenshots, pricing and FAQ.
-- [Pricing](https://schoolms.rampastor.com/#pricing): three one-time licence tiers — $1,000 (up to 100 students), $1,800 (100–300 students), $2,800 (300+ students, multi-branch included). No subscription, no per-student charge.
+- [Pricing](https://schoolms.rampastor.com/#pricing): three annual plans — $900/year (up to 100 students), $1,800/year (100–300 students), $3,000/year (300+ students, multi-branch included). Updates and support included; no per-student charge.
 - [Features](https://schoolms.rampastor.com/#features): students, attendance, grades, fees, payroll (with NIB), timetables.
-- [FAQ](https://schoolms.rampastor.com/#faq): offline operation, absence of recurring fees, student limits, remote access over a Cloudflare Tunnel, CSV import, refunds.
+- [FAQ](https://schoolms.rampastor.com/#faq): offline operation, yearly billing, enrollment ranges, remote access over a Cloudflare Tunnel, CSV import, refunds.
 
 ## Downloads
 
