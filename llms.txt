@@ -11,8 +11,8 @@
 
 ## Downloads
 
-- [SchoolMS 2.6.3 installer (latest)](https://github.com/ro1manramirez73-ops/schoolms-downloads/raw/main/installers/SchoolMS_Setup_v2.6.3.exe)
-- [SchoolMS 2.5 installer (stable)](https://github.com/ro1manramirez73-ops/schoolms-downloads/raw/main/installers/SchoolMS_Setup_v2.5.exe)
+- [SchoolMS 2.0.2 installer (new install)](https://github.com/ro1manramirez73-ops/schoolms-downloads/raw/main/installers/SchoolMS_Setup_2.0.2.exe)
+- [SchoolMS 2.0.2 updater (existing schools)](https://github.com/ro1manramirez73-ops/schoolms-downloads/raw/main/installers/SchoolMS_Update_2.0.2.exe)
 
 ## Contact
 
