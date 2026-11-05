@@ -6,7 +6,7 @@
 
 - [SchoolMS](https://schoolms.rampastor.com/): single-page overview — modules, product screenshots, pricing and FAQ.
 - [Pricing](https://schoolms.rampastor.com/#pricing): three annual plans — $900/year (up to 100 students), $1,800/year (100–300 students), $3,000/year (300+ students, multi-branch included). Updates and support included; no per-student charge.
-- [Features](https://schoolms.rampastor.com/#features): students, attendance, grades, fees, payroll (with NIB), timetables.
+- [Features](https://schoolms.rampastor.com/#features): students, attendance, grades, fees, payroll (with NIB), timetables. QuickBooks Desktop sync is optional on every plan.
 - [FAQ](https://schoolms.rampastor.com/#faq): offline operation, yearly billing, enrollment ranges, remote access over a Cloudflare Tunnel, CSV import, refunds, the free trial.
 - Free trial: 30 days with every module, using a trial key requested on the site. No payment details needed.
 
